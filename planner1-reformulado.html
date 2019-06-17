@@ -1,0 +1,751 @@
+<!doctype html>
+<html ⚡ lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Sample document</title>
+    <link rel="canonical" href="./regular-html-version.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <style amp-custom>
+      *{margin:0;padding:0;outline:none;text-decoration:none;font-size:12px}
+      nav{position:absolute;z-index:100;display:none}
+      html{box-sizing:border-box;font-size:10px;font-family:'Roboto Condensed',sans-serif}
+      input,section,button{outline:none}
+      a,button{cursor:pointer;pointer-events:all}
+      button{border:none;border-radius:7px;background:#fff}
+      span{font-size:12px}
+      body{background-color:#fff}
+      .hvr-grow{display:inline-block;vertical-align:middle;-webkit-transform:perspective(1px) translateZ(0);transform:perspective(1px) translateZ(0);box-shadow:0 0 1px rgba(0,0,0,0);-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transition-property:transform;transition-property:transform}
+      .hvr-grow:hover{-webkit-transform:scale(1.1);transform:scale(1.1);box-shadow:0 0 27px 0 rgba(0,0,0,0.15);background:#80a4be}
+      .header{height:10vh;background:#eef4f2}
+      .template-title{font-size:26px;font-weight:200;text-align:center;color:#8e9aaf;font-family:'Roboto',sans-serif}
+      .templates-container button{font-family:'Roboto',sans-serif}
+      .input-cliente{position:relative;top:-32px;right:0;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-end;align-items:center}
+      .icone-input-cliente svg{height:27px;padding-right:10px}
+      .ampstart-input{background-color:#fff}
+      .cliente-dropdown{background-color:#fff;padding:10px 70px 10px 7px;margin-right:10px;border-radius:5px;border:none;box-shadow:0 0 30px 0 rgba(0,0,0,0.10)}
+      .cliente-dropdown select option{text-align:left}
+      .templates-container{display:grid;grid-template-columns:repeat(5,1fr);grid-gap:20px;justify-content:center;margin:0 20px 20px}
+      .blocos-template{padding:10px;border-radius:5px;box-shadow:0 0 24px 0 rgba(0,0,0,0.10)}
+      .icone-blocos-templates{width:70%;margin:0 auto;margin-bottom:10px;max-width:150px}
+      .blocos-title{display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:flex-start;align-items:center}
+      .template-title-icon{width:23px}
+      .template-title-icon svg{margin-top:2px;width:20px}
+      #bloco-title{font-size:18px;color:#26547c;height:50px}
+      .description-templates{margin-top:10px;color:#26547c;font-size:12px;line-height:140%;height:70px}
+      .scrollbar{margin-left:10px;float:left;height:100px;width:90%;background:#fff;overflow-y:scroll;margin-bottom:25px;position:relative;z-index:1}
+      .force-overflow{min-height:100px;line-height:1.5;font-size:12px}
+      #style-3-scrollbar::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbar::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbar::-webkit-scrollbar-thumb{background-color:silver}
+      .hvr-grow{display:inline-block;vertical-align:middle;-webkit-transform:perspective(1px) translateZ(0);transform:perspective(1px) translateZ(0);box-shadow:0 0 1px rgba(0,0,0,0);-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transition-property:transform;transition-property:transform}
+      .hvr-grow:hover,.hvr-grow:focus,.hvr-grow:active{-webkit-transform:scale(1.1);transform:scale(1.1);box-shadow:0 0 27px 0 rgba(0,0,0,0.15)}
+      .header{height:100px}
+      .lightbox{background:rgba(38,84,124,.5);box-shadow:inset 0 0 200px 100px rgba(255,255,255,.8);width:100%;height:100%;position:absolute;display:flex;align-items:center;justify-content:center}
+      .lightbox-grid{display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr}
+      .cliente-nome-tag{position:relative;top:26px;grid-row:1 / 2;justify-self:start;z-index:2;border-radius:7px 20px 0 0;background:#fff}
+      #cliente-nome-tag-title{text-align:left;margin:12px 40px 40px 20px;font-size:18px}
+      .project-creator-modal{position:relative;z-index:3;display:flex;flex-direction:row;justify-content:flex-end;width:837px;height:428px;background:#fff;border-radius:7px;box-shadow:0 0 50px 0 rgba(0,0,0,0.50)}
+      .modal-grid{position:relative;display:grid;width:100%;grid-template-columns:2.3fr 1fr;grid-template-rows:repeat(3,auto)}
+      .close-btn1{grid-row:1 / 2;grid-column:2 / 3;justify-self:end}
+      .close-svg1{margin:13px;position:relative;width:15px}
+      .nomeProjeto{width:90%;grid-column:1 / 2;grid-row:1 / 2;justify-self:start;align-self:center;border-radius:5px;margin:50px 20px 20px;padding:10px;border:transparent;outline:none;font-size:18px;color:#26547c;box-shadow:0 0 20px 0 rgba(0,0,0,0.15)}
+      form{grid-column:1 / 2;grid-row:1 / 4}
+      .descrProjeto{width:90%;grid-column:1 / 2;grid-row:2 / 3;justify-self:start;align-self:center;border-radius:5px;margin:10px 20px;padding:10px;border:transparent;outline:none;font-size:18px;color:#26547c;box-shadow:0 0 20px 0 rgba(0,0,0,0.15);resize:none;overflow:auto}
+      input::placeholder{color:#26547c}
+      textarea::placeholder{color:#26547c;font-family:'Roboto Condensed',sans-serif}
+      .criar-btn{width:100px;grid-column:1 / 3;grid-row:3 / 4;justify-self:center;align-self:center;border-radius:5px;margin:10px;padding:10px;border:transparent;outline:none;font-size:14px;box-shadow:0 0 20px 0 rgba(0,0,0,0.15);color:#fff;background-color:#26547c}
+      .criar-btn:hover{background-color:#1f8a70}
+      .equipe-svg{position:relative;z-index:30;right:60px;align-self:center;justify-self:end;grid-column:2 / 3;grid-row:1 / 2}
+      .equipe-btn{width:35px;background:transparent;border:none}
+      .equipe-modal{position:relative;grid-column:2 / 3;grid-row:2 / 3}
+      .lightbox-equipe{background:#fff;width:264px;margin:20px;padding:20px;height:auto;position:relative;right:-49.5%;top:30%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px;line-height:2;border-radius:6px;box-shadow:0 0 20px 0 rgba(0,0,0,0.15)}
+      .lightbox-equipe ul{width:100%;margin:20px 10px 10px}
+      .lightbox-equipe ul li{position:relative;border-bottom:.5px solid #eee2df;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center}
+      .close-svg-equipe{position:absolute;width:15px;right:0;top:0;margin:10px}
+      .exclude-svg-equipe{position:absolute;width:10px;right:0;top:8px}
+      #teamTitle{font-size:14px;font-weight:400;color:#26547c}
+      .lider-btn{display:flex;justify-content:center;align-items:center;width:30px;height:30px;border-radius:50%;margin:6px}
+      .team-list-color1{background:orange}
+      #diamond-lider{position:absolute;width:13px;left:2px;bottom:4px}
+      .LineLeader{justify-content:center}
+      .TeamCircle{border-radius:50%;background:#eee2df;padding:5px}
+      #teamDropDownIcon,#termDropDownIcon,#typeDropDownIcon,#StatusDropDownIcon{position:relative;top:1px;width:15px;padding-right:5px}
+      #myDIV{position:relative;background-color:#fff;grid-row:2 / 3;grid-column:2/ 3;z-index:14;width:50%;height:170px;box-shadow:0 0 20px 0 rgba(0,0,0,0.15);display:flex;justify-content:center;align-items:center;left:64px;top:30px}
+      .Color1{color:#8e9aaf;position:relative;left:-9px}
+      .LineTerm{z-index:15;background-color:#fff;position:relative;grid-column:2 / 3;grid-row:2 / 3;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;justify-self:center;width:60%;box-shadow:0 0 20px 0 rgba(0,0,0,0.15);height:30px;border-radius:5px}
+      #icon-data{width:20px;margin-left:5px}
+      #termDropDownIcon{width:20px;height:20px}
+      fieldset{position:relative;border:none}
+      #start,#end{font-family:'Roboto Condensed',sans-serif;border:none;background:#eee2df;padding:2px}
+      .date-picker{position:relative;margin-bottom:8px;display:flex}
+      .datas-header{display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:center;align-items:center}
+      #date-picker-icon{width:18px;margin:18px 3px 3px 0}
+      #datasHeaderText{position:relative;top:8px;font-weight:400}
+      .anexos-container{z-index:1;position:relative;top:64px;display:grid;grid-column:2 / 3;grid-row:2 / 3;width:80%;margin:0 auto;height:150px;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:5px}
+      .grid-anexos{position:relative;z-index:3;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;height:25px;margin:6px 8px 8px;border-bottom:.5px solid #eee2df}
+      .grid-anexos button{pointer-events:all}
+      .grid-anexos p{position:relative;bottom:2px;color:#8e9aaf}
+      #clip-icon{width:18px}
+      .grid-anexos button{position:relative;z-index:12;background:transparent;border:none}
+      .tolltip-fechar{position:relative;text-align:center}
+      .tolltip-fechar::before,.tolltip-fechar::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tolltip-fechar::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:50px;border-color:transparent transparent #415b76}
+      .tolltip-fechar::after{content:attr(data-tooltip-Fechar);background:#415b76;border-radius:4px;color:#fff;top:59px;width:50px;padding:5px;left:-22px}
+      .tolltip-fechar:hover::before,.tolltip-fechar:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tolltip-fechar:active::before,.tolltip-fechar:active::after{opacity:0;visibility:hidden}
+      .tooltip-anexos{position:relative;text-align:center}
+      .tooltip-anexos::before,.tooltip-anexos::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltip-anexos::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:50px;border-color:transparent transparent #415b76}
+      .tooltip-anexos::after{content:attr(data-tooltip-Anexos);background:#415b76;border-radius:4px;color:#fff;top:59px;width:100px;padding:5px;left:-46px}
+      .tooltip-anexos:hover::before,.tooltip-anexos:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltip-anexos:active::before,.tooltip-anexos:active::after{opacity:0;visibility:hidden}
+      .tooltip-time{position:relative;text-align:center}
+      .tooltip-time::before,.tooltip-time::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltip-time::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:50px;border-color:transparent transparent #415b76}
+      .tooltip-time::after{content:attr(data-tooltip-Time);background:#415b76;border-radius:4px;color:#fff;top:59px;width:100px;padding:5px;left:-37px}
+      .tooltip-time:hover::before,.tooltip-time:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltip-time:active::before,.tooltip-time:active::after{opacity:0;visibility:hidden}
+    </style>
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-date-picker" src="https://cdn.ampproject.org/v0/amp-date-picker-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="planner-style-reformulado.css">
+
+  </head>
+  <body>
+
+
+    <header class="header"></header>
+
+    <div class="template-title">Selecione o tipo de projeto</div>
+
+
+<!-- menu cliente Select -->
+<div class="input-cliente">
+  <div class="icone-input-cliente">
+    <svg id="icone-cliente" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 25.2 27" xml:space="preserve">
+      <path fill="#EEE2DF" d="M11,12.5c3.5,0,6.3-2.8,6.3-6.3S14.4,0,11,0S4.7,2.8,4.7,6.3S7.5,12.5,11,12.5z M11,1.6c2.6,0,4.7,2.1,4.7,4.7S13.5,11,11,11S6.3,8.8,6.3,6.3S8.4,1.6,11,1.6z M2.3,23.5c-0.4,0-0.8-0.4-0.8-0.8v-2c0-2.8,2.2-5,5-5c1,0,1.9,0.8,4.4,0.8c2.5,0,3.4-0.8,4.4-0.8c0.1,0,0.3,0,0.4,0c0.1-0.6,0.3-1.1,0.6-1.5c-0.3-0.1-0.7-0.1-1-0.1c-1.4,0-2.1,0.8-4.4,0.8s-3-0.8-4.4-0.8C2.9,14.1,0,17,0,20.7v2C0,24,1.1,25,2.3,25h14.1c-0.3-0.5-0.6-1-0.7-1.6H2.3z M23.6,22.2c0-0.5-0.2-0.9-0.5-1.3c-0.4-0.3-1-0.7-1.8-0.9c-1.2-0.4-2-0.8-2.6-1.4c-0.5-0.6-0.8-1.3-0.8-2.2c0-0.9,0.3-1.6,0.8-2.2c0.5-0.6,1.2-0.9,2.2-1v-1.8h1.2v1.8c0.9,0.1,1.6,0.5,2.2,1.2c0.5,0.7,0.8,1.5,0.8,2.7h-1.5c0-0.8-0.2-1.4-0.6-1.9c-0.4-0.5-0.9-0.7-1.5-0.7c-0.7,0-1.2,0.2-1.5,0.5c-0.3,0.3-0.5,0.8-0.5,1.4c0,0.6,0.2,1,0.5,1.3c0.4,0.3,1,0.6,1.8,0.9c0.8,0.3,1.5,0.6,2,0.9c0.5,0.3,0.8,0.7,1,1.1c0.2,0.4,0.3,0.9,0.3,1.5c0,0.9-0.3,1.7-0.8,2.2c-0.6,0.6-1.3,0.9-2.4,1V27h-1.2v-1.6c-1-0.1-1.8-0.5-2.4-1.1c-0.6-0.6-0.9-1.5-0.9-2.6H19c0,0.8,0.2,1.4,0.6,1.8c0.4,0.4,1,0.6,1.7,0.6c0.7,0,1.3-0.2,1.7-0.5C23.4,23.3,23.6,22.8,23.6,22.2z"/>
+    </svg>
+  </div>
+
+  <div class="ampstart-input">
+    <select name="name12" id="ip12" class="cliente-dropdown">
+      <option value="">Selecione o Cliente</option>
+      <option value="">Nome Cliente 1</option>
+      <option value="">Nome Cliente 2</option>
+      <option value="">Nome Cliente 3</option>
+    </select>
+  </div>
+</div>
+  <!-- End menu cliente Select -->
+
+
+<!-- menu quadros templates container -->
+<div class="templates-container">
+
+
+<button href="" id="em-branco" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="tmplate-file" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" d="M69.7,9.1H41.5l-11.2,9.7v44.1c0,2.2,1.8,4,4,4h35.3c2.2,0,4-1.8,4-4V13.1C73.7,10.9,71.9,9.1,69.7,9.1z"/>
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" points="43.3,9.4 43.3,22.2 35.8,22.2"/>
+        <rect fill="none" width="104" height="76"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Em Branco</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="description-templates">Monte seu planejamento da maneira que quiser.<div>
+
+  </div>
+</button>
+
+<button href="" id="reutilizar" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="template-nuvem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" d="M35.1,58.5H29c-7.6,0-14-6.2-14-14c0-7.6,6.3-14,14-14h0.3v-3.4C29.3,17.2,37.6,9,47.7,9c9.9,0,18.1,7.7,18.4,17.4h7.8c8.3,0,15.1,6.8,15.1,15.1v1.9c0,8.3-6.8,15.1-15.1,15.1h-4.4"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" d="M46,36v15.7h-5.8c-0.8,0-1.1,0.5-1.2,0.9
+        c-0.3,0.8-0.2,1.6,0.2,2l11.7,11.7c0.9,0.9,2.2,0.9,2.9,0l11.6-11.7c0.4-0.4,0.5-1.3,0.3-1.9c-0.2-0.5-0.8-0.9-1.4-0.9h-6V36"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Reutilizar</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="description-templates">Lista de projetos já realizados que contaram com a sua participação.</div>
+
+  </div>
+</button>
+
+<button href="" id="pauta" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="template-pauta" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <rect fill="none" width="104" height="76"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="42.8" y1="38.6" x2="53.4" y2="38.6"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="42.8" y1="45.8" x2="53.4" y2="45.8"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="42.8" y1="53.1" x2="53.4" y2="53.1"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="42.8" y1="31.3" x2="73" y2="31.3"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="42.8" y1="24" x2="73" y2="24"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" d="M23.9,22.8v32.5c0,3,2.5,5.5,5.5,5.5h0.2c3,0,5.5-2.5,5.5-5.5v-39h45.5v39.5c0,2.8-2.3,5-5,5h-46"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="29.5" y1="55.3" x2="29.5" y2="22.8"/>
+        <rect x="59.7" y="38.7" fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="13.1" height="14.4"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Sugestão de Pauta</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="description-templates">Utilize quando for sugerir uma reportagem sobre um ou mais tema.</div>
+
+  </div>
+</button>
+
+<button href="" id="solicitacao" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="template-solicitacao" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <rect fill="none" width="104" height="76"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M58.4,68.1H33.6c-1.6,0-3-1.4-3-3V19.9c0-1.6,1.4-3,3-3h3.7"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M66.8,16.9h3.8c1.6,0,3,1.4,3,3v16.8"/>
+
+        <circle fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="72.7" cy="55.6" r="13.8"/>
+
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="66.4,55.1 72,59.6 79.2,50.3"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M62.1,13.5h-5c-0.1-2.7-2.3-4.9-5-4.9c-2.7,0-4.9,2.2-5,4.9h-5v7.6h20V13.5z"/>
+        <rect x="39.6" y="32" fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="0.9" height="0.9"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="46" y1="32.5" x2="66.4" y2="32.5"/>
+        <rect x="39.6" y="40.1" fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="0.9" height="0.9"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="46" y1="40.5" x2="61.4" y2="40.5"/>
+        <rect x="39.6" y="48.2" fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="0.9" height="0.9"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="46" y1="48.6" x2="55.2" y2="48.6"/>
+        <rect x="39.6" y="56.2" fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="0.9" height="0.9"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="46" y1="56.6" x2="53.9" y2="56.6"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Solicitação de imprensa</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="description-templates">Template para ser utilizado ao receber um pedido da imprensa.</div>
+  </div>
+</button>
+
+
+
+<button href="" id="follow" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="template-follow-up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <rect fill="none" width="104" height="76"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" d="M81.2,33.6v23.2"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" d="M24.8,56.8V26.4c0-2.3,1.9-4.1,4.1-4.1h12.4"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" d="M18.2,61.3c0,0,1.2,5.7,5.2,5.7h59.2c4,0,5.2-5.7,5.2-5.7H18.2z"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" d="M53,19.7c-7.3,0-7.7,4.4-7.2,9.8c0.5,5.4,3.9,9.8,7.2,9.8c3.3,0,6.7-4.4,7.2-9.8C60.7,24.1,60.3,19.7,53,19.7z"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M60.2,28c-3.1-0.8-5-2.8-5-2.8s-0.8,1.7-4.7,2.4"/>
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" points="55.7,15.7 55.7,10.6 85.2,10.6 85.2,29.4 64.9,29.4  "/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" d="M67.3,56.8v-8c0-4.4-5.3-5.7-5.3-5.7l-2.7-0.8L53,50.2l-6.3-7.9L44,43.1c0,0-5.3,1.3-5.3,5.7v8"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="71.5" y1="29.4" x2="66.8" y2="35"/>
+        <circle fill="#EEE2DF" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" cx="64.9" cy="20" r="0.6"/>
+        <circle fill="#EEE2DF" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" cx="71.3" cy="20" r="0.6"/>
+        <circle fill="#EEE2DF" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" cx="77.7" cy="20" r="0.6"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Follow-up</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="description-templates">Gerencie os contatos após sugerir uma pauta.</div>
+
+  </div>
+</button>
+
+
+
+<button href="" id="comunicado" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="template-comunicado" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <rect fill="none" width="104" height="76"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" d="M41.1,44.6c0,0,12.9,0.2,28.6,12.2V13.6c-14.4,12-28.6,12.2-28.6,12.2"/>
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" points="23.8,44.9 31.9,63.4 40.7,63.4 36,45.3"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" d="M77.5,26.2c2.2,2.3,3.5,5.5,3.5,8.9c0,3.5-1.4,6.7-3.6,9"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" d="M82.9,21.3c3.4,3.6,5.5,8.5,5.5,13.8c0,5.3-2.1,10.2-5.4,13.8"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" d="M26.7,25.3c-5.5,0-10,4.5-10,9.9s4.5,9.9,10,9.9H36V25.3H26.7z"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Comunicado</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="description-templates">Estrutura para divulgações rápidas e simples.</div>
+
+  </div>
+</button>
+
+
+
+<button href="" id="divulgacao" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="template-divulgacao" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <rect fill="none" width="104" height="76"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="52.5" y1="54.8" x2="52.5" y2="64.2"/>
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+        74.6,64.2 74.6,59.5 30.4,59.5 30.4,64.2"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="52.5" y1="6.5" x2="52.5" y2="2.8"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" x1="52.5" y1="41.5" x2="52.5" y2="29.6"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="52.5" y1="29.6" x2="48.8" y2="26"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="52.5" y1="29.6" x2="56.2" y2="26"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" d="M52.5,12.4c-7.1,0-13,5.9-13,13.2
+        c0,3.5,1.2,5.9,2.6,7.7c2.2,2.6,4.8,3.8,5.6,8.4h9.6c0.8-4.7,3.4-5.9,5.6-8.4c1.4-1.8,2.6-4.2,2.6-7.7
+        C65.5,18.3,59.6,12.4,52.5,12.4z"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="48.6" y1="47.2" x2="56.4" y2="47.2"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="67.3" y1="12.9" x2="69.9" y2="10.3"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="37.7" y1="12.9" x2="35.1" y2="10.3"/>
+        <circle fill="#EEE2DF" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" cx="74.6" cy="72.7" r="1.5"/>
+        <circle fill="#EEE2DF" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" cx="52.5" cy="72.7" r="1.5"/>
+        <circle fill="#EEE2DF" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" cx="30.4" cy="72.7" r="1.5"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Divulgação</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="description-templates">Checklist para realizar divulgações.</div>
+
+  </div>
+</button>
+
+
+
+<button href="" id="post" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="template-post" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <rect fill="none" width="104" height="76"/>
+        <circle fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" cx="67.1" cy="31.9" r="12.2"/>
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" points="61.2,31.7 66.1,35.7 72.2,27.7"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" d="M67.3,48.8v17.3c0,1.5-1.2,2.8-2.8,2.8H36.5c-1.5,0-2.8-1.2-2.8-2.8V10.9c0-1.5,1.2-2.8,2.8-2.8h28.1c1.5,0,2.8,1.2,2.8,2.8v4.3"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" x1="33.7" y1="57" x2="67.3" y2="57"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="48.2" y1="62.8" x2="52.8" y2="62.8"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linejoin="round" stroke-miterlimit="10" x1="33.7" y1="57" x2="67.3" y2="57"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Post</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="description-templates">Gerencie as divulgações em suas redes sociais.</div>
+
+  </div>
+</button>
+
+
+
+<button href="" id="follow" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="template-plano" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <rect fill="none" width="104" height="76"/>
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="34.9,34 38,36.4 42.5,30.7"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="47.4" y1="34.8" x2="63.7" y2="34.8"/>
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="34.9,44.6 38,47.1 42.5,41.4"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="47.4" y1="45.5" x2="56" y2="45.5"/>
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="34.9,55.3 38,57.7 42.5,52"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="47.4" y1="56.2" x2="53.5" y2="56.2"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M71.7,26.6v-13c0-2.2-1.8-4-4-4H39.5l-11.2,9.7v44.1c0,2.2,1.8,4,4,4h35.3c2.2,0,4-1.8,4-4v-6.2"/>
+        <polyline fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="43.1,10.4 43.1,22.7 35.6,22.7"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M71.9,52.1l-13.2,4l4.6-13.2l17.1-17.1c0.9-0.9,2.8-0.6,4.1,0.6l4.2,4.2c1.3,1.3,1.6,3.1,0.6,4.1L71.9,52.1z"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="71.8" y1="50.5" x2="64.4" y2="43.1"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="62.7" y1="54.6" x2="60.3" y2="52.2"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="68.4" y1="46.9" x2="78" y2="37.2"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="76.9" y1="29.6" x2="85.4" y2="38.1"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Plano</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="description-templates">Checklist completo com as etapas para elaboração de planos de comunicação.</div>
+
+  </div>
+</button>
+
+
+
+<button href="" id="evento" class="hvr-grow" on="tap:myLightboxProject.open" role="button" tabindex="0">
+  <div class="blocos-template">
+
+    <div class="icone-blocos-templates">
+      <svg id="template-evento" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 104 76" xml:space="preserve">
+        <rect fill="none" width="104" height="76"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="59.6" y1="57.2" x2="71.1" y2="45.7"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="67.1" y1="57.2" x2="71.9" y2="52.4"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" x1="26.5" y1="66.6" x2="26.5" y2="38.3"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" x1="78.5" y1="38.3" x2="78.5" y2="66.6"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-miterlimit="10" x1="42.9" y1="38.3" x2="42.9" y2="66.5"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" x1="37.2" y1="47.4" x2="37.2" y2="51.3"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M46.5,28.2c0,3.3-2.6,5.9-5.9,5.9c-3.3,0-5.8-2.6-5.8-5.9"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M58.3,28.2c0,3.3-2.6,5.9-5.9,5.9c-3.3,0-5.9-2.6-5.9-5.9"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M70.1,28.2c0,3.3-2.7,5.9-6,5.9c-3.3,0-5.9-2.6-5.9-5.9"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="81.7" y1="23" x2="29.5" y2="23"/>
+        <path fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+        M70.1,28.2c0,3.3,2.7,5.9,6,5.9s5.9-2.6,5.9-5.9V23l-7.2-12.6H30.4L23,23v5.1c0,3.3,2.6,5.9,5.9,5.9c3.3,0,5.8-2.6,5.8-5.9"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="47.3" y1="17.6" x2="47.8" y2="10.5"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="37" y1="17.6" x2="38.7" y2="10.5"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="57.4" y1="17.6" x2="57" y2="10.5"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="67.7" y1="17.6" x2="66.1" y2="10.5"/>
+        <line fill="none" stroke="#EEE2DF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="21.3" y1="66.6" x2="83.7" y2="66.6"/>
+      </svg>
+    </div>
+
+    <div class="blocos-title">
+      <div id="bloco-title">Evento</div>
+      <div class="template-title-icon">
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.9 14.1" xml:space="preserve">
+          <path fill="#EEE2DF" d="M9.8,13.7L0.5,4.4c-0.6-0.6-0.6-1.7,0-2.3L2,0.5c0.6-0.6,1.7-0.6,2.3,0L11,7.1l6.6-6.6c0.6-0.6,1.7-0.6,2.3,0L21.4,2c0.6,0.6,0.6,1.7,0,2.3l-9.3,9.3C11.5,14.3,10.4,14.3,9.8,13.7L9.8,13.7z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="description-templates">Gerencie a comunicação de seu evento, do início ao fim.</div>
+
+  </div>
+</button>
+
+<!-- modal criador de projetos -->
+<div class="projet-modal">
+<amp-lightbox id="myLightboxProject"
+  layout="nodisplay">
+  <!-- <form action="post"> -->
+  <div class="lightbox">
+    <div class="lightbox-grid">
+      <!-- tag nome do cliente -->
+      <div class="cliente-nome-tag">
+        <div id="cliente-nome-tag-title">Nome de cliente</div>
+      </div>
+      <div class="project-creator-modal">
+        <div class="modal-grid">
+
+          <!-- botão fechar janela modal criador de projetos-->
+          <a href="#" class="close-btn1" on="tap:myLightboxProject.close"
+            role="button"
+            tabindex="0">
+            <div class="close-svg1 tolltip-fechar" data-tooltip-Fechar="Fechar">
+              <svg id="close-btn1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+              </svg>
+            </div>
+          </a>
+          <!-- fim botão fechar janela modal criador de projetos-->
+          <input class="nomeProjeto" type="text" placeholder="Nome do Projeto...">
+          <textarea class="descrProjeto" name="descrProjeto" id="" cols="30" rows="8" placeholder="Descrição..."></textarea>
+          <!-- botão equipe -->
+          <div class="equipe-svg tooltip-time" data-tooltip-Time="Editar o time de colaboradores">
+            <button class="equipe-btn" on="tap:my-lightboxEquipe" role="button" tabindex="1">
+              <svg id="icone-equipe" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.8 27" xml:space="preserve">
+                <path fill="#8E9AAF" d="M33.1,18.9l-0.9-0.5c0-0.4,0-0.9,0-1.4l0.9-0.5c0.5-0.3,0.7-0.9,0.6-1.4c-0.4-1.2-1-2.4-1.9-3.3c-0.4-0.4-1-0.5-1.5-0.2L29.4,12c-0.4-0.3-0.8-0.5-1.2-0.7v-1c0-0.6-0.4-1.1-1-1.2c-1.3-0.3-2.6-0.3-3.9,0c-0.6,0.1-1,0.6-1,1.2v1c-0.4,0.2-0.8,0.4-1.2,0.7l-0.9-0.5c-0.5-0.3-1.1-0.2-1.5,0.2c-0.9,1-1.6,2.1-1.9,3.3c-0.2,0.5,0.1,1.1,0.6,1.4l0.9,0.5c0,0.4,0,0.9,0,1.4l-0.9,0.5c-0.5,0.3-0.7,0.9-0.6,1.4c0.4,1.2,1,2.4,1.9,3.3c0.4,0.4,1,0.5,1.5,0.2l0.9-0.5c0.4,0.3,0.8,0.5,1.2,0.7v1c0,0.6,0.4,1.1,1,1.2c0.6,0.1,1.3,0.2,1.9,0.2c0.6,0,1.3-0.1,1.9-0.2c0.6-0.1,1-0.6,1-1.2v-1c0.4-0.2,0.8-0.4,1.2-0.7l0.9,0.5c0.5,0.3,1.1,0.2,1.5-0.2c0.9-1,1.6-2.1,1.9-3.3C33.9,19.8,33.6,19.2,33.1,18.9L33.1,18.9zM30.4,19.3l1.6,0.9c-0.3,0.8-0.7,1.5-1.2,2.1l-1.6-0.9c-1.1,1-1.3,1.1-2.7,1.6v1.8c-0.8,0.1-1.6,0.1-2.4,0v-1.8c-1.4-0.5-1.6-0.6-2.7-1.6l-1.6,0.9c-0.5-0.6-0.9-1.3-1.2-2.1l1.6-0.9c-0.3-1.4-0.3-1.6,0-3.1l-1.6-0.9c0.3-0.8,0.7-1.5,1.2-2.1l1.6,0.9c1.1-1,1.3-1.1,2.7-1.6v-1.8c0.8-0.1,1.6-0.1,2.4,0v1.8c1.4,0.5,1.6,0.6,2.7,1.6l1.6-0.9c0.5,0.6,0.9,1.3,1.2,2.1l-1.6,0.9C30.7,17.6,30.7,17.8,30.4,19.3z M25.3,14.3c-1.9,0-3.4,1.5-3.4,3.4s1.5,3.4,3.4,3.4c1.9,0,3.4-1.5,3.4-3.4S27.2,14.3,25.3,14.3zM25.3,19.4c-0.9,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7s1.7,0.8,1.7,1.7S26.3,19.4,25.3,19.4z M11.8,13.5c3.7,0,6.8-3,6.8-6.8S15.5,0,11.8,0S5.1,3,5.1,6.8S8.1,13.5,11.8,13.5z M11.8,1.7c2.8,0,5.1,2.3,5.1,5.1s-2.3,5.1-5.1,5.1S6.8,9.5,6.8,6.8S9,1.7,11.8,1.7z M2.5,25.3c-0.5,0-0.8-0.4-0.8-0.8v-2.2c0-3,2.4-5.4,5.4-5.4c1,0,2.1,0.8,4.7,0.8c1,0,2-0.2,3-0.5c0-0.6,0.1-1.2,0.2-1.8c-0.5,0.1-1.6,0.6-3.2,0.6c-2.5,0-3.2-0.8-4.7-0.8c-3.9,0-7.1,3.2-7.1,7.1v2.2C0,25.9,1.1,27,2.5,27h17.8c-0.8-0.5-1.6-1-2.3-1.7H2.5z"/>
+              </svg>
+            </button>
+          </div>
+            <!-- fim botão equipe -->
+          <button class="criar-btn">Criar</button>
+
+
+        <div class="tasklineItem LineTerm">
+            <div class="prazo-svg">
+              <svg id="icon-data" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.9 18" xml:space="preserve">
+                <path fill="#EEE2DF" d="M13.3,2.3h-1.6V0.4c0-0.2-0.2-0.4-0.4-0.4H11c-0.2,0-0.4,0.2-0.4,0.4v1.8H4.3V0.4C4.3,0.2,4.1,0,3.9,0H3.6C3.4,0,3.2,0.2,3.2,0.4v1.8H1.6C0.7,2.3,0,3,0,3.9v12.4C0,17.2,0.7,18,1.6,18h11.7c0.9,0,1.6-0.8,1.6-1.7V3.9C14.9,3,14.2,2.3,13.3,2.3z M1.6,3.4h11.7c0.3,0,0.5,0.3,0.5,0.6v1.7H1.1V3.9C1.1,3.6,1.3,3.4,1.6,3.4z M13.3,16.9H1.6c-0.3,0-0.5-0.3-0.5-0.6V6.8h12.8v9.6C13.8,16.6,13.6,16.9,13.3,16.9z M11.1,10l-4.5,4.7c-0.2,0.2-0.4,0.2-0.6,0l-2.2-2.4c-0.2-0.2-0.2-0.4,0-0.6l0.3-0.3c0.2-0.2,0.4-0.2,0.6,0l1.7,1.8l3.9-4.1c0.2-0.2,0.4-0.2,0.6,0l0.3,0.3C11.2,9.6,11.2,9.9,11.1,10L11.1,10z"/>
+              </svg>
+            </div>
+            <div id="TermTitle" class="Color1">Prazo</div>
+            <div id="TermTitle">20 dias</div>
+          <button class="lineTermDropDown" onclick="myFunction()">
+            <svg id="termDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+              <path fill="#26547C" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+            </svg>
+          </button>
+        </div>
+          <div id="myDIV" style="display: none;" class="progressDropdown">
+            <div class="date-picker">
+              <fieldset>
+                  <div class="datas-header">
+                    <div class="date-picker-icon">
+                      <svg id="date-picker-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.5 20" xml:space="preserve">
+                        <path fill="#EEE2DF" d="M15.6,2.5h-1.9v-2c0-0.3-0.2-0.5-0.5-0.5H13c-0.3,0-0.5,0.2-0.5,0.5v2H5v-2C5,0.2,4.8,0,4.5,0H4.2C4,0,3.8,0.2,3.8,0.5v2H1.9C0.8,2.5,0,3.3,0,4.4v13.8c0,1,0.8,1.9,1.9,1.9h13.8c1,0,1.9-0.8,1.9-1.9V4.4C17.5,3.3,16.7,2.5,15.6,2.5z M1.9,3.8h13.8c0.3,0,0.6,0.3,0.6,0.6v1.9h-15V4.4C1.3,4,1.5,3.8,1.9,3.8z M15.6,18.8H1.9c-0.3,0-0.6-0.3-0.6-0.6V7.5h15v10.6C16.3,18.5,16,18.8,15.6,18.8z M5.8,12.5H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6C3.8,10.2,4,10,4.2,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C6.3,12.3,6,12.5,5.8,12.5z M9.5,12.5H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6C7.5,10.2,7.7,10,8,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C10,12.3,9.8,12.5,9.5,12.5z M13.3,12.5h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5V12C13.8,12.3,13.5,12.5,13.3,12.5z M9.5,16.3H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C10,16,9.8,16.3,9.5,16.3z M5.8,16.3H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C6.3,16,6,16.3,5.8,16.3z M13.3,16.3h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C13.8,16,13.5,16.3,13.3,16.3z"/>
+                      </svg>
+                    </div>
+                    <div id="datasHeaderText">Data inicial</div>
+                  </div>
+                  <div class="data-inicial">
+                      <input type="date" id="start" name="trip" value="2018-07-22" min="2018-01-01" max="2018-12-31"/>
+                  </div>
+                  <div class="datas-header">
+                    <div class="date-picker-icon">
+                      <svg id="date-picker-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.5 20" xml:space="preserve">
+                        <path fill="#EEE2DF" d="M15.6,2.5h-1.9v-2c0-0.3-0.2-0.5-0.5-0.5H13c-0.3,0-0.5,0.2-0.5,0.5v2H5v-2C5,0.2,4.8,0,4.5,0H4.2C4,0,3.8,0.2,3.8,0.5v2H1.9C0.8,2.5,0,3.3,0,4.4v13.8c0,1,0.8,1.9,1.9,1.9h13.8c1,0,1.9-0.8,1.9-1.9V4.4C17.5,3.3,16.7,2.5,15.6,2.5z M1.9,3.8h13.8c0.3,0,0.6,0.3,0.6,0.6v1.9h-15V4.4C1.3,4,1.5,3.8,1.9,3.8z M15.6,18.8H1.9c-0.3,0-0.6-0.3-0.6-0.6V7.5h15v10.6C16.3,18.5,16,18.8,15.6,18.8z M5.8,12.5H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6C3.8,10.2,4,10,4.2,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C6.3,12.3,6,12.5,5.8,12.5z M9.5,12.5H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6C7.5,10.2,7.7,10,8,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C10,12.3,9.8,12.5,9.5,12.5z M13.3,12.5h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5V12C13.8,12.3,13.5,12.5,13.3,12.5z M9.5,16.3H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C10,16,9.8,16.3,9.5,16.3z M5.8,16.3H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C6.3,16,6,16.3,5.8,16.3z M13.3,16.3h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C13.8,16,13.5,16.3,13.3,16.3z"/>
+                      </svg>
+                    </div>
+                    <div id="datasHeaderText">Data Final</div>
+                  </div>
+                  <div class="data-final">
+                      <input type="date" id="end" name="trip" value="2018-07-29" min="2018-01-01" max="2018-12-31"/ >
+                  </div>
+
+              </fieldset>
+              </div>
+            
+          </div>
+<!-- fim data dropdown -->
+
+<!-- janela anexos -->
+<div class="anexos-container acima" id="Zindex-data">
+  <div class="grid-anexos">
+    <div>Anexos</div>
+      <button href="#">
+        <div class="clip-icon tooltip-anexos" data-tooltip-Anexos="Anexar arquivos ao projeto">
+            <svg id="clip-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.2 19" xml:space="preserve">
+              <path fill="#EEE2DF" d="M1.6,17.4c-2.2-2.2-2.2-5.6,0-7.8L10,1.2c1.7-1.7,4.4-1.7,6,0c1.7,1.7,1.7,4.3,0,6l-7,7c-1.2,1.2-3.1,1.2-4.2,0c-1.2-1.2-1.2-3.1,0-4.2l6-6c0.2-0.2,0.5-0.2,0.6,0l0.6,0.6c0.2,0.2,0.2,0.5,0,0.6l-6,6c-0.5,0.5-0.5,1.2,0,1.7c0.5,0.5,1.2,0.5,1.7,0l7-7c1-1,1-2.5,0-3.5c-1-1-2.5-1-3.5,0l-8.3,8.4c-1.5,1.5-1.5,3.8,0,5.3c1.5,1.5,3.8,1.5,5.3,0c2.4-2.4,4.8-4.8,7.3-7.3c0.2-0.2,0.5-0.2,0.6,0l0.6,0.6c0.2,0.2,0.2,0.5,0,0.6c-2.4,2.4-4.8,4.8-7.3,7.3C7.3,19.5,3.8,19.5,1.6,17.4L1.6,17.4z"/>
+            </svg>
+        </div>
+      </button>
+  </div>
+  <div class="lista-anexos scrollbar" id="style-3-scrollbar">
+    <div class="force-overflow">
+      <ul>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+        <li>Arquivo.pdf</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- fim janela anexos -->
+
+<!-- modal equipe -->
+          <div class="equipe-modal">
+            <amp-lightbox id="my-lightboxEquipe"
+            layout="nodisplay">
+              <div class="lightbox-equipe">
+              <a href="#" class="close-equipe-btn" on="tap:my-lightboxEquipe.close" role="button" tabindex="1">
+            <div class="close-svg-equipe">
+              <svg id="close-btn2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+              </svg>
+            </div>
+          </a>
+          <div id="teamTitle">Equipe</div>
+              <ul class="team-list">
+                <li>
+                  <div class="lider-btn team-list-color1">
+                    <div class="svg-diamond-lider">
+                      <svg id="diamond-lider" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 110.9 98.6" xml:space="preserve">
+                        <path fill="#26547C" d="M89.3,0H21.6c-0.8,0-1.6,0.4-2,1.1L0.3,32.5c-0.5,0.8-0.4,1.9,0.2,2.7l53.1,62.6c0.9,1.1,2.6,1.1,3.5,0l53.1-62.6c0.7-0.8,0.7-1.8,0.2-2.7L91.3,1.1C90.9,0.4,90.1,0,89.3,0z M86.7,6.9L101,30.8H85L74.1,6.9H86.7z M66.4,6.9l10.9,23.9H33.5l11-23.9H66.4z M24.2,6.9h12.6L25.9,30.8h-16L24.2,6.9z M11.8,37h14.1l15.8,37L11.8,37z M33.4,37h44.2L55.5,87.8L33.4,37zM69.3,73.9l15.8-37h14.1L69.3,73.9z"/>
+                      </svg>
+                    </div>
+                  <a href="#">
+                      <div id="teamTitle">AP</div>
+                  </a>
+                    </div>
+                  <div id="teamTitle">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                    <div class="lider-btn team-list-color1">
+                  <a href="#">
+                      <div id="teamTitle">AP</div>
+                  </a>
+                    </div>
+                  <div id="teamTitle">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                    <div class="lider-btn team-list-color1">
+                  <a href="#">
+                      <div id="teamTitle">AP</div>
+                  </a>
+                    </div>
+                  <div id="teamTitle">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                    <div class="lider-btn team-list-color1">
+                  <a href="#">
+                      <div id="teamTitle">AP</div>
+                  </a>
+                    </div>
+                  <div id="teamTitle">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            </amp-lightbox>
+          </div>
+<!-- fim modal equipe -->
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<!-- </form> -->
+
+
+</amp-lightbox>
+</div>
+<!-- fim modal criador de projetos -->
+</div>
+<!-- fim menu quadros templates container -->
+
+
+<script>
+  function toggle() {
+  var x = document.getElementById("toggleZindex").getAttribute("aria-expanded");
+  var y = document.getElementById("DatePicker");
+  var z = document.getElementById("Zindex-data");
+    if (x == "true") {
+    x = "false";
+    y.style.display = "none";
+    z.style.zIndex = "12";
+    y.style.zIndex = "1";
+    } else {
+    x = "true";
+    y.style.display= "flex";
+    z.style.zIndex = "1";
+    y.style.zIndex = "12";
+    }
+  }
+
+    function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+  </body>
+</html>

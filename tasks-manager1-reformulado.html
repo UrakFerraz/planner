@@ -1,0 +1,2019 @@
+<!doctype html>
+<html ⚡ lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Sample document</title>
+    <link rel="canonical" href="./regular-html-version.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <style amp-custom>
+    *{margin:0;padding:0;outline:none;text-decoration:none}
+      nav{position:absolute;z-index:100;display:none}
+      html{box-sizing:border-box;font-size:12px;font-weight:400;font-family:'Roboto Condensed',sans-serif}
+      input,section,button{outline:none}
+      a,button{cursor:pointer;pointer-events:all}
+      button{border:none;border-radius:7px;background:transparent}
+      button:hover{background:#fff}
+      h1,h2,h3,h4,h5,h6,p{font-size:12px;font-weight:400}
+      body{background-color:#fff}
+      #Blue1{color:#26547c}
+      #Blue2{color:#8E9AAF}
+      .i-amphtml-sidebar-mask{background-color:transparent}
+      .i-amphtml-element{background-color:transparent}
+      .hvr-grow{display:inline-block;vertical-align:middle;-webkit-transform:perspective(1px) translateZ(0);transform:perspective(1px) translateZ(0);box-shadow:0 0 1px rgba(0,0,0,0);-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transition-property:transform;transition-property:transform}
+      .hvr-grow:hover{-webkit-transform:scale(1.1);transform:scale(1.1);box-shadow:0 0 27px 0 rgba(0,0,0,0.15);background:#80a4be}
+      .header{height:10vh;background:#eef4f2}
+      .tasksManager{background:#efefef;height:90vh}
+      .tasksManagerHeader{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;height:87px;padding-bottom:40px}
+      #tasksManagerHeaderProjectName{font-size:32px;font-weight:300;color:#8e9aaf;margin-left:30px}
+      .tasks-manager-icons-header{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;margin:20px}
+      .tasks-manager-icons-header svg{height:27px;margin:10px}
+      .tasks-newFolder-icon svg{height:20px;margin:5px}
+      .newFolder-btn{position:relative;background:#1f8a70;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;margin-right:15px}
+      .newFolder-btn:hover{background:#1c7c63}
+      #newFolder-btnText{font-weight:400;font-size:14px;padding-right:5px;color:#fff}
+      .headerTaskColunm{display:flex;align-items:center;justify-content:flex-start;flex-direction:row;flex-wrap:nowrap;padding:4px}
+      #orderingNameIconDown,#orderingLeaderIconDown,#orderingTeamIconDown,#orderingTermIconDown,#orderingTypeIconDown,#orderingStatusIconDown,#orderingProgressIconDown{position:relative;justify-content:flex-start;padding-left:1px;left:2px;top:2px;width:18px}
+      .tasks-wrapper{background:#fff;position:relative;display:block}
+      .tasks-tag{position:absolute;z-index:2;top:-40px;display:flex;background:#fff;padding:10px 60px 30px 10px;margin-left:30px;border-radius:5px 15px 0 0}
+      .tasks-tag svg{height:20px;padding-right:10px}
+      .tasks-tag span{font-family:'Roboto',sans-serif;font-size:18px;color:#5a9eb3}
+      .listaTasksWrapper{position:relative;z-index:4;right:50%;transform:translate(50%);display:grid;background:#fff;padding:20px}
+      .taskFlexBoxContainer{position:relative;display:grid;grid-template-columns:1fr 1fr 6fr 2fr 2fr 5.1fr 5fr 6fr 1.6fr 4fr;justify-content:space-between;height:36px}
+      #taskLineText{font-size:12px;color:#26547c}
+      .tasklineItem{position:relative;display:flex;align-items:center;justify-content:space-between;flex-direction:row;flex-wrap:nowrap;border-top:.5px solid #eee2df;border-bottom:.5px solid #eee2df;border-right:.5px solid #eee2df;padding:4px}
+      .tasklineItem button{position:relative}
+      .LineOrdering{border-top:.5px transparent;border-bottom:.5px transparent;flex-direction:column;padding:2px}
+      #orderingIconUp,#orderingIconDown{width:18px}
+      #tasksOpenIcon{position:relative;width:20px;margin-right:10px}
+      .LineSelectTask{justify-content:center}
+      .container{display:block;position:relative;padding-left:25.5px;margin-bottom:25px;cursor:pointer;font-size:22px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+      .container input{position:absolute;opacity:0;cursor:pointer;height:0;width:0}
+      .checkmark{position:absolute;top:0;left:0;height:25px;width:25px;background-color:#eee}
+      .container:hover input ~ .checkmark{background-color:#ccc}
+      .container input:checked ~ .checkmark{background-color:#2196F3}
+      .checkmark:after{content:"";position:absolute;display:none}
+      .container input:checked ~ .checkmark:after{display:block}
+      .container .checkmark:after{left:9px;top:5px;width:5px;height:10px;border:solid #fff;border-width:0 3px 3px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
+      .LineSelectTask input{outline:none;cursor:pointer;position:absolute;opacity:0;cursor:pointer;height:0;width:0}
+      .checkmark{position:absolute;top:0;left:0;height:25px;width:25px;background-color:#eee}
+      .LineSelectTask:hover input ~ .checkmark{background-color:#ccc}
+      .LineSelectTask input:checked ~ .checkmark{background-color:#2196F3}
+      .checkmark:after{content:"";position:absolute;display:none}
+      .LineSelectTask input:checked ~ .checkmark:after{display:block}
+      .LineSelectTask .checkmark:after{left:9px;top:5px;width:5px;height:10px;border:solid #fff;border-width:0 3px 3px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
+      .LineLeader{justify-content:center}
+      .TeamCircle{border-radius:50%;background:#eee2df;padding:5px}
+      #teamDropDownIcon,#termDropDownIcon,#typeDropDownIcon,#StatusDropDownIcon{position:relative;top:1px;width:15px;padding-right:5px}
+      .LineStatus{background-color:#8cbde8}
+      .LineMsgs,.lineStatusDropDown{justify-content:center}
+      #LineTaksMsgsBubble{position:absolute;width:28px;left:-6px;top:-5px}
+      .LineProgressBar{position:relative;display:grid;grid-template-columns:1fr;grid-template-rows:1fr;padding:7px;justify-content:center}
+      #LineProgressBarText{position:absolute;z-index:3;grid-column:1 / 2;grid-row:1 / 2;justify-self:center}
+      .fullProgressBorder{position:relative;grid-column:1 / 2;grid-row:1 / 2;width:100%;height:100%;border:.5px solid lightgray;justify-self:start;background:transparent}
+      .progressBar{position:relative;grid-column:1 / 2;grid-row:1 / 2;width:65%;height:100%;border:.5px solid lightgray;justify-self:start;background:#49dbb4}
+      .TaskTeamLineHeader{display:grid;grid-template-columns:0.7fr 1fr 1.3fr;margin:20px 10px 10px}
+      #TaskTeamLineHeaderText{color:#eee2df;padding-left:10px}
+      .taskTeamName{display:grid;grid-template-columns:0.7fr 1fr 1.3fr;margin:-1px 10px;height:36px;align-items:center;border:1px solid #eee2df}
+      #taskTeamNameText{color:#26547c;margin-left:10px}
+      .taskTeamStatus{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center}
+      .TaskTeamNameStatusDropdownWrapper{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;border-radius:5px;border:.5px solid #eee2df;padding:4px;width:170px}
+      .TaskTeamNameStatusDropdown{position:absolute;right:2px}
+      #TaskTeamNameStatusColorTitle{margin-left:5px;color:#26547c}
+      .taskTeamNameStatusListDropdown{position:relative;list-style-position:inside;list-style-type:none}
+      .TaskTeamStatusLine{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;line-height:3;padding-left:6px}
+      .TaskTeamStatusLine a{margin-left:5px}
+      .myDIVTaskTeamStatusSelector{position:absolute;top:24px;background-color:#fff;border-radius:0 0 7px 7px;box-shadow:0 0 27px 0 rgba(0,0,0,0.15);padding:5px;width:160px;z-index:1}
+      .TaskTeamTimeSheet{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center}
+      #teamNameTimeSheet svg{width:20px;margin:0 0 0 10px}
+      .TaskTeamNameStatusDiv{width:20px;height:20px;border-radius:4px}
+      .taskTeamNameStatusListDropdown li:hover{background-color:#eee2df;border-radius:5px}
+      .TaskTeamNameStatusColor1{background-color:#bedb39}
+      .TaskTeamNameStatusColor2{background-color:#fd7400}
+      .TaskTeamNameStatusColor3{background-color:#c0f1f6}
+      .TaskTeamNameStatusColor4{background-color:#8c8681}
+      .TaskTeamNameStatusColor5{background-color:#8cbde8}
+      .TaskTeamNameStatusColor6{background-color:#f95b4d}
+      .TaskTeamMsg{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center}
+      #TaskTeamMsgText{color:#26547c}
+      .TaskTeamMsgsBtn{margin-right:5px}
+      #plusIconCircle{width:20px}
+      .NewTaskBtn{margin:10px 20px 20px 30px;position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-start;background:#1f8a70;justify-self:start}
+      .NewTaskBtn:hover{background-color:#165444}
+      .NewTaskBtn svg{width:15px;margin:9px}
+      #NewTaskBtnTitle{color:#fff;font-size:14px;margin-right:9px}
+      #myDIV{display:none;position:absolute;z-index:2;width:100%;height:160px;top:35px;right:0;background-color:#fff;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:0 0 7px 7px;transition:1s}
+      fieldset{position:relative;border:none}
+      #start,#end{font-family:'Roboto Condensed',sans-serif;border:none;background:#eee2df;padding:4px}
+      .date-picker{position:relative;margin-bottom:8px}
+      .datas-header{display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:center;align-items:center}
+      #date-picker-icon{width:18px;margin:15px 3px 3px 0}
+      #datas-headerTitle{position:relative;top:7px;font-size:12px}
+      .data-inicial,.data-final{display:flex;justify-content:center}
+      #myDIVTotalTeam{display:none;position:relative;z-index:1;width:100%;right:0;padding-bottom:10px;background-color:#fff;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:0 0 7px 7px}
+      #myDIVtypeList{display:none;position:absolute;z-index:2;width:155%;height:350px;top:35px;background-color:#fff;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:0 0 7px 7px;left:-1px;background:#fff;margin-bottom:25px}
+      #myDIVtypeList a{font-size:14px;line-height:1.5;margin:5px}
+      #myDIVtypeList li{position:relative;margin:5px;list-style-type:none}
+      #myDIVtypeList li:hover{background-color:#eee2df}
+      .scrollbar{margin-left:10px;float:left;height:330px;width:95%;background:#fff;overflow-y:scroll;margin-bottom:25px;margin-top:5px}
+      .force-overflow{min-height:100px;line-height:1.5;font-size:12px}
+      #style-3-scrollbar::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbar::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbar::-webkit-scrollbar-thumb{background-color:silver}
+      .lineStatusDropDown:hover{background:transparent}
+      #myDIVtaskStatusList{display:none;position:absolute;z-index:2;width:100%;height:160px;right:0;top:35px;background-color:#fff;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:0 0 7px 7px}
+      #myDIVtaskStatusList a{font-size:14px;line-height:1.5;margin:5px}
+      #myDIVtaskStatusList li{position:relative;display:flex;align-items:center;margin:5px;height:36px;vertical-align:middle;list-style-type:none}
+      #myDIVtaskStatusList li:hover{background-color:#eee2df}
+      #StatusEmAprovacao{background:#bedb39}
+      #StatusRevisar{background:#fd7400}
+      #StatusDivulgado{background:#c0f1f6}
+      #StatusAfazer{background:#8c8681}
+      #StatusEmAndamento{background:#8cbde8}
+      #StatusParado{background:#f95b4d}
+      #sidebar{width:300px;background-color:#fff;box-shadow:0 0 100px 0 rgba(0,0,0,0.30)}
+      .GridTaskEditorInputMsgsMural{position:relative;display:flex;flex-direction:column;align-items:flex-end;bottom:-58vh;right:-10px}
+      .TaskEditorInputMsgsMural{position:absolute;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between}
+      .TaskEditorInputMsgsMural input{border-radius:5px;border:none;padding:10px;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);width:190px;margin-right:10px}
+      .TaskEditorEnviarMsgMural{background-color:#26547c;padding:10px;color:#fff}
+      .TaskEditorEnviarMsgMural:hover{background-color:#267a56}
+      #my-lightbox{background:rgba(238,226,223,.5);box-shadow:inset 0 0 200px 100px rgba(238,226,223,.8)}
+      .lightbox{position:relative;display:grid;width:947px;height:577px;background:#fff;border-radius:7px;box-shadow:0 0 50px 0 rgba(0,0,0,0.20);left:50%;top:50%;transform:translate(-50%,-50%)}
+      .close-btn{position:absolute;right:0;margin:10px;width:15px}
+      .taskEditorIconContainer{position:absolute;right:0;margin:30px;padding:0 20px 0 0;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;height:50px;width:300px}
+      .TaskName{position:relative;left:20px;top:20px;padding:10px;border-radius:5px;color:#8E9AAF;border:none;margin:10px;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);font-size:20px;width:440px}
+      .taskEditorIconContainer button{margin:8px}
+      .taskEditorIconContainer button:hover{background:#fff;border-radius:5px;box-shadow:0 0 20px 0 rgba(0,0,0,0.10)}
+      .task-editor-icon-btns{padding:6px;height:39px;width:39px}
+      #task-editor-save-icon{position:relative;width:24px}
+      #task-editor-clip-icon{width:23px}
+      #taskEditorTeamIcon{position:relative;right:5px;width:35px}
+      #task-editor-export-icon{position:relative;right:1px;width:26px}
+      #task-editor-print-icon{width:24px}
+      #task-editor-delete-icon{width:23px}
+      .editorFieldGrid{position:relative;z-index:1;display:grid;grid-template-columns:1.6fr 2fr;grid-gap:15px;margin:45px 15px 15px}
+      .editorTaskFieldsLeftSide{position:relative;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center}
+      .taskEditorFields{position:relative;z-index:3;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;margin:15px;padding:5px;width:120px;height:30px;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:5px;background-color:#fff}
+      .taskEditorLineItem{z-index:4}
+      .TaskEditorTeamDropdown{position:absolute;right:250px;top:35px;display:flex;z-index:100;width:auto;height:auto;background-color:#fff;box-shadow:0 0 5px 0 rgba(0,0,0,0.15);border-radius:6px}
+      .lightbox-equipe2{background:#fff;width:264px;padding:20px;height:auto;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px;line-height:2;border-radius:6px;box-shadow:0 10px 40px 0 rgba(0,0,0,0.15)}
+      .lightbox-equipe2 ul{width:100%;margin:20px 10px 10px}
+      .lightbox-equipe2 ul li{position:relative;border-bottom:.5px solid #eee2df;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center}
+      .close-svg-equipe{position:absolute;width:15px;right:0;top:0;margin:10px}
+      .exclude-svg-equipe{position:absolute;width:10px;right:0;top:8px}
+      .lightbox-equipe h1{font-size:14px;font-weight:400;color:#26547c}
+      .lider-btn{display:flex;justify-content:center;align-items:center;width:30px;height:30px;border-radius:50%;margin:6px}
+      .team-list-color1{background:orange}
+      #diamond-lider{position:absolute;width:13px;left:2px;bottom:4px}
+      .TaskEditorTitles{position:absolute;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;top:-28px;height:25px}
+      .TaskEditorTitles svg{width:20px;margin-right:5px}
+      #TaskEditorTitles{color:#8E9AAF;font-weight:400}
+      #TaskEditorTermMyDIV{position:absolute;z-index:1;top:40px;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);width:100%;height:150px;left:-.5px;border-radius:0 0 5px 5px;background-color:#fff}
+      .date-picker{position:relative;top:5px}
+      .taskEditorLineItem1{position:relative;width:200px;z-index:4}
+      .equipe-modal{position:absolute;display:flex;z-index:5;left:0;width:100%;height:99%;background-color:rgba(0,0,0,.1);box-shadow:inset 0 0 81px 48px rgba(255,255,255,1)}
+      .my-lightboxEquipe{width:100%}
+      .lightbox-equipe{background:#fff;width:264px;margin:20px;padding:20px;height:auto;left:74px;top:35px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px;line-height:2;border-radius:6px;box-shadow:0 10px 50px 5px rgba(0,0,0,0.35)}
+      .ReplyTeamList{width:100%}
+      .ReplyTeamList li{position:relative;border-bottom:.5px solid #eee2df;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;margin:0 10px;line-height:3}
+      .TeamReplyCloseBtn{position:absolute;width:15px;right:0;top:0;margin:10px}
+      #TeamMsgReplyCheckIcon{position:relative;top:7px;width:20px}
+      #lightbox-equipeTitle{font-size:14px;font-weight:400;color:#26547c}
+      .TaskEditorReplyBtn{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;margin:10px 0;background-color:#26547c;padding:10px;color:#999;box-shadow:0 0 20px 0 rgba(0,0,0,0.10)}
+      #IconMsgReply{width:20px}
+      .scrollbar3{float:left;height:200px;width:280px;background:#fff;overflow-y:scroll}
+      .force-overflow3{min-height:100px;line-height:1.5;font-size:12px}
+      #style-3-scrollbar3::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbar3::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbar3::-webkit-scrollbar-thumb{background-color:silver}
+      .scrollbar4{float:left;height:380px;width:100%;background:#fff;overflow-y:scroll}
+      .force-overflow4{min-height:100px;line-height:1.5;font-size:12px}
+      #style-3-scrollbar4::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbar4::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbar4::-webkit-scrollbar-thumb{background-color:silver}
+      .TaskEditorLogMsgWrapper{margin:20px 20px 0 10px;text-align:justify;border-bottom:.5px solid #eee2df}
+      .TaskEditorLogMsgWrapper span{color:orange}
+      .scrollbar5{float:left;height:380px;width:100%;background:#fff;overflow-y:scroll}
+      .force-overflow5{min-height:100px;line-height:1.5;font-size:12px}
+      #style-3-scrollbar5::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbar5::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbar5::-webkit-scrollbar-thumb{background-color:silver}
+      #VersionFileList{position:relative;width:95%;border-bottom:.5px solid #eee2df;margin:0 auto;margin-bottom:20px}
+      #VersionFileListAdd{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;line-height:2}
+      #VersionFileListAdd:hover{background-color:#f7f7f7}
+      #filesVersionsDate{position:absolute;right:5px}
+      #VersionFileListAdd svg{width:20px}
+      #VersionFileList li:nth-last-of-type(1){color:green;margin-left:10px;font-weight:600;font-size:14px}
+      .VersionFile{font-family:'Roboto',sans-serif}
+      .ContactsTab{display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:center;position:relative;align-items:center;height:100%}
+      .contactsTable{position:relative;display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:stretch;align-content:center;width:100%;height:310px}
+      .ContactsRows{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;width:100%;border-bottom:5px solid #eee2df}
+      .ContactsColumn{min-width:60px;flex-grow:1;padding:10px}
+      #ContactOpenIcon{width:20px}
+      .ctNota{flex-grow:3}
+      .TableHeader{color:#8e9aaf}
+      .buttonCtn{position:relative;z-index:40;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:5px;padding:10px;margin:10px auto}
+      .buttonCtn:hover{background-color:silver}
+      .buttonCtn svg{width:30px;height:30px}
+      #buttonCtnTitle{color:#8e9aaf;font-size:14px;margin-left:5px}
+      .TaskEditorContactsLine{position:relative;display:grid;grid-template-columns:107px 103px 104px 80px 20px;align-items:center;padding:5px;width:100%}
+      #ContactLineDropDownIcon{position:relative;right:-17px;width:20px;height:20px}
+      .ContactLineData{margin:10px;line-height:2}
+      #ContactLineEditTitle{margin-left:5px;font-size:12px}
+      #Bold1{font-weight:700;margin-right:5px}
+      #ContactLineEdit{position:absolute;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:5px;background-color:#fff;padding:10px;font-size:14px;right:10px;top:10px}
+      #ContactLineEdit:hover{background-color:#eee2df}
+      #ContactLineEditIcon{width:25px}
+      .accordionTaskEditorContacts{width:99.5%}
+      #accordionTaskEditorContactsTexts{border:0;border-bottom:.5px solid #eee2df}
+      .i-amphtml-accordion-header{background-color:#fff}
+      .scrollbar6{float:left;height:380px;width:100%;background:#fff;overflow-y:scroll}
+      .force-overflow6{min-height:100px;line-height:1.5;font-size:12px}
+      #style-3-scrollbar6::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbar6::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbar6::-webkit-scrollbar-thumb{background-color:silver}
+      #myDIVtypeList1{display:none;position:absolute;z-index:1;width:210px;height:250px;top:41px;background-color:#fff;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:0 0 7px 7px;left:-.5px;background:#fff;margin-bottom:25px}
+      #myDIVtypeList1 a{font-size:14px;line-height:1.5;margin:5px;color:#8E9AAF}
+      #myDIVtypeList1 li{position:relative;margin:5px;list-style-type:none;color:#eee2df}
+      #myDIVtypeList1 li:hover{background-color:#eee2df}
+      .scrollbar1{margin-left:10px;float:left;height:240px;width:95%;background:#fff;overflow-y:scroll;margin-bottom:25px;margin-top:5px}
+      .force-overflow1{min-height:100px;line-height:1.5;font-size:12px}
+      #style-3-scrollbar1::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbar1::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbar1::-webkit-scrollbar-thumb{background-color:silver}
+      .taskEditorDescr{position:relative;display:flex;flex-direction:column;flex-wrap:nowrap;width:100%;height:70px;padding:10px}
+      .taskEditorDescrHeader{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;top:-9px;width:100%;height:50px;border-bottom:.5px solid #EEE2DF}
+      #taskEditorDescr{height:20px}
+      .descrTextarea{margin-top:3px;border:transparent;outline:none;resize:none}
+      .editorTaskFieldsRighttSide{box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:5px}
+      .ampTabContainer{display:flex;flex-wrap:wrap}
+      .tabButton[selected]{outline:none;border:0 solid transparent}
+      .tabButton{list-style:none;flex-grow:1;text-align:center;cursor:pointer;padding:6px}
+      .innerTabBtn{position:relative;bottom:-3px;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:center}
+      .tabContent{display:none;width:100%;order:1;padding:10px;border-top:.25px solid #eee2df}
+      .tabButton[selected]+.tabContent{display:block}
+      amp-selector [option][selected]{outline:none;border-bottom:3px solid silver;height:28px}
+      #ampSelectorTitle{font-weight:500;color:#8e9aaf;margin-left:3px}
+      .itemCustom{border:1px solid #000;height:280px;width:380px;margin:10px;text-align:center;padding-top:140px}
+      amp-selector{padding:5px;margin:0}
+      .iconsAbas{width:20px}
+      #desenvolvimento-icon{width:25px}
+      #log-eventos-icon{width:16px}
+      .scrollbar2{float:left;height:340px;width:100%;background:#fff;overflow-y:scroll;margin:0}
+      .force-overflow{position:relative;display:grid;align-items:center;font-size:12px;margin:20px}
+      #style-3-scrollbar::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbar::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbar::-webkit-scrollbar-thumb{background-color:silver}
+      .myMsg{position:relative;justify-self:end;display:flex;flex-direction:column;flex-wrap:nowrap;padding:10px;right:0;box-shadow:3px 0 20px 5px rgba(0,0,0,0.10);border-radius:10px;margin-bottom:30px;width:90%}
+      .myMsg::before{content:"";position:absolute;right:-7px;top:10px;width:20px;height:20px;background-color:#fff;transform:rotate(45deg)}
+      .MyMsgsName{color:green;margin-bottom:4px}
+      .MyMsgsTxt{width:92%}
+      .MsgsBtns{position:absolute;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;bottom:0;right:0}
+      .MyMsgCheck,.MyMsgTimesheet{position:relative;width:17px;height:17px;margin:6px}
+      .MyMsgTimesheet{bottom:3px}
+      .teamMsg{position:relative;justify-self:start;display:flex;flex-direction:column;flex-wrap:nowrap;padding:10px;right:0;box-shadow:-3px 0 20px 5px rgba(0,0,0,0.10);border-radius:10px;margin-bottom:30px;width:90%}
+      .teamMsg::before{content:"";position:absolute;z-index:1;left:-7px;top:10px;width:20px;height:20px;background-color:#fff;transform:rotate(45deg)}
+      .teamMsgsName{position:relative;z-index:2;color:blue;margin-bottom:4px}
+      .teamMsgsTxt{width:92%}
+      .TeamMsgCheck,.TeamMsgReply{position:relative;width:13px;height:13px;margin:9px}
+      .GridTaskEditorInputMsgs{position:relative;display:flex;flex-direction:column;align-items:flex-end;bottom:0;top:350px}
+      .TaskEditorInputMsgs{position:absolute;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between}
+      .TaskEditorInputMsgs input{border-radius:5px;border:none;padding:10px;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);width:350px;margin-right:20px}
+      .TaskEditorEnviarMsg{background-color:#26547c;padding:10px;color:#fff}
+      .TaskEditorEnviarMsg:hover{background-color:#267a56}
+      .taskEditorLembreteFields{position:relative;z-index:3;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;margin:10px;padding:5px;width:120px;height:30px;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);border-radius:5px;background-color:#fff}
+      .taskEditorLembrete{position:relative;display:flex;flex-wrap:wrap;width:100%;height:auto;padding:10px}
+      .taskEditorLembreteHeader{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:space-between;width:100%;height:25px;margin-bottom:10px;border-bottom:.5px solid #EEE2DF}
+      #taskEditorLembreteHeader{position:relative;bottom:4px;color:#8E9AAF}
+      #taskEditorLembrete{height:20px}
+      .taskEditorDate{width:auto;height:auto}
+      #LembreteDataTitle{margin-right:5px}
+      .taskEditorHora{width:auto}
+      .taskEditorLembreteTitle{width:95%}
+      .taskEditorNota{width:50%}
+      .LembreteTitle{position:relative;width:100%;outline:none;border:transparent}
+      #appt-time{background-color:#eee2df;border:0;padding:4px}
+      .criarLembreteBtn{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;background:#26547c;padding:10px;border:0;box-shadow:0 0 20px 0 rgba(0,0,0,0.10);margin:10px}
+      .criarLembreteBtn:hover{background-color:#44b27d}
+      #lembrete-icon{width:20px}
+      #criarLembreteBtnTitle{color:#eee2df;margin-left:6px;font-size:12px}
+      .TasksteamDropdown{position:absolute;right:270px;top:110px;display:flex;z-index:100;width:auto;height:auto;background-color:#fff;box-shadow:0 0 5px 0 rgba(0,0,0,0.15);border-radius:6px}
+      .lightbox-equipe1{background:#fff;width:264px;padding:20px;height:auto;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px;line-height:2;border-radius:6px;box-shadow:0 10px 40px 0 rgba(0,0,0,0.15)}
+      .lightbox-equipe1 ul{width:100%;margin:20px 10px 10px}
+      .lightbox-equipe1 ul li{position:relative;border-bottom:.5px solid #eee2df;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center}
+      .close-svg-equipe{position:absolute;width:15px;right:0;top:0;margin:10px}
+      .exclude-svg-equipe{position:absolute;width:10px;right:0;top:8px}
+      #lightboxEquipeTexts,#lightboxEquipeTextsBullet{font-size:14px;font-weight:400;color:#26547c}
+      .lider-btn{display:flex;justify-content:center;align-items:center;width:30px;height:30px;border-radius:50%;margin:6px}
+      .team-list-color1{background:orange}
+      #diamond-lider{position:absolute;width:13px;left:2px;bottom:4px}
+      .clientSnacktab{position:fixed;z-index:100;background:#26547c;color:#fff;bottom:0;right:50%;transform:translate(50%);padding:10px;border-radius:8px 8px 0 0}
+      .clientSnacktab h1{font-size:20px}
+      .TaskShacktab{position:fixed;display:flex;flex-direction:row;flex-wrap:nowrap;align-self:center;justify-content:space-around;z-index:100;background:#e8f5fd;color:#fff;bottom:40px;right:50%;transform:translate(50%);padding:10px 20px;border-radius:8px;box-shadow:0 0 50px 0 rgba(0,0,0,0.20)}
+      #TaskShacktabNomeCliente{position:absolute;z-index:101;padding:10px 30px 20px 10px;color:#8e9aaf;left:20px;top:-28px;background:#e8f5fd;font-size:12px;border-radius:8px 17px 0 0;box-shadow:0 -10px 20px 0 rgba(0,0,0,0.10)}
+      .TaskSnacktabIcons{position:relative;z-index:102;display:flex;flex-direction:row;flex-wrap:nowrap;align-self:center}
+      .TaskSnacktabIcons button{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;margin:5px;padding:5px}
+      .TaskSnacktabIcons button:hover{background-color:#fff;border-radius:px}
+      #TaskSnacktabIconsTitle{position:relative;color:#8E9AAF;font-weight:500;margin-right:5px}
+      .TaskSnacktabIcons button svg{width:20px}
+      .tolltip-fechar{position:relative;text-align:center}
+      .tolltip-fechar::before,.tolltip-fechar::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tolltip-fechar::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:50px;border-color:transparent transparent #415b76}
+      .tolltip-fechar::after{content:attr(data-tooltip-Fechar);background:#415b76;border-radius:4px;color:#fff;top:59px;width:50px;padding:5px;left:-22px}
+      .tolltip-fechar:hover::before,.tolltip-fechar:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tolltip-fechar:active::before,.tolltip-fechar:active::after{opacity:0;visibility:hidden}
+      .tooltipNewFolder{position:relative;text-align:center}
+      .tooltipNewFolder::before,.tooltipNewFolder::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltipNewFolder::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:50px;border-color:transparent transparent #415b76}
+      .tooltipNewFolder::after{content:attr(data-tooltip-NewFolder);background:#415b76;border-radius:4px;color:#fff;top:59px;width:100px;padding:5px;left:2px}
+      .tooltipNewFolder:hover::before,.tooltipNewFolder:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltipNewFolder:active::before,.tooltipNewFolder:active::after{opacity:0;visibility:hidden}
+      .tooltipSave{position:relative;text-align:center}
+      .tooltipSave::before,.tooltipSave::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltipSave::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltipSave::after{content:attr(data-tooltip-Save);background:#415b76;border-radius:4px;color:#fff;top:69px;width:100px;padding:5px;left:-32px}
+      .tooltipSave:hover::before,.tooltipSave:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltipSave:active::before,.tooltipSave:active::after{opacity:0;visibility:hidden}
+      .tooltipTeam{position:relative;text-align:center}
+      .tooltipTeam::before,.tooltipTeam::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltipTeam::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltipTeam::after{content:attr(data-tooltip-Team);background:#415b76;border-radius:4px;color:#fff;top:69px;width:80px;padding:5px;left:-15px}
+      .tooltipTeam:hover::before,.tooltipTeam:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltipTeam:active::before,.tooltipTeam:active::after{opacity:0;visibility:hidden}
+      .tooltipMsgs{position:relative;text-align:center}
+      .tooltipMsgs::before,.tooltipMsgs::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltipMsgs::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltipMsgs::after{content:attr(data-tooltip-Msgs);background:#415b76;border-radius:4px;color:#fff;top:69px;width:70px;padding:5px;left:-15px}
+      .tooltipMsgs:hover::before,.tooltipMsgs:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltipMsgs:active::before,.tooltipMsgs:active::after{opacity:0;visibility:hidden}
+      .tooltipExport{position:relative;text-align:center}
+      .tooltipExport::before,.tooltipExport::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltipExport::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltipExport::after{content:attr(data-tooltip-Export);background:#415b76;border-radius:4px;color:#fff;top:69px;width:65px;padding:5px;left:-12px}
+      .tooltipExport:hover::before,.tooltipExport:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltipExport:active::before,.tooltipExport:active::after{opacity:0;visibility:hidden}
+      .tooltipPrint{position:relative;text-align:center}
+      .tooltipPrint::before,.tooltipPrint::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltipPrint::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltipPrint::after{content:attr(data-tooltip-Print);background:#415b76;border-radius:4px;color:#fff;top:69px;width:65px;padding:5px;left:-12px}
+      .tooltipPrint:hover::before,.tooltipPrint:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltipPrint:active::before,.tooltipPrint:active::after{opacity:0;visibility:hidden}
+      .tooltipDelete{position:relative;text-align:center}
+      .tooltipDelete::before,.tooltipDelete::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltipDelete::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltipDelete::after{content:attr(data-tooltip-Delete);background:#415b76;border-radius:4px;color:#fff;top:69px;width:57px;padding:5px;left:-10px}
+      .tooltipDelete:hover::before,.tooltipDelete:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltipDelete:active::before,.tooltipDelete:active::after{opacity:0;visibility:hidden}
+      .toolTipOpenTask{position:relative;text-align:center}
+      .toolTipOpenTask::before,.toolTipOpenTask::after{position:absolute;left:38%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .toolTipOpenTask::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:50px;border-color:transparent transparent #415b76}
+      .toolTipOpenTask::after{content:attr(data-tooltip-OpenTask);background:#415b76;border-radius:4px;color:#fff;top:59px;width:70px;padding:5px;left:-29px}
+      .toolTipOpenTask:hover::before,.toolTipOpenTask:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .toolTipOpenTask:active::before,.toolTipOpenTask:active::after{opacity:0;visibility:hidden}
+      .tooltipNewTask{position:relative;text-align:center}
+      .tooltipNewTask::before,.tooltipNewTask::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltipNewTask::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltipNewTask::after{content:attr(data-tooltip-NewTask);background:#415b76;border-radius:4px;color:#fff;top:69px;width:96px;padding:5px;left:-2px}
+      .tooltipNewTask:hover::before,.tooltipNewTask:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltipNewTask:active::before,.tooltipNewTask:active::after{opacity:0;visibility:hidden}
+      .tooltipSave1{position:relative;text-align:center}
+      .tooltipSave1::before,.tooltipSave1::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltipSave1::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltipSave1::after{content:attr(data-tooltip-Save1);background:#415b76;border-radius:4px;color:#fff;top:69px;width:80px;padding:5px;left:-24px}
+      .tooltipSave1:hover::before,.tooltipSave1:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltipSave1:active::before,.tooltipSave1:active::after{opacity:0;visibility:hidden}
+      .tooltip-anexos{position:relative;text-align:center}
+      .tooltip-anexos::before,.tooltip-anexos::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltip-anexos::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltip-anexos::after{content:attr(data-tooltip-Anexos);background:#415b76;border-radius:4px;color:#fff;top:69px;width:100px;padding:5px;left:-34px}
+      .tooltip-anexos:hover::before,.tooltip-anexos:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltip-anexos:active::before,.tooltip-anexos:active::after{opacity:0;visibility:hidden}
+      .tooltip-team{position:relative;text-align:center}
+      .tooltip-team::before,.tooltip-team::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltip-team::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltip-team::after{content:attr(data-tooltip-team);background:#415b76;border-radius:4px;color:#fff;top:69px;width:80px;padding:5px;left:-25px}
+      .tooltip-team:hover::before,.tooltip-team:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltip-team:active::before,.tooltip-team:active::after{opacity:0;visibility:hidden}
+      .tooltip-export{position:relative;text-align:center}
+      .tooltip-export::before,.tooltip-export::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltip-export::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltip-export::after{content:attr(data-tooltip-export);background:#415b76;border-radius:4px;color:#fff;top:69px;width:100px;padding:5px;left:-34px}
+      .tooltip-export:hover::before,.tooltip-export:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltip-export:active::before,.tooltip-export:active::after{opacity:0;visibility:hidden}
+      .tooltip-print{position:relative;text-align:center}
+      .tooltip-print::before,.tooltip-print::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltip-print::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltip-print::after{content:attr(data-tooltip-print);background:#415b76;border-radius:4px;color:#fff;top:69px;width:100px;padding:5px;left:-34px}
+      .tooltip-print:hover::before,.tooltip-print:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltip-print:active::before,.tooltip-print:active::after{opacity:0;visibility:hidden}
+      .tooltip-delete{position:relative;text-align:center}
+      .tooltip-delete::before,.tooltip-delete::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltip-delete::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:60px;border-color:transparent transparent #415b76}
+      .tooltip-delete::after{content:attr(data-tooltip-delete);background:#415b76;border-radius:4px;color:#fff;top:69px;width:87px;padding:5px;left:-32px}
+      .tooltip-delete:hover::before,.tooltip-delete:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltip-delete:active::before,.tooltip-delete:active::after{opacity:0;visibility:hidden}
+    </style>
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    
+    <!-- <link rel="stylesheet" href="tasks-manager-reformulado.css"> -->
+
+  </head>
+  <body>
+
+<div class="header"></div>
+
+
+<!-- tasks manager -->
+<div class="tasksManager">
+<div class="tasksManagerHeader">
+    <div id="tasksManagerHeaderProjectName">Nome Projeto</div>
+  <div class="tasks-manager-icons-header">
+    <button class="newFolder-btn tooltipNewFolder" data-tooltip-NewFolder="Criar nova pasta de tasks">
+      <div class="tasks-newFolder-icon">
+        <svg id="tasks-newFolder-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 18" xml:space="preserve">
+          <path fill="#FFFFFF" d="M15.9,9.9h-3.4V6.4c0-0.1-0.1-0.2-0.2-0.2h-0.7c-0.1,0-0.2,0.1-0.2,0.2v3.5H8.1C8,9.9,7.9,10,7.9,10.1v0.7C7.9,10.9,8,11,8.1,11h3.4v3.5c0,0.1,0.1,0.2,0.2,0.2h0.7c0.1,0,0.2-0.1,0.2-0.2V11h3.4c0.1,0,0.2-0.1,0.2-0.2v-0.7C16.1,10,16,9.9,15.9,9.9z"/>
+          <path fill="#FFFFFF" d="M21.8,3h-9l-3-3H2.3C1,0,0,1,0,2.3v13.5C0,17,1,18,2.3,18h19.5c1.2,0,2.3-1,2.3-2.3V5.3C24,4,23,3,21.8,3zM22.5,15.8c0,0.4-0.3,0.8-0.8,0.8H2.3c-0.4,0-0.8-0.3-0.8-0.8V2.3c0-0.4,0.3-0.8,0.8-0.8h6.9l3,3h9.6c0.4,0,0.8,0.3,0.8,0.8V15.8z"/>
+        </svg>
+      </div>
+      <div id="newFolder-btnText">Nova Pasta</div>
+    </button>
+    <button class="tasks-manager-icons-header-btns tooltipSave" data-tooltip-Save="Salvar projeto">
+      <div class="tasks-save-icon">
+        <svg id="tasks-save-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 27 27" xml:space="preserve">
+          <path fill="#8E9AAF" d="M26.2,5.9l-5.1-5.1c-0.5-0.5-1.3-0.8-2-0.8H2.9C1.3,0,0,1.3,0,2.9v21.2C0,25.7,1.3,27,2.9,27h21.2c1.6,0,2.9-1.3,2.9-2.9V7.9C27,7.2,26.7,6.4,26.2,5.9L26.2,5.9z M17.4,1.9v5.8H5.8V1.9H17.4z M25.1,24.1c0,0.5-0.4,1-1,1H2.9c-0.5,0-1-0.4-1-1V2.9c0-0.5,0.4-1,1-1h1v6.3c0,0.8,0.6,1.4,1.4,1.4h12.5c0.8,0,1.4-0.6,1.4-1.4V2c0.2,0,0.3,0.1,0.4,0.3l5.1,5.1c0.2,0.2,0.3,0.4,0.3,0.7V24.1z M13.5,12.1c-2.9,0-5.3,2.4-5.3,5.3s2.4,5.3,5.3,5.3s5.3-2.4,5.3-5.3S16.4,12.1,13.5,12.1zM13.5,20.7c-1.9,0-3.4-1.5-3.4-3.4c0-1.9,1.5-3.4,3.4-3.4s3.4,1.5,3.4,3.4C16.9,19.2,15.4,20.7,13.5,20.7z"/>
+        </svg>
+      </div>
+    </button>
+    <button class="tasks-manager-icons-header-btns tooltipTeam" data-tooltip-Team="Editar time"  onclick="myFunctionProjectTeamEditor()">
+      <div class="tasks-team-icon">
+        <svg id="tasks-team-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38.6 27" xml:space="preserve">
+          <path fill="#8E9AAF" d="M17.3,13.2c0.2-0.6,0.4-1.2,0.7-1.8c-2-0.6-3.5-2.4-3.5-4.6c0-2.7,2.2-4.8,4.8-4.8c2.2,0,4,1.5,4.6,3.5c0.6-0.3,1.2-0.5,1.8-0.7C24.9,2,22.3,0,19.3,0c-3.7,0-6.8,3-6.8,6.8C12.5,9.8,14.6,12.3,17.3,13.2z M5.8,11.6c2.7,0,4.8-2.2,4.8-4.8S8.4,1.9,5.8,1.9S1,4.1,1,6.8S3.1,11.6,5.8,11.6z M5.8,3.9c1.6,0,2.9,1.3,2.9,2.9S7.4,9.6,5.8,9.6S2.9,8.3,2.9,6.8S4.2,3.9,5.8,3.9z M9.5,14.3c-0.7-0.5-1.6-0.8-2.5-0.8H4.6c-2.5,0-4.6,2.2-4.6,4.8c0,0.5,0.4,1,1,1s1-0.4,1-1c0-1.6,1.2-2.9,2.7-2.9H7c0.3,0,0.7,0.1,0.9,0.2C8.4,15.1,8.9,14.7,9.5,14.3L9.5,14.3z M10.6,25.1c-0.5,0-1-0.4-1-1v-2.7c0-1,0.3-2,0.8-2.8c0.8-1.2,2.3-2,4-2c0.9,0,1.1,0.1,2.5,0.4c0-0.2-0.1-0.8,0-2c-1-0.3-1.6-0.4-2.5-0.4c-2.2,0-4.3,1-5.6,2.8c-0.7,1.1-1.2,2.4-1.2,3.9v2.7c0,1.6,1.3,2.9,2.9,2.9h12.6c-1-0.5-1.8-1.2-2.6-1.9H10.6z M28.9,12.5c-2.1,0-3.9,1.7-3.9,3.9s1.7,3.9,3.9,3.9s3.9-1.7,3.9-3.9S31.1,12.5,28.9,12.5z M28.9,18.4c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S30,18.4,28.9,18.4zM37.9,17.7l-1-0.6c0-0.5,0-1,0-1.5l1-0.6c0.6-0.3,0.8-1,0.6-1.6c-0.4-1.4-1.2-2.7-2.2-3.8c-0.4-0.5-1.2-0.6-1.7-0.3l-1,0.6c-0.4-0.3-0.9-0.6-1.3-0.8V8c0-0.7-0.5-1.2-1.1-1.4c-1.4-0.3-3-0.3-4.4,0c-0.6,0.1-1.1,0.7-1.1,1.4v1.1c-0.5,0.2-0.9,0.5-1.3,0.8l-1-0.6C22.7,9,22,9.1,21.6,9.6c-1,1.1-1.8,2.4-2.2,3.8c-0.2,0.6,0.1,1.3,0.6,1.6l1,0.6c0,0.5,0,1,0,1.5l-1,0.6c-0.6,0.3-0.8,1-0.6,1.6c0.4,1.4,1.2,2.7,2.2,3.8c0.4,0.5,1.2,0.6,1.7,0.3l1-0.6c0.4,0.3,0.9,0.6,1.3,0.8v1.1c0,0.7,0.5,1.2,1.1,1.4c0.7,0.2,1.5,0.2,2.2,0.2c0.7,0,1.5-0.1,2.2-0.2c0.6-0.1,1.1-0.7,1.1-1.4v-1.1c0.5-0.2,0.9-0.5,1.3-0.8l1,0.6c0.6,0.3,1.3,0.2,1.7-0.3c1-1.1,1.8-2.4,2.2-3.8C38.7,18.8,38.4,18.1,37.9,17.7L37.9,17.7z M34.8,18.2l1.8,1c-0.3,0.9-0.8,1.7-1.4,2.4l-1.8-1c-1.3,1.1-1.5,1.2-3.1,1.8v2c-0.9,0.2-1.8,0.2-2.7,0v-2c-1.6-0.6-1.8-0.7-3.1-1.8l-1.8,1c-0.6-0.7-1.1-1.5-1.4-2.4l1.8-1c-0.3-1.6-0.3-1.8,0-3.6l-1.8-1c0.3-0.9,0.8-1.7,1.4-2.4l1.8,1c1.3-1.1,1.5-1.2,3.1-1.8v-2c0.9-0.2,1.9-0.2,2.7,0v2c1.6,0.6,1.8,0.7,3.1,1.8l1.8-1c0.6,0.7,1.1,1.5,1.4,2.4l-1.8,1C35.1,16.2,35.1,16.5,34.8,18.2z"/>
+        </svg>
+      </div>
+    </button>
+    <button on="tap:sidebar.toggle" class="tasks-manager-icons-header-btns tooltipMsgs" data-tooltip-Msgs="Mural de recados">
+      <div class="tasks-msgs-icon">
+        <svg id="tasks-msgs-icon.svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30.4 27" xml:space="preserve">
+          <path fill="#8E9AAF" d="M27,8.4h-5.1V3.4c0-1.9-1.5-3.4-3.4-3.4H3.4C1.5,0,0,1.5,0,3.4v8.4c0,1.9,1.5,3.4,3.4,3.4h1.7v2.7c0,0.4,0.3,0.6,0.6,0.6c0.1,0,0.3,0,0.4-0.1l5.7-3.2h6.8c1.9,0,3.4-1.5,3.4-3.4v-1.7H27c0.9,0,1.7,0.8,1.7,1.7v8.4c0,0.9-0.8,1.7-1.7,1.7h-3.4v2.6l-4.2-2.4L19,21.9h-5.5c-0.9,0-1.7-0.8-1.7-1.7v-5.1l-1.7,1v4.1c0,1.9,1.5,3.4,3.4,3.4h5.1l5.7,3.2c0.1,0.1,0.2,0.1,0.4,0.1c0.3,0,0.6-0.3,0.6-0.6v-2.7H27c1.9,0,3.4-1.5,3.4-3.4v-8.4C30.4,10,28.9,8.4,27,8.4z M20.3,11.8c0,0.9-0.8,1.7-1.7,1.7h-7.2L11,13.7l-4.2,2.4v-2.6H3.4c-0.9,0-1.7-0.8-1.7-1.7V3.4c0-0.9,0.8-1.7,1.7-1.7h15.2c0.9,0,1.7,0.8,1.7,1.7V11.8z"/>
+        </svg>
+      </div>
+    </button>
+    <button class="tasks-manager-icons-header-btns tooltipExport" data-tooltip-Export="Exportar Projeto">
+      <div class="tasks-export-icon">
+        <svg id="tasks-export-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30.4 27" xml:space="preserve">
+          <path fill="#8E9AAF" d="M29.9,15l-3.8-3.6c-0.4-0.4-1.1-0.5-1.6-0.3c-0.5,0.2-0.9,0.7-0.9,1.3v2.8h-3.4V7c0-0.7-0.3-1.3-0.7-1.8l-4.4-4.4C14.6,0.3,14,0,13.3,0H2.5C1.1,0,0,1.1,0,2.5v21.9C0,25.9,1.1,27,2.5,27h15.2c1.4,0,2.5-1.1,2.5-2.5v-5.9h-1.7v5.9c0,0.5-0.4,0.8-0.8,0.8H2.5c-0.5,0-0.8-0.4-0.8-0.8V2.5c0-0.5,0.4-0.8,0.8-0.8h9.3v5.5c0,0.7,0.6,1.3,1.3,1.3h5.5v6.8H8.9c-0.2,0-0.4,0.2-0.4,0.4v0.8c0,0.2,0.2,0.4,0.4,0.4h14.8v2.8c0,0.6,0.3,1.1,0.9,1.3c0.8,0.3,1.4-0.1,1.6-0.3l3.8-3.6c0.3-0.3,0.5-0.7,0.5-1.1C30.4,15.6,30.2,15.3,29.9,15L29.9,15z M13.5,6.8v-5c0.1,0,0.3,0.1,0.4,0.2l4.4,4.4c0.1,0.1,0.2,0.2,0.2,0.4L13.5,6.8L13.5,6.8z M25.3,19.1v-6.2l3.3,3.1L25.3,19.1z"/>
+        </svg>
+      </div>
+    </button>
+    <button class="tasks-manager-icons-header-btns tooltipPrint" data-tooltip-Print="Versão para impressão">
+      <div class="tasks-print-icon">
+        <svg id="tasks-print-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 27 27" xml:space="preserve">
+          <path fill="#8E9AAF" d="M21.9,10.1V4.3c0-0.3-0.1-0.7-0.4-0.9l-3.1-3.1C18.3,0.1,18,0,17.6,0H6.3C5.6,0,5.1,0.6,5.1,1.3v8.9c-2.8,0-5.1,2.3-5.1,5.1v7.2c0,0.7,0.6,1.3,1.3,1.3h3.8v2.1c0,0.7,0.6,1.3,1.3,1.3h14.3c0.7,0,1.3-0.6,1.3-1.3v-2.1h3.8c0.7,0,1.3-0.6,1.3-1.3v-7.2C27,12.4,24.7,10.1,21.9,10.1z M6.8,1.7h10.7l2.8,2.8v9H6.8V1.7z M20.3,25.3H6.8v-5.1h13.5V25.3zM25.3,21.9h-3.4v-2.1c0-0.7-0.6-1.3-1.3-1.3H6.3c-0.7,0-1.3,0.6-1.3,1.3v2.1H1.7v-6.8c0-1.9,1.5-3.4,3.4-3.4v2.1c0,0.7,0.6,1.3,1.3,1.3h14.3c0.7,0,1.3-0.6,1.3-1.3v-2.1c1.9,0,3.4,1.5,3.4,3.4V21.9z M23.8,16c0,0.6-0.5,1.1-1.1,1.1s-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1S23.8,15.5,23.8,16z"/>
+        </svg>
+      </div>
+    </button>
+    <button class="tasks-manager-icons-header-btns tooltipDelete" data-tooltip-Delete="Excluir projeto">
+      <div class="tasks-delete-icon">
+        <svg id="tasks-delete-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 23.6 27" xml:space="preserve">
+          <path fill="#8E9AAF" d="M17.7,3.4L15.9,1c-0.5-0.6-1.2-1-2-1H9.7c-0.8,0-1.5,0.4-2,1L5.9,3.4H1.3C0.6,3.4,0,3.9,0,4.6v0.1c0,0.2,0.1,0.3,0.3,0.3h1.4v19.4c0,1.4,1.1,2.5,2.5,2.5h15.2c1.4,0,2.5-1.1,2.5-2.5V5.1h1.4c0.2,0,0.3-0.1,0.3-0.3V4.6c0-0.7-0.6-1.3-1.3-1.3H17.7z M9.7,1.7h4.2c0.3,0,0.5,0.1,0.7,0.3l1,1.3H8L9,2C9.2,1.8,9.4,1.7,9.7,1.7z M20.3,24.5c0,0.5-0.4,0.8-0.8,0.8H4.2c-0.5,0-0.8-0.4-0.8-0.8V5.1h16.9V24.5z M11,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6H12c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6h-0.4C11.3,22.8,11,22.5,11,22.1z M6.8,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6h0.4c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6H7.4C7,22.8,6.8,22.5,6.8,22.1z M15.2,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6h0.4c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6h-0.4C15.5,22.8,15.2,22.5,15.2,22.1z"/>
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+
+
+<!-- lista de tasks -->
+<section class="tasks-container">
+  <div class="tasks-wrapper">
+    <div class="tasks-tag">
+      <svg id="tasks-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20.2 16.4" xml:space="preserve">
+        <path fill="#5A9EB3" d="M20,3.2H7.8C7.7,3.2,7.6,3.1,7.6,3V2.1c0-0.1,0.1-0.2,0.2-0.2H20c0.1,0,0.2,0.1,0.2,0.2V3C20.2,3.1,20.1,3.2,20,3.2z M20.2,9.3V8.4c0-0.1-0.1-0.2-0.2-0.2H7.8c-0.1,0-0.2,0.1-0.2,0.2v0.9c0,0.1,0.1,0.2,0.2,0.2H20C20.1,9.6,20.2,9.5,20.2,9.3z M20.2,15.7v-0.9c0-0.1-0.1-0.2-0.2-0.2H7.8c-0.1,0-0.2,0.1-0.2,0.2v0.9c0,0.1,0.1,0.2,0.2,0.2H20C20.1,15.9,20.2,15.8,20.2,15.7z M2.7,13.6c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4s1.4-0.6,1.4-1.4C4.1,14.2,3.5,13.6,2.7,13.6z M6.8,0.4L6.5,0.1C6.3,0,6,0,5.8,0.1L2.7,3.3L1.2,1.8C1,1.6,0.7,1.6,0.5,1.8L0.1,2.1C0,2.3,0,2.6,0.1,2.8l2.1,2.1c0.2,0.2,0.5,0.2,0.7,0l0,0l3.8-3.8C6.9,0.9,6.9,0.6,6.8,0.4L6.8,0.4z M6.8,6.8L6.5,6.5C6.3,6.3,6,6.3,5.8,6.5L2.7,9.6L1.2,8.1C1,7.9,0.7,7.9,0.5,8.1L0.2,8.4C0,8.6,0,8.9,0.2,9.1l2.1,2.1c0.2,0.2,0.5,0.2,0.7,0l0,0l3.8-3.8C7,7.2,7,6.9,6.8,6.8L6.8,6.8z"/>
+      </svg>
+      <span>Tasks do projeto</span>
+    </div>
+    <div class="listaTasksWrapper">
+
+
+<!-- header task task container -->
+      <div class="taskFlexBoxContainer">
+        <div class="headerTaskColunm">
+        </div>
+        <div class="headerTaskColunm"></div>
+        <div class="headerTaskColunm">
+          <div id="taskLineText">Nome Task</div>
+          <a href="" class="taskNameOrderingDown">
+            <svg id="orderingNameIconDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.2 144.1" xml:space="preserve">
+              <path fill="#EEE2DF" d="M216.1,0H24C2.7,0-8.1,25.9,7.1,41l96,96.1c9.4,9.4,24.6,9.4,34,0L233.1,41C248.2,25.9,237.5,0,216.1,0zM120.1,120.1L24,24h192.2L120.1,120.1z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="headerTaskColunm">
+          <div id="taskLineText">Líder</div>
+          <a href="" class="taskLeaderOrderingDown">
+            <svg id="orderingLeaderIconDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.2 144.1" xml:space="preserve">
+              <path fill="#EEE2DF" d="M216.1,0H24C2.7,0-8.1,25.9,7.1,41l96,96.1c9.4,9.4,24.6,9.4,34,0L233.1,41C248.2,25.9,237.5,0,216.1,0zM120.1,120.1L24,24h192.2L120.1,120.1z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="headerTaskColunm">
+          <div id="taskLineText">Time</div>
+          <a href="" class="taskTeamOrderingDown">
+            <svg id="orderingTeamIconDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.2 144.1" xml:space="preserve">
+              <path fill="#EEE2DF" d="M216.1,0H24C2.7,0-8.1,25.9,7.1,41l96,96.1c9.4,9.4,24.6,9.4,34,0L233.1,41C248.2,25.9,237.5,0,216.1,0zM120.1,120.1L24,24h192.2L120.1,120.1z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="headerTaskColunm">
+          <div id="taskLineText">Prazo</div>
+          <a href="" class="taskTermOrderingDown">
+            <svg id="orderingTermIconDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.2 144.1" xml:space="preserve">
+              <path fill="#EEE2DF" d="M216.1,0H24C2.7,0-8.1,25.9,7.1,41l96,96.1c9.4,9.4,24.6,9.4,34,0L233.1,41C248.2,25.9,237.5,0,216.1,0zM120.1,120.1L24,24h192.2L120.1,120.1z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="headerTaskColunm">
+          <div id="taskLineText">Tipo</div>
+          <a href="" class="taskTypeOrderingDown">
+            <svg id="orderingTypeIconDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.2 144.1" xml:space="preserve">
+              <path fill="#EEE2DF" d="M216.1,0H24C2.7,0-8.1,25.9,7.1,41l96,96.1c9.4,9.4,24.6,9.4,34,0L233.1,41C248.2,25.9,237.5,0,216.1,0zM120.1,120.1L24,24h192.2L120.1,120.1z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="headerTaskColunm">
+          <div id="taskLineText">Status</div>
+          <a href="" class="taskStatusOrderingDown">
+            <svg id="orderingStatusIconDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.2 144.1" xml:space="preserve">
+              <path fill="#EEE2DF" d="M216.1,0H24C2.7,0-8.1,25.9,7.1,41l96,96.1c9.4,9.4,24.6,9.4,34,0L233.1,41C248.2,25.9,237.5,0,216.1,0zM120.1,120.1L24,24h192.2L120.1,120.1z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="headerTaskColunm"></div>
+        <div class="headerTaskColunm">
+          <div id="taskLineText">Progresso</div>
+          <button class="taskProgressOrderingDown">
+            <svg id="orderingProgressIconDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.2 144.1" xml:space="preserve">
+              <path fill="#EEE2DF" d="M216.1,0H24C2.7,0-8.1,25.9,7.1,41l96,96.1c9.4,9.4,24.6,9.4,34,0L233.1,41C248.2,25.9,237.5,0,216.1,0zM120.1,120.1L24,24h192.2L120.1,120.1z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+<!-- final header task container -->
+
+
+<!-- task-flexBox-Container -->
+      <div class="taskFlexBoxContainer">
+        <div class="tasklineItem LineOrdering">
+          <a href="" class="taskOrderingUp">
+            <svg id="orderingIconUp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.2 144.1" xml:space="preserve">
+              <path fill="#EEE2DF" d="M24.1,144.1h192.1c21.3,0,32.1-25.9,16.9-41L137.1,7c-9.4-9.4-24.6-9.4-34,0l-96,96.1C-8,118.3,2.7,144.1,24.1,144.1z M120.1,24.1l96.1,96.1H24L120.1,24.1z"/>
+            </svg>
+          </a>
+          <a href="" class="taskOrderingDown">
+            <svg id="orderingIconDown" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 240.2 144.1" xml:space="preserve">
+              <path fill="#EEE2DF" d="M216.1,0H24C2.7,0-8.1,25.9,7.1,41l96,96.1c9.4,9.4,24.6,9.4,34,0L233.1,41C248.2,25.9,237.5,0,216.1,0zM120.1,120.1L24,24h192.2L120.1,120.1z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="tasklineItem LineSelectTask">
+        <label class="container">
+          <input type="checkbox"
+          checked="checked"
+          onclick="myFunctionCkeckBox()">
+          <span class="checkmark"></span>
+        </label>
+        </div>
+        <div class="tasklineItem LineTaskName">
+          <div>Nome Task</div>
+          <button href="" on="tap:my-lightbox" role="button" tabindex="0" class="lineMaximizeTask toolTipOpenTask" data-tooltip-OpenTask="Abrir Task">
+            <svg id="tasksOpenIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 18" xml:space="preserve">
+              <path fill="#8E9AAF" d="M16.1,0H1.9C0.9,0,0,0.9,0,1.9v14.1C0,17.1,0.9,18,1.9,18h14.1c1.1,0,1.9-0.9,1.9-1.9V1.9C18,0.9,17.1,0,16.1,0z M16.7,16.1c0,0.4-0.3,0.6-0.6,0.6H1.9c-0.4,0-0.6-0.3-0.6-0.6V1.9c0-0.4,0.3-0.6,0.6-0.6h14.1c0.4,0,0.6,0.3,0.6,0.6V16.1z M4,13.8c-0.2-0.2-0.2-0.5,0-0.7l7.8-7.8l0,0l-3.6,0C7.9,5.2,7.7,5,7.7,4.8V4.4c0-0.3,0.2-0.5,0.5-0.5l5.5,0c0.3,0,0.5,0.2,0.5,0.5l0,5.5c0,0.3-0.2,0.5-0.5,0.5h-0.4c-0.3,0-0.5-0.2-0.5-0.5l0-3.6l0,0L4.9,14c-0.2,0.2-0.5,0.2-0.7,0L4,13.8L4,13.8z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="tasklineItem LineLeader">
+          <div>TM</div>
+        </div>
+        <div class="tasklineItem LineTeam">
+          <div class="TeamCircle">
+            <div id="TeamNumber">+5</div>
+          </div>
+          <button href="" class="lineTeamDropDown" onclick="myFunctionTotalTeam()">
+            <svg id="teamDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+              <path fill="#26547C" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="tasklineItem LineTerm">
+            <div id="TermTitle">20 dias</div>
+          <button class="lineTermDropDown" onclick="myFunction()">
+            <svg id="termDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+              <path fill="#26547C" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+            </svg>
+          </button>
+          <div id="myDIV" style="display: none;" class="progressDropdown">
+            <div class="date-picker">
+              <fieldset>
+                  <div class="datas-header">
+                    <div class="date-picker-icon">
+                      <svg id="date-picker-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.5 20" xml:space="preserve">
+                        <path fill="#EEE2DF" d="M15.6,2.5h-1.9v-2c0-0.3-0.2-0.5-0.5-0.5H13c-0.3,0-0.5,0.2-0.5,0.5v2H5v-2C5,0.2,4.8,0,4.5,0H4.2C4,0,3.8,0.2,3.8,0.5v2H1.9C0.8,2.5,0,3.3,0,4.4v13.8c0,1,0.8,1.9,1.9,1.9h13.8c1,0,1.9-0.8,1.9-1.9V4.4C17.5,3.3,16.7,2.5,15.6,2.5z M1.9,3.8h13.8c0.3,0,0.6,0.3,0.6,0.6v1.9h-15V4.4C1.3,4,1.5,3.8,1.9,3.8z M15.6,18.8H1.9c-0.3,0-0.6-0.3-0.6-0.6V7.5h15v10.6C16.3,18.5,16,18.8,15.6,18.8z M5.8,12.5H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6C3.8,10.2,4,10,4.2,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C6.3,12.3,6,12.5,5.8,12.5z M9.5,12.5H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6C7.5,10.2,7.7,10,8,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C10,12.3,9.8,12.5,9.5,12.5z M13.3,12.5h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5V12C13.8,12.3,13.5,12.5,13.3,12.5z M9.5,16.3H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C10,16,9.8,16.3,9.5,16.3z M5.8,16.3H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C6.3,16,6,16.3,5.8,16.3z M13.3,16.3h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C13.8,16,13.5,16.3,13.3,16.3z"/>
+                      </svg>
+                    </div>
+                    <div id="datas-headerTitle">Data inicial</div>
+                  </div>
+                  <div class="data-inicial">
+                      <input type="date" id="start" name="trip" value="2018-07-22" min="2018-01-01" max="2018-12-31"/>
+                  </div>
+                  <div class="datas-header">
+                    <div class="date-picker-icon">
+                      <svg id="date-picker-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.5 20" xml:space="preserve">
+                        <path fill="#EEE2DF" d="M15.6,2.5h-1.9v-2c0-0.3-0.2-0.5-0.5-0.5H13c-0.3,0-0.5,0.2-0.5,0.5v2H5v-2C5,0.2,4.8,0,4.5,0H4.2C4,0,3.8,0.2,3.8,0.5v2H1.9C0.8,2.5,0,3.3,0,4.4v13.8c0,1,0.8,1.9,1.9,1.9h13.8c1,0,1.9-0.8,1.9-1.9V4.4C17.5,3.3,16.7,2.5,15.6,2.5z M1.9,3.8h13.8c0.3,0,0.6,0.3,0.6,0.6v1.9h-15V4.4C1.3,4,1.5,3.8,1.9,3.8z M15.6,18.8H1.9c-0.3,0-0.6-0.3-0.6-0.6V7.5h15v10.6C16.3,18.5,16,18.8,15.6,18.8z M5.8,12.5H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6C3.8,10.2,4,10,4.2,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C6.3,12.3,6,12.5,5.8,12.5z M9.5,12.5H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6C7.5,10.2,7.7,10,8,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C10,12.3,9.8,12.5,9.5,12.5z M13.3,12.5h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5V12C13.8,12.3,13.5,12.5,13.3,12.5z M9.5,16.3H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C10,16,9.8,16.3,9.5,16.3z M5.8,16.3H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C6.3,16,6,16.3,5.8,16.3z M13.3,16.3h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C13.8,16,13.5,16.3,13.3,16.3z"/>
+                      </svg>
+                    </div>
+                    <div id="datas-headerTitle">Data Final</div>
+                  </div>
+                  <div class="data-final">
+                      <input type="date" id="end" name="trip" value="2018-07-29" min="2018-01-01" max="2018-12-31"/ >
+                  </div>
+
+              </fieldset>
+              </div>
+            
+          </div>
+        </div>
+        <div class="tasklineItem LineType">
+          <div id="TaskType">Escolha o tipo da tarefa</div>
+          <button href="" class="lineTypeDropDown" onclick="myFunctionTypeList()">
+            <svg id="typeDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+              <path fill="#26547C" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+            </svg>
+          </button>
+
+<script>
+  function updateType(obj)
+  {
+
+  document.getElementById("TaskType").innerHTML=obj.innerHTML;
+  document.getElementById("myDIVtypeList").style.display="none";
+  }
+
+  function setUpdateType()
+  {
+
+    var o=document.getElementsByClassName("type");
+
+    for (var i=0;i<o.length;i++)
+    {
+      o[i].onclick=function() {updateType(this);return false}
+
+    }
+  }
+</script>
+
+          <div id="myDIVtypeList" style="display: none;">
+            <div class="scrollbar" id="style-3-scrollbar">
+              <div class="force-overflow">
+                <ul>
+                  <li class="type"><a href="">Briefing</a></li>
+                  <li class="type"><a href="">Clipping</a></li>
+                  <li class="type"><a href="">Coletiva</a></li>
+                  <li class="type"><a href="">Conference Call</a></li>
+                  <li class="type"><a href="">Contato com Cliente</a></li>
+                  <li class="type"><a href="">Contato com Fornecedor</a></li>
+                  <li class="type"><a href="">Contato com Imprensa</a></li>
+                  <li class="type"><a href="">Contato com Stakeholders</a></li>
+                  <li class="type"><a href="">Conteúdo</a></li>
+                  <li class="type"><a href="">Divulgação</a></li>
+                  <li class="type"><a href="">Encontro de Relacionamento</a></li>
+                  <li class="type"><a href="">Entrevista</a></li>
+                  <li class="type"><a href="">Estratégia</a></li>
+                  <li class="type"><a href="">Evento</a></li>
+                  <li class="type"><a href="">Fact sheet</a></li>
+                  <li class="type"><a href="">Feedback</a></li>
+                  <li class="type"><a href="">Follow-up</a></li>
+                  <li class="type"><a href="">Gestão de Crise</a></li>
+                  <li class="type"><a href="">Media Training</a></li>
+                  <li class="type"><a href="">Monitoramento</a></li>
+                  <li class="type"><a href="">Operacional</a></li>
+                  <li class="type"><a href="">Pauta</a></li>
+                  <li class="type"><a href="">Pesquisa</a></li>
+                  <li class="type"><a href="">Planos</a></li>
+                  <li class="type"><a href="">Post</a></li>
+                  <li class="type"><a href="">Press Release</a></li>
+                  <li class="type"><a href="">Press Trip</a></li>
+                  <li class="type"><a href="">Q&A</a></li>
+                  <li class="type"><a href="">Redes Sociais</a></li>
+                  <li class="type"><a href="">Relatório</a></li>
+                  <li class="type"><a href="">Reunião</a></li>
+                  <li class="type"><a href="">Solicitação de Imprensa</a></li>
+                  <li class="type"><a href="">Talking Points</a></li>
+                  <li class="type"><a href="">Texto</a></li>
+                  <li class="type"><a href="">Outros</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="tasklineItem LineStatus">
+          <div id="StatusType">Definir o status da tarefa</div>
+          <button href="" class="lineStatusDropDown" onclick="myFunctionTaskStatusList()">
+            <svg id="StatusDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+              <path fill="#26547C" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+            </svg>
+          </button>
+
+<script>
+  function updateStatus(obj)
+  {
+
+  document.getElementById("StatusType").innerHTML=obj.innerHTML;
+  document.getElementById("myDIVtaskStatusList").style.display="none";
+  }
+
+  function setUpdateStatus()
+  {
+
+    var o1=document.getElementsByClassName("StatusLine");
+
+    for (var i=0;i<o1.length;i++)
+    {
+      o1[i].onclick=function() {updateStatus(this);return false}
+
+    }
+  }
+</script>
+
+          <div id="myDIVtaskStatusList" style="display: none;">
+            <ul class="taskStatusListDropdown">
+              <li class="StatusLine" id="StatusEmAprovacao"><a href="">Em aprovação</a></li>
+              <li class="StatusLine" id="StatusRevisar"><a href="">Revisar</a></li>
+              <li class="StatusLine" id="StatusDivulgado"><a href="">Divulgado</a></li>
+              <li class="StatusLine" id="StatusAfazer"><a href="">A fazer</a></li>
+              <li class="StatusLine" id="StatusEmAndamento"><a href="">Em andamento</a></li>
+              <li class="StatusLine" id="StatusParado"><a href="">Parado</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="tasklineItem LineMsgs">
+          <button href="" class="lineMsgsDropDown" on="tap:sidebar.toggle">
+          <div id="MsgsBubble">+7</div>
+            <svg id="LineTaksMsgsBubble" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 167.9 146.9" xml:space="preserve">
+              <path fill="#EEE2DF" d="M84,10.5c40.5,0,73.5,25.9,73.5,57.7s-33,57.7-73.5,57.7c-9.3,0-18.5-1.4-27.3-4.2l-5-1.6l-4.3,3c-7.5,5.3-19.2,11.6-33.6,13c3.9-5,9.8-13.2,13.4-22.8l2.3-6.1l-4.5-4.8c-9.5-10-14.5-21.9-14.5-34.2C10.5,36.4,43.5,10.5,84,10.5M84,0C37.6,0,0,30.5,0,68.2c0,15.6,6.5,29.9,17.3,41.4c-4.9,12.9-15.1,23.9-15.2,24c-2.2,2.3-2.8,5.6-1.5,8.5s4.1,4.8,7.2,4.8c20.2,0,36.1-8.4,45.6-15.2c9.5,3,19.7,4.7,30.5,4.7c46.4,0,84-30.5,84-68.2S130.3,0,84,0z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="tasklineItem LineProgressBar">
+          <div id="LineProgressBarText"><span>65%</span> Concluído</div>
+          <div class="fullProgressBorder"></div>
+          <div class="progressBar"></div>
+        </div>
+      </div>
+<!-- task total team container -->
+      <div id="myDIVTotalTeam" style="display: none;" class="TotalTeamContainer">
+
+        <!-- task team line header -->
+        <div class="TaskTeamLineHeader">
+          <div id="TaskTeamLineHeaderText">Nome</div>
+          <div id="TaskTeamLineHeaderText">Status</div>
+          <div id="TaskTeamLineHeaderText">Notas</div>
+        </div>
+        <!-- final task team line header -->
+
+        <!-- task team line -->
+        <div class="TaskTeamContainer">
+          <div class="taskTeamName" id="TaskName1">
+            <div id="taskTeamNameText">Nome Sobrenome</div>
+            <div class="taskTeamStatus">
+              <div class="TaskTeamNameStatusDropdownWrapper">
+                <div class="TaskTeamNameStatusColor"></div>
+                <div id="TaskTeamNameStatusColorTitle">Status</div>
+                <button href="" class="TaskTeamNameStatusDropdown" onclick="myFunctionTaskTeamNameStatusList()">
+                  <svg id="StatusDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+                    <path fill="#26547C" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+                  </svg>
+                </button>
+                <div class="myDIVTaskTeamStatusSelector" id="myDIVTaskTeamStatusSelector" style="display: none;">
+                  <ul class="taskTeamNameStatusListDropdown">
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor1 TaskTeamNameStatusDiv"></div><a href="">Em aprovação</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor2 TaskTeamNameStatusDiv"></div><a href="">Revisar</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor3 TaskTeamNameStatusDiv"></div><a href="">Divulgado</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor4 TaskTeamNameStatusDiv"></div><a href="">A fazer</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor5 TaskTeamNameStatusDiv"></div><a href="">Em andamento</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor6 TaskTeamNameStatusDiv"></div><a href="">Parado</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="TaskTeamTimeSheet">
+                <button id="teamNameTimeSheet">
+                  <svg id="TimeSheetIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.9 17" xml:space="preserve">
+                    <path fill="#8E9AAF" d="M13.1,4.7l0.6-0.6c0.2-0.2,0.2-0.4,0-0.6l-0.2-0.2c-0.2-0.2-0.4-0.2-0.6,0l-0.6,0.6c-1.2-1-2.7-1.7-4.4-1.8V1.1h0.8c0.2,0,0.4-0.2,0.4-0.4V0.4C9.2,0.2,9,0,8.8,0H6.1C5.9,0,5.7,0.2,5.7,0.4v0.3c0,0.2,0.2,0.4,0.4,0.4h0.8v1.1C3,2.4,0,5.6,0,9.6C0,13.7,3.3,17,7.4,17s7.4-3.3,7.4-7.4C14.9,7.7,14.2,6,13.1,4.7z M7.4,15.9c-3.5,0-6.4-2.9-6.4-6.4s2.9-6.4,6.4-6.4s6.4,2.9,6.4,6.4S11,15.9,7.4,15.9z M7.6,11.7H7.3c-0.2,0-0.4-0.2-0.4-0.4V5.7c0-0.2,0.2-0.4,0.4-0.4h0.3C7.8,5.3,8,5.5,8,5.7v5.6C8,11.5,7.8,11.7,7.6,11.7z"/>
+                  </svg>
+                </button>
+                <div id="Blue1">1h e 5min</div>
+              </div>
+          </div>
+              <div class="TaskTeamMsgGrid">
+                <div class="TaskTeamMsg">
+                <button class="TaskTeamMsgsBtn">
+                  <svg id="plusIconCircle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 15 15" xml:space="preserve">
+                    <path fill="#EEE2DF" d="M11.4,7v1c0,0.2-0.2,0.4-0.4,0.4H8.3V11c0,0.2-0.2,0.4-0.4,0.4H7c-0.2,0-0.4-0.2-0.4-0.4V8.3H4C3.8,8.3,3.6,8.2,3.6,8V7c0-0.2,0.2-0.4,0.4-0.4h2.7V4c0-0.2,0.2-0.4,0.4-0.4h1c0.2,0,0.4,0.2,0.4,0.4v2.7H11C11.2,6.7,11.4,6.8,11.4,7zM15,7.5c0,4.1-3.4,7.5-7.5,7.5S0,11.6,0,7.5S3.4,0,7.5,0S15,3.4,15,7.5z M13.5,7.5c0-3.3-2.7-6-6-6s-6,2.7-6,6s2.7,6,6,6S13.5,10.8,13.5,7.5z"/>
+                  </svg>
+                </button>
+                  <div id="TaskTeamMsgText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id impedit sapiente quos ducimus aliquid</div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- final task team line -->
+
+       <!-- task team line -->
+        <div class="TaskTeamContainer">
+          <div class="taskTeamName" id="TaskName1">
+            <div id="taskTeamNameText">Nome Sobrenome</div>
+            <div class="taskTeamStatus">
+              <div class="TaskTeamNameStatusDropdownWrapper">
+                <div class="TaskTeamNameStatusColor"></div>
+                <div id="TaskTeamNameStatusColorTitle">Status</div>
+                <button href="" class="TaskTeamNameStatusDropdown" onclick="myFunctionTaskTeamNameStatusList1()">
+                  <svg id="StatusDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+                    <path fill="#26547C" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+                  </svg>
+                </button>
+                <div class="myDIVTaskTeamStatusSelector" id="myDIVTaskTeamStatusSelector1" style="display: none;">
+                  <ul class="taskTeamNameStatusListDropdown">
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor1 TaskTeamNameStatusDiv"></div><a href="">Em aprovação</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor2 TaskTeamNameStatusDiv"></div><a href="">Revisar</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor3 TaskTeamNameStatusDiv"></div><a href="">Divulgado</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor4 TaskTeamNameStatusDiv"></div><a href="">A fazer</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor5 TaskTeamNameStatusDiv"></div><a href="">Em andamento</a></li>
+                    <li class="TaskTeamStatusLine"><div class="TaskTeamNameStatusColor6 TaskTeamNameStatusDiv"></div><a href="">Parado</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="TaskTeamTimeSheet">
+                <button id="teamNameTimeSheet">
+                  <svg id="TimeSheetIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.9 17" xml:space="preserve">
+                    <path fill="#8E9AAF" d="M13.1,4.7l0.6-0.6c0.2-0.2,0.2-0.4,0-0.6l-0.2-0.2c-0.2-0.2-0.4-0.2-0.6,0l-0.6,0.6c-1.2-1-2.7-1.7-4.4-1.8V1.1h0.8c0.2,0,0.4-0.2,0.4-0.4V0.4C9.2,0.2,9,0,8.8,0H6.1C5.9,0,5.7,0.2,5.7,0.4v0.3c0,0.2,0.2,0.4,0.4,0.4h0.8v1.1C3,2.4,0,5.6,0,9.6C0,13.7,3.3,17,7.4,17s7.4-3.3,7.4-7.4C14.9,7.7,14.2,6,13.1,4.7z M7.4,15.9c-3.5,0-6.4-2.9-6.4-6.4s2.9-6.4,6.4-6.4s6.4,2.9,6.4,6.4S11,15.9,7.4,15.9z M7.6,11.7H7.3c-0.2,0-0.4-0.2-0.4-0.4V5.7c0-0.2,0.2-0.4,0.4-0.4h0.3C7.8,5.3,8,5.5,8,5.7v5.6C8,11.5,7.8,11.7,7.6,11.7z"/>
+                  </svg>
+                </button>
+                <div id="Blue1">1h e 5min</div>
+              </div>
+          </div>
+              <div class="TaskTeamMsgGrid">
+                <div class="TaskTeamMsg">
+                <button class="TaskTeamMsgsBtn">
+                  <svg id="plusIconCircle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 15 15" xml:space="preserve">
+                    <path fill="#EEE2DF" d="M11.4,7v1c0,0.2-0.2,0.4-0.4,0.4H8.3V11c0,0.2-0.2,0.4-0.4,0.4H7c-0.2,0-0.4-0.2-0.4-0.4V8.3H4C3.8,8.3,3.6,8.2,3.6,8V7c0-0.2,0.2-0.4,0.4-0.4h2.7V4c0-0.2,0.2-0.4,0.4-0.4h1c0.2,0,0.4,0.2,0.4,0.4v2.7H11C11.2,6.7,11.4,6.8,11.4,7zM15,7.5c0,4.1-3.4,7.5-7.5,7.5S0,11.6,0,7.5S3.4,0,7.5,0S15,3.4,15,7.5z M13.5,7.5c0-3.3-2.7-6-6-6s-6,2.7-6,6s2.7,6,6,6S13.5,10.8,13.5,7.5z"/>
+                  </svg>
+                </button>
+                  <div id="TaskTeamMsgText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id impedit sapiente quos ducimus aliquid</div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- final task team line -->
+</div>
+<!-- final task total team container -->
+
+
+
+<!-- final task-flexBox-Container -->
+      <button class="NewTaskBtn tooltipNewTask" data-tooltip-NewTask="Criar nova task">
+        <svg id="Plus-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 103.8 103.8" xml:space="preserve">
+          <path fill="#FFFFFF" d="M101.7,45.4H58.4V2.2c0-1.2-1-2.2-2.2-2.2h-8.7c-1.2,0-2.2,1-2.2,2.2v43.3H2.2c-1.2,0-2.2,1-2.2,2.2v8.7c0,1.2,1,2.2,2.2,2.2h43.3v43.3c0,1.2,1,2.2,2.2,2.2h8.7c1.2,0,2.2-1,2.2-2.2V58.4h43.3c1.2,0,2.2-1,2.2-2.2v-8.7C103.8,46.4,102.9,45.4,101.7,45.4z"/>
+        </svg>
+        <div id="NewTaskBtnTitle">Nova task</div>
+      </button>
+    </div>
+  </div>
+</section>
+<!-- fim lista de tasks -->
+
+
+
+<!-- modal editor de tasks -->
+<amp-lightbox id="my-lightbox" layout="nodisplay">
+  <div class="lightbox" >
+    <div class="taskEditorContainer">
+      <!-- botão fechar janela modal task editor -->
+      <a href="#" class="close-btn" on="tap:my-lightbox.close" role="button" tabindex="0">
+        <div class="close-svg tolltip-fechar" data-tooltip-Fechar="Fechar">
+          <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+            <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+          </svg>
+        </div>
+      </a>
+
+      <div class="TaskEditorName">
+        <input class="TaskName" type="text" placeholder="Nome Principal">
+      </div>
+
+
+
+<!-- task editor team dropdown -->
+<div class="TaskEditorTeamDropdown" id="TaskEditorTeamDropdown" style="display: none;">
+  <div class="TasksTeamGrid">
+<div class="lightbox-equipe2">
+              <button href="#" class="close-svg-equipe" onclick="myFunctionTaskEditorTeamEditor()">
+              <svg id="close-btn2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+              </svg>
+          </button>
+          <div id="lightboxEquipeTexts">Equipe</div>
+              <ul class="team-list">
+                <li>
+                  <div class="lider-btn team-list-color1">
+                    <div class="svg-diamond-lider">
+                      <svg id="diamond-lider" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 110.9 98.6" xml:space="preserve">
+                        <path fill="#26547C" d="M89.3,0H21.6c-0.8,0-1.6,0.4-2,1.1L0.3,32.5c-0.5,0.8-0.4,1.9,0.2,2.7l53.1,62.6c0.9,1.1,2.6,1.1,3.5,0l53.1-62.6c0.7-0.8,0.7-1.8,0.2-2.7L91.3,1.1C90.9,0.4,90.1,0,89.3,0z M86.7,6.9L101,30.8H85L74.1,6.9H86.7z M66.4,6.9l10.9,23.9H33.5l11-23.9H66.4z M24.2,6.9h12.6L25.9,30.8h-16L24.2,6.9z M11.8,37h14.1l15.8,37L11.8,37z M33.4,37h44.2L55.5,87.8L33.4,37zM69.3,73.9l15.8-37h14.1L69.3,73.9z"/>
+                      </svg>
+                    </div>
+                  <a href="#">
+          <div id="lightboxEquipeTextsBullet">AP</div>
+                  </a>
+                    </div>
+          <div id="lightboxEquipeTexts">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                    <div class="lider-btn team-list-color1">
+                  <a href="#">
+          <div id="lightboxEquipeTextsBullet">AP</div>
+                  </a>
+                    </div>
+          <div id="lightboxEquipeTexts">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                    <div class="lider-btn team-list-color1">
+                  <a href="#">
+          <div id="lightboxEquipeTextsBullet">AP</div>
+                  </a>
+                    </div>
+          <div id="lightboxEquipeTexts">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                    <div class="lider-btn team-list-color1">
+                  <a href="#">
+          <div id="lightboxEquipeTextsBullet">AP</div>
+                  </a>
+                    </div>
+          <div id="lightboxEquipeTexts">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+    </div>
+  </div>
+
+</div>
+<!-- fim task editor team dropdown -->
+
+
+      <!-- task editor icons container -->
+      <div class="taskEditorIconContainer">
+      <button class="task-editor-icon-btns tooltipSave1" data-tooltip-Save1="Salvar tarefa">
+        <div class="task-editor-save-icon">
+          <svg id="task-editor-save-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 27 27" xml:space="preserve">
+            <path fill="#8E9AAF" d="M26.2,5.9l-5.1-5.1c-0.5-0.5-1.3-0.8-2-0.8H2.9C1.3,0,0,1.3,0,2.9v21.2C0,25.7,1.3,27,2.9,27h21.2c1.6,0,2.9-1.3,2.9-2.9V7.9C27,7.2,26.7,6.4,26.2,5.9L26.2,5.9z M17.4,1.9v5.8H5.8V1.9H17.4z M25.1,24.1c0,0.5-0.4,1-1,1H2.9c-0.5,0-1-0.4-1-1V2.9c0-0.5,0.4-1,1-1h1v6.3c0,0.8,0.6,1.4,1.4,1.4h12.5c0.8,0,1.4-0.6,1.4-1.4V2c0.2,0,0.3,0.1,0.4,0.3l5.1,5.1c0.2,0.2,0.3,0.4,0.3,0.7V24.1z M13.5,12.1c-2.9,0-5.3,2.4-5.3,5.3s2.4,5.3,5.3,5.3s5.3-2.4,5.3-5.3S16.4,12.1,13.5,12.1zM13.5,20.7c-1.9,0-3.4-1.5-3.4-3.4c0-1.9,1.5-3.4,3.4-3.4s3.4,1.5,3.4,3.4C16.9,19.2,15.4,20.7,13.5,20.7z"/>
+          </svg>
+        </div>
+      </button>
+      <button class="task-editor-icon-btns tooltip-anexos" data-tooltip-Anexos="Anexar Arquivos">
+        <div class="task-editor-clip-icon">
+          <svg id="task-editor-clip-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="#8E9AAF" d="M149.106 512c-33.076 0-66.153-12.59-91.333-37.771-50.364-50.361-50.364-132.305-.002-182.665L319.842 29.498c39.331-39.331 103.328-39.331 142.66 0 39.331 39.332 39.331 103.327 0 142.657l-222.63 222.626c-28.297 28.301-74.347 28.303-102.65 0-28.3-28.301-28.3-74.349 0-102.649l170.301-170.298c4.686-4.686 12.284-4.686 16.97 0l5.661 5.661c4.686 4.686 4.686 12.284 0 16.971l-170.3 170.297c-15.821 15.821-15.821 41.563.001 57.385 15.821 15.82 41.564 15.82 57.385 0l222.63-222.626c26.851-26.851 26.851-70.541 0-97.394-26.855-26.851-70.544-26.849-97.395 0L80.404 314.196c-37.882 37.882-37.882 99.519 0 137.401 37.884 37.881 99.523 37.882 137.404.001l217.743-217.739c4.686-4.686 12.284-4.686 16.97 0l5.661 5.661c4.686 4.686 4.686 12.284 0 16.971L240.44 474.229C215.26 499.41 182.183 512 149.106 512z"/>
+          </svg>
+        </div>
+      </button>
+      <button class="task-editor-icon-btns tooltip-team" data-tooltip-team="Editar time" onclick="myFunctionTaskEditorTeamEditor()">
+        <div class="task-editor-team-icon">
+          <svg id="taskEditorTeamIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 29.2 20.4" xml:space="preserve">
+            <path fill="#8E9AAF" d="M13.1,10c0.1-0.5,0.3-0.9,0.5-1.4c-1.5-0.4-2.7-1.8-2.7-3.5c0-2,1.6-3.6,3.6-3.6c1.7,0,3.1,1.1,3.5,2.7c0.4-0.2,0.9-0.4,1.4-0.5C18.8,1.5,16.9,0,14.6,0c-2.8,0-5.1,2.3-5.1,5.1C9.5,7.4,11,9.3,13.1,10z M4.4,8.7c2,0,3.6-1.6,3.6-3.6S6.4,1.5,4.4,1.5S0.7,3.1,0.7,5.1S2.4,8.7,4.4,8.7z M4.4,2.9c1.2,0,2.2,1,2.2,2.2s-1,2.2-2.2,2.2s-2.2-1-2.2-2.2S3.2,2.9,4.4,2.9zM7.2,10.8c-0.5-0.4-1.2-0.6-1.9-0.6H3.5c-1.9,0-3.5,1.6-3.5,3.6c0,0.4,0.3,0.7,0.7,0.7s0.7-0.3,0.7-0.7c0-1.2,0.9-2.2,2-2.2h1.8c0.3,0,0.5,0.1,0.7,0.2C6.3,11.4,6.7,11.1,7.2,10.8L7.2,10.8z M8,19c-0.4,0-0.7-0.3-0.7-0.7v-2c0-0.8,0.2-1.5,0.6-2.1c0.6-0.9,1.7-1.5,3-1.5c0.7,0,0.9,0.1,1.9,0.3c0-0.2-0.1-0.6,0-1.5c-0.7-0.2-1.2-0.3-1.9-0.3c-1.7,0-3.3,0.7-4.2,2.1c-0.6,0.8-0.9,1.8-0.9,2.9v2c0,1.2,1,2.2,2.2,2.2h9.5c-0.7-0.4-1.4-0.9-2-1.5H8z M21.9,9.5c-1.6,0-2.9,1.3-2.9,2.9s1.3,2.9,2.9,2.9c1.6,0,2.9-1.3,2.9-2.9S23.5,9.5,21.9,9.5z M21.9,13.9c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5c0.8,0,1.5,0.7,1.5,1.5S22.7,13.9,21.9,13.9z M28.6,13.4L27.9,13c0-0.4,0-0.8,0-1.2l0.8-0.4c0.4-0.3,0.6-0.8,0.5-1.2c-0.3-1.1-0.9-2.1-1.7-2.9c-0.3-0.4-0.9-0.5-1.3-0.2l-0.8,0.4c-0.3-0.2-0.7-0.4-1-0.6V6c0-0.5-0.3-0.9-0.8-1c-1.1-0.2-2.2-0.2-3.3,0c-0.5,0.1-0.8,0.5-0.8,1v0.9c-0.4,0.2-0.7,0.4-1,0.6l-0.8-0.4c-0.4-0.3-1-0.2-1.3,0.2c-0.8,0.8-1.3,1.8-1.7,2.9c-0.2,0.5,0.1,1,0.5,1.2l0.8,0.4c0,0.4,0,0.8,0,1.2l-0.8,0.4c-0.4,0.2-0.6,0.8-0.5,1.2c0.3,1.1,0.9,2.1,1.7,2.9c0.3,0.4,0.9,0.4,1.3,0.2l0.8-0.4c0.3,0.2,0.7,0.4,1,0.6v0.9c0,0.5,0.3,0.9,0.8,1c0.5,0.1,1.1,0.2,1.7,0.2s1.1-0.1,1.7-0.2c0.5-0.1,0.8-0.5,0.8-1v-0.9c0.4-0.2,0.7-0.4,1-0.6l0.8,0.4c0.4,0.2,1,0.2,1.3-0.2c0.8-0.8,1.3-1.8,1.7-2.9C29.3,14.2,29.1,13.7,28.6,13.4L28.6,13.4zM26.3,13.7l1.3,0.8c-0.2,0.7-0.6,1.3-1,1.8l-1.3-0.8c-1,0.8-1.1,0.9-2.3,1.3v1.5c-0.7,0.1-1.4,0.1-2.1,0v-1.5c-1.2-0.4-1.4-0.5-2.3-1.3l-1.3,0.8c-0.4-0.5-0.8-1.1-1-1.8l1.3-0.8c-0.2-1.2-0.2-1.4,0-2.7l-1.3-0.8c0.2-0.7,0.6-1.3,1-1.8l1.3,0.8c1-0.8,1.1-0.9,2.3-1.3V6.4c0.7-0.1,1.4-0.1,2.1,0v1.5c1.2,0.4,1.4,0.5,2.3,1.3l1.3-0.8c0.4,0.5,0.8,1.1,1,1.8l-1.3,0.8C26.5,12.3,26.5,12.4,26.3,13.7z"/>
+          </svg>
+        </div>
+      </button>
+      <button class="task-editor-icon-btns tooltip-export" data-tooltip-export="Exportar tarefa">
+        <div class="task-editor-export-icon">
+          <svg id="task-editor-export-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30.4 27" xml:space="preserve">
+            <path fill="#8E9AAF" d="M29.9,15l-3.8-3.6c-0.4-0.4-1.1-0.5-1.6-0.3c-0.5,0.2-0.9,0.7-0.9,1.3v2.8h-3.4V7c0-0.7-0.3-1.3-0.7-1.8l-4.4-4.4C14.6,0.3,14,0,13.3,0H2.5C1.1,0,0,1.1,0,2.5v21.9C0,25.9,1.1,27,2.5,27h15.2c1.4,0,2.5-1.1,2.5-2.5v-5.9h-1.7v5.9c0,0.5-0.4,0.8-0.8,0.8H2.5c-0.5,0-0.8-0.4-0.8-0.8V2.5c0-0.5,0.4-0.8,0.8-0.8h9.3v5.5c0,0.7,0.6,1.3,1.3,1.3h5.5v6.8H8.9c-0.2,0-0.4,0.2-0.4,0.4v0.8c0,0.2,0.2,0.4,0.4,0.4h14.8v2.8c0,0.6,0.3,1.1,0.9,1.3c0.8,0.3,1.4-0.1,1.6-0.3l3.8-3.6c0.3-0.3,0.5-0.7,0.5-1.1C30.4,15.6,30.2,15.3,29.9,15L29.9,15z M13.5,6.8v-5c0.1,0,0.3,0.1,0.4,0.2l4.4,4.4c0.1,0.1,0.2,0.2,0.2,0.4L13.5,6.8L13.5,6.8z M25.3,19.1v-6.2l3.3,3.1L25.3,19.1z"/>
+          </svg>
+        </div>
+      </button>
+      <button class="task-editor-icon-btns tooltip-print" data-tooltip-print="Imprimir tarefa">
+        <div class="task-editor-print-icon">
+          <svg id="task-editor-print-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 27 27" xml:space="preserve">
+            <path fill="#8E9AAF" d="M21.9,10.1V4.3c0-0.3-0.1-0.7-0.4-0.9l-3.1-3.1C18.3,0.1,18,0,17.6,0H6.3C5.6,0,5.1,0.6,5.1,1.3v8.9c-2.8,0-5.1,2.3-5.1,5.1v7.2c0,0.7,0.6,1.3,1.3,1.3h3.8v2.1c0,0.7,0.6,1.3,1.3,1.3h14.3c0.7,0,1.3-0.6,1.3-1.3v-2.1h3.8c0.7,0,1.3-0.6,1.3-1.3v-7.2C27,12.4,24.7,10.1,21.9,10.1z M6.8,1.7h10.7l2.8,2.8v9H6.8V1.7z M20.3,25.3H6.8v-5.1h13.5V25.3zM25.3,21.9h-3.4v-2.1c0-0.7-0.6-1.3-1.3-1.3H6.3c-0.7,0-1.3,0.6-1.3,1.3v2.1H1.7v-6.8c0-1.9,1.5-3.4,3.4-3.4v2.1c0,0.7,0.6,1.3,1.3,1.3h14.3c0.7,0,1.3-0.6,1.3-1.3v-2.1c1.9,0,3.4,1.5,3.4,3.4V21.9z M23.8,16c0,0.6-0.5,1.1-1.1,1.1s-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1S23.8,15.5,23.8,16z"/>
+          </svg>
+        </div>
+      </button>
+      <button class="task-editor-icon-btns tooltip-delete" data-tooltip-delete="Deletar tarefa">
+        <div class="task-editor-delete-icon">
+          <svg id="task-editor-delete-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 23.6 27" xml:space="preserve">
+            <path fill="#8E9AAF" d="M17.7,3.4L15.9,1c-0.5-0.6-1.2-1-2-1H9.7c-0.8,0-1.5,0.4-2,1L5.9,3.4H1.3C0.6,3.4,0,3.9,0,4.6v0.1c0,0.2,0.1,0.3,0.3,0.3h1.4v19.4c0,1.4,1.1,2.5,2.5,2.5h15.2c1.4,0,2.5-1.1,2.5-2.5V5.1h1.4c0.2,0,0.3-0.1,0.3-0.3V4.6c0-0.7-0.6-1.3-1.3-1.3H17.7z M9.7,1.7h4.2c0.3,0,0.5,0.1,0.7,0.3l1,1.3H8L9,2C9.2,1.8,9.4,1.7,9.7,1.7z M20.3,24.5c0,0.5-0.4,0.8-0.8,0.8H4.2c-0.5,0-0.8-0.4-0.8-0.8V5.1h16.9V24.5z M11,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6H12c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6h-0.4C11.3,22.8,11,22.5,11,22.1z M6.8,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6h0.4c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6H7.4C7,22.8,6.8,22.5,6.8,22.1z M15.2,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6h0.4c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6h-0.4C15.5,22.8,15.2,22.5,15.2,22.1z"/>
+          </svg>
+        </div>
+      </button>
+      </div>
+    <!-- fim task editor icon container  -->
+
+<!-- task-editor-fields-grid -->
+    <section class="editorFieldGrid">
+      <div class="editorTaskFieldsLeftSide">
+        <!-- task editor prazo -->
+        <div class="taskEditorLineItem taskEditorFields">
+          <div class="TaskEditorTermTitle TaskEditorTitles">
+            <svg id="icon-data" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.9 18" xml:space="preserve">
+              <path fill="#EEE2DF" d="M13.3,2.3h-1.6V0.4c0-0.2-0.2-0.4-0.4-0.4H11c-0.2,0-0.4,0.2-0.4,0.4v1.8H4.3V0.4C4.3,0.2,4.1,0,3.9,0H3.6C3.4,0,3.2,0.2,3.2,0.4v1.8H1.6C0.7,2.3,0,3,0,3.9v12.4C0,17.2,0.7,18,1.6,18h11.7c0.9,0,1.6-0.8,1.6-1.7V3.9C14.9,3,14.2,2.3,13.3,2.3z M1.6,3.4h11.7c0.3,0,0.5,0.3,0.5,0.6v1.7H1.1V3.9C1.1,3.6,1.3,3.4,1.6,3.4z M13.3,16.9H1.6c-0.3,0-0.5-0.3-0.5-0.6V6.8h12.8v9.6C13.8,16.6,13.6,16.9,13.3,16.9z M11.1,10l-4.5,4.7c-0.2,0.2-0.4,0.2-0.6,0l-2.2-2.4c-0.2-0.2-0.2-0.4,0-0.6l0.3-0.3c0.2-0.2,0.4-0.2,0.6,0l1.7,1.8l3.9-4.1c0.2-0.2,0.4-0.2,0.6,0l0.3,0.3C11.2,9.6,11.2,9.9,11.1,10L11.1,10z"/>
+            </svg>
+            <div id="TaskEditorTitles">Prazo</div>
+          </div>
+          <div id="TermTitle">20 dias</div>
+            <button class="TaskEditorLineTermDropDown" onclick="myFunctionTaskEditorTerm()">
+              <svg id="termDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+                <path fill="#26547C" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+              </svg>
+            </button>
+            <div id="TaskEditorTermMyDIV"
+            style="display: none;"
+            class="TaskEditorProgressDropdown">
+              <div class="date-picker">
+                <fieldset>
+                  <div class="datas-header">
+                    <div class="date-picker-icon">
+                      <svg id="date-picker-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.5 20" xml:space="preserve">
+                        <path fill="#EEE2DF" d="M15.6,2.5h-1.9v-2c0-0.3-0.2-0.5-0.5-0.5H13c-0.3,0-0.5,0.2-0.5,0.5v2H5v-2C5,0.2,4.8,0,4.5,0H4.2C4,0,3.8,0.2,3.8,0.5v2H1.9C0.8,2.5,0,3.3,0,4.4v13.8c0,1,0.8,1.9,1.9,1.9h13.8c1,0,1.9-0.8,1.9-1.9V4.4C17.5,3.3,16.7,2.5,15.6,2.5z M1.9,3.8h13.8c0.3,0,0.6,0.3,0.6,0.6v1.9h-15V4.4C1.3,4,1.5,3.8,1.9,3.8z M15.6,18.8H1.9c-0.3,0-0.6-0.3-0.6-0.6V7.5h15v10.6C16.3,18.5,16,18.8,15.6,18.8z M5.8,12.5H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6C3.8,10.2,4,10,4.2,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C6.3,12.3,6,12.5,5.8,12.5z M9.5,12.5H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6C7.5,10.2,7.7,10,8,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C10,12.3,9.8,12.5,9.5,12.5z M13.3,12.5h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5V12C13.8,12.3,13.5,12.5,13.3,12.5z M9.5,16.3H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C10,16,9.8,16.3,9.5,16.3z M5.8,16.3H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C6.3,16,6,16.3,5.8,16.3z M13.3,16.3h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C13.8,16,13.5,16.3,13.3,16.3z"/>
+                      </svg>
+                    </div>
+                      <div id="datas-headerTitle">Data inicial</div>
+                    </div>
+                  <div class="data-inicial">
+                    <input type="date" id="start" name="trip" value="2018-07-22" min="2018-01-01" max="2018-12-31"/>
+                  </div>
+                    <div class="datas-header">
+                    <div class="date-picker-icon">
+                      <svg id="date-picker-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.5 20" xml:space="preserve">
+                        <path fill="#EEE2DF" d="M15.6,2.5h-1.9v-2c0-0.3-0.2-0.5-0.5-0.5H13c-0.3,0-0.5,0.2-0.5,0.5v2H5v-2C5,0.2,4.8,0,4.5,0H4.2C4,0,3.8,0.2,3.8,0.5v2H1.9C0.8,2.5,0,3.3,0,4.4v13.8c0,1,0.8,1.9,1.9,1.9h13.8c1,0,1.9-0.8,1.9-1.9V4.4C17.5,3.3,16.7,2.5,15.6,2.5z M1.9,3.8h13.8c0.3,0,0.6,0.3,0.6,0.6v1.9h-15V4.4C1.3,4,1.5,3.8,1.9,3.8z M15.6,18.8H1.9c-0.3,0-0.6-0.3-0.6-0.6V7.5h15v10.6C16.3,18.5,16,18.8,15.6,18.8z M5.8,12.5H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6C3.8,10.2,4,10,4.2,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C6.3,12.3,6,12.5,5.8,12.5z M9.5,12.5H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6C7.5,10.2,7.7,10,8,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C10,12.3,9.8,12.5,9.5,12.5z M13.3,12.5h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5V12C13.8,12.3,13.5,12.5,13.3,12.5z M9.5,16.3H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C10,16,9.8,16.3,9.5,16.3z M5.8,16.3H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C6.3,16,6,16.3,5.8,16.3z M13.3,16.3h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C13.8,16,13.5,16.3,13.3,16.3z"/>
+                      </svg>
+                    </div>
+                      <div id="datas-headerTitle">Data Final</div>
+                    </div>
+                      <div class="data-final">
+                        <input type="date" id="end" name="trip" value="2018-07-29" min="2018-01-01" max="2018-12-31"/ >
+                        </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <!-- task editor prazo -->
+
+          <!-- task editor tipo -->
+        <div class="taskEditorLineItem1 taskEditorFields">
+          <div class="TaskEditorTypeTitle TaskEditorTitles">
+            <svg id="task-type" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 18" xml:space="preserve">
+              <path fill="#EEE2DF" d="M9,1.2c4.3,0,7.8,3.5,7.8,7.8c0,4.3-3.5,7.8-7.8,7.8c-4.3,0-7.8-3.5-7.8-7.8C1.2,4.7,4.7,1.2,9,1.2 M9,0C4,0,0,4,0,9c0,5,4,9,9,9s9-4,9-9C18,4,14,0,9,0z M7.7,12.5h0.4V8.1H7.7c-0.2,0-0.4-0.2-0.4-0.4V7.4C7.3,7.2,7.5,7,7.7,7h1.7c0.2,0,0.4,0.2,0.4,0.4v5.1h0.4c0.2,0,0.4,0.2,0.4,0.4v0.3c0,0.2-0.2,0.4-0.4,0.4H7.7c-0.2,0-0.4-0.2-0.4-0.4v-0.3C7.3,12.7,7.5,12.5,7.7,12.5z M9,3.8c-0.6,0-1.2,0.5-1.2,1.2S8.4,6.1,9,6.1s1.2-0.5,1.2-1.2S9.6,3.8,9,3.8z"/>
+            </svg>
+            <div id="Blue2">Tipo</div>
+          </div>
+            <div id="TypeTitle">Definir tipo de task</div>
+            <button class="TaskEditorLineTypeDropDown" onclick="myFunctionTaskEditorType()">
+              <svg id="typeDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+                <path fill="#26547C" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+              </svg>
+            </button>
+            <div id="myDIVtypeList1" style="display: none;">
+            <div class="scrollbar1" id="style-3-scrollbar1">
+              <div class="force-overflow1">
+                <ul>
+                  <li class="type"><a href="">Briefing</a></li>
+                  <li class="type"><a href="">Clipping</a></li>
+                  <li class="type"><a href="">Coletiva</a></li>
+                  <li class="type"><a href="">Conference Call</a></li>
+                  <li class="type"><a href="">Contato com Cliente</a></li>
+                  <li class="type"><a href="">Contato com Fornecedor</a></li>
+                  <li class="type"><a href="">Contato com Imprensa</a></li>
+                  <li class="type"><a href="">Contato com Stakeholders</a></li>
+                  <li class="type"><a href="">Conteúdo</a></li>
+                  <li class="type"><a href="">Divulgação</a></li>
+                  <li class="type"><a href="">Encontro de Relacionamento</a></li>
+                  <li class="type"><a href="">Entrevista</a></li>
+                  <li class="type"><a href="">Estratégia</a></li>
+                  <li class="type"><a href="">Evento</a></li>
+                  <li class="type"><a href="">Fact sheet</a></li>
+                  <li class="type"><a href="">Feedback</a></li>
+                  <li class="type"><a href="">Follow-up</a></li>
+                  <li class="type"><a href="">Gestão de Crise</a></li>
+                  <li class="type"><a href="">Media Training</a></li>
+                  <li class="type"><a href="">Monitoramento</a></li>
+                  <li class="type"><a href="">Operacional</a></li>
+                  <li class="type"><a href="">Pauta</a></li>
+                  <li class="type"><a href="">Pesquisa</a></li>
+                  <li class="type"><a href="">Planos</a></li>
+                  <li class="type"><a href="">Post</a></li>
+                  <li class="type"><a href="">Press Release</a></li>
+                  <li class="type"><a href="">Press Trip</a></li>
+                  <li class="type"><a href="">Q&A</a></li>
+                  <li class="type"><a href="">Redes Sociais</a></li>
+                  <li class="type"><a href="">Relatório</a></li>
+                  <li class="type"><a href="">Reunião</a></li>
+                  <li class="type"><a href="">Solicitação de Imprensa</a></li>
+                  <li class="type"><a href="">Talking Points</a></li>
+                  <li class="type"><a href="">Texto</a></li>
+                  <li class="type"><a href="">Outros</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- task editor tipo -->
+
+        <!-- task editor descrição -->
+          <div class="taskEditorDescr taskEditorFields">
+            <div class="taskEditorDescrHeader">
+              <div id="Blue2">Descrição</div>
+              <svg id="taskEditorDescr" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.5 20" xml:space="preserve">
+                <path fill="#EEE2DF" d="M21.9,5.3l-1-1c-0.8-0.8-2.1-0.8-2.9,0L15,7.4V5.2c0-0.5-0.2-1-0.6-1.3l-3.3-3.3C10.8,0.2,10.3,0,9.8,0h-8C0.8,0,0,0.8,0,1.9v16.2c0,1,0.8,1.9,1.9,1.9h11.3c1,0,1.9-0.8,1.9-1.9V15c0.2-0.2,0.5-0.4,0.7-0.6l6.2-6.2c0.4-0.4,0.6-0.9,0.6-1.4S22.3,5.7,21.9,5.3L21.9,5.3z M10,1.3c0.1,0,0.2,0.1,0.3,0.2l3.3,3.3c0.1,0.1,0.1,0.2,0.2,0.3H10V1.3z M13.8,18.1c0,0.3-0.3,0.6-0.6,0.6H1.9c-0.3,0-0.6-0.3-0.6-0.6V1.9c0-0.3,0.3-0.6,0.6-0.6h6.9v4.1c0,0.5,0.4,0.9,0.9,0.9h4.1v2.4l-1.9,1.9C10.7,11.7,10,13.3,10,15c-0.2,0-0.3-0.1-0.4-0.2c-0.5-0.9-1.8-1.2-2.6-0.6l-0.5-1.6c-0.1-0.4-0.5-0.6-0.9-0.6c-0.4,0-0.8,0.3-0.9,0.6L4,14.7C4,14.9,3.8,15,3.6,15H3.1c-0.3,0-0.6,0.3-0.6,0.6s0.3,0.6,0.6,0.6h0.5c0.7,0,1.4-0.5,1.6-1.2l0.4-1.2l0.7,2c0.2,0.5,0.9,0.6,1.2,0.1l0.3-0.6c0.2-0.3,0.6-0.3,0.8,0c0.3,0.6,0.8,0.9,1.5,0.9h1.3c0.9,0,1.7-0.2,2.5-0.5V18.1zM14.8,13.5c-0.9,1-2.2,1.5-3.6,1.5v0c0-1.3,0.5-2.6,1.5-3.6l4.7-4.7l2.1,2.1L14.8,13.5L14.8,13.5z M21,7.3l-0.8,0.8l-2.1-2.1L19,5.2c0.3-0.3,0.8-0.3,1.1,0l1,1C21.3,6.5,21.3,7,21,7.3L21,7.3z"/>
+              </svg>
+            </div>
+            <textarea class="descrTextarea" name="" id="" cols="50" rows="4" placeholder="Texto"></textarea>
+          </div>
+        <!-- task editor descrição -->
+
+        <!-- task editor Lembrete -->
+        <div class="taskEditorLembrete taskEditorFields">
+            <div class="taskEditorLembreteHeader">
+              <div id="taskEditorLembreteHeader">Lembrete</div>
+            </div>
+
+<!-- task editor título lembrete -->
+        <div class="taskEditorLembreteTitle taskEditorLembreteFields">
+          <input class="LembreteTitle" type="text" placeholder="Título">
+        </div>
+<!-- task editor título lembrete -->
+
+        <!-- task editor data lembrete -->
+        <div class="taskEditorDate taskEditorLembreteFields">
+          <div id="LembreteDataTitle">Data</div>
+              <div class="lembrete-date-picker">
+                <fieldset>
+                  <div class="data-inicial">
+                    <input type="date" id="start" name="trip" value="2018-07-22" min="2018-01-01" max="2018-12-31"/>
+                  </div>
+                </fieldset>
+              </div>
+        </div>
+          <!-- task editor data lembrete -->
+
+          <!-- task editor lembrete hora -->
+        <div class="taskEditorHora taskEditorLembreteFields">
+
+          <fieldset>
+            <div class="hourControl">
+                <label for="appt-time">Hora </label>
+                <input type="time" id="appt-time" name="appt-time" min="00:00" max="24:00"/>
+            </div>
+          </fieldset>
+        </div>
+          <!-- task editor lembrete horas  -->
+
+          <!-- task editor lembrete nota -->
+        <div class="taskEditorNota taskEditorLembreteFields">
+          <input class="LembreteTitle" type="text" placeholder="Nota">
+        </div>
+          <!-- task editor lembrete nota -->
+
+          <!-- task editor lembrete criar -->
+          <button class="criarLembreteBtn">
+            <svg id="lembrete-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" xml:space="preserve">
+              <path fill="#EEE2DF" d="M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50s50-22.4,50-50S77.6,0,50,0z M93.5,50c0,23.9-19.4,43.5-43.5,43.5C26.1,93.5,6.5,74.2,6.5,50C6.5,26.1,25.8,6.5,50,6.5C73.9,6.5,93.5,25.8,93.5,50z M63.5,67.8L47.2,55.9c-0.6-0.5-1-1.2-1-2V21.8c0-1.3,1.1-2.4,2.4-2.4h2.8c1.3,0,2.4,1.1,2.4,2.4v29.5L68,61.6c1.1,0.8,1.3,2.3,0.5,3.4l-1.7,2.3C66.1,68.3,64.6,68.6,63.5,67.8L63.5,67.8z"/>
+            </svg>
+            <div id="criarLembreteBtnTitle">Criar Lembrete</div>
+          </button>
+          <!-- task editor lembrete criar -->
+          </div>
+        <!-- task editor Lembrete -->
+        </div>
+        <div class="editorTaskFieldsRighttSide">
+            <amp-selector on="select:AMP.setState({selectedTab: event.targetOption})"
+                [selected]="selectedTab"
+                role="tablist"
+                layout="container"
+                class="ampTabContainer">
+                <div role="tab"
+                  class="tabButton"
+                  selected
+                  option="a">
+                  <div class="innerTabBtn">
+                    <svg id="desenvolvimento-icon" class="iconsAbas" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 23.8 19" xml:space="preserve">
+                      <path fill="#8E9AAF" d="M20,7.2l-0.1-0.1c-0.2,0-0.3,0-0.5,0v0.1c-0.2,0.3-0.6,0.5-1,0.4c-0.5-0.2-0.9-0.3-1.3-0.7c-0.3-0.3-0.4-0.8-0.2-1.1L17,5.6c-0.1-0.1-0.2-0.3-0.2-0.4h-0.4c-0.4,0-0.8-0.3-0.9-0.7c-0.1-0.5-0.1-0.9,0-1.4c0.1-0.4,0.4-0.7,0.9-0.7h0.3c0.1-0.1,0.1-0.3,0.2-0.4l-0.1-0.2C16.6,1.4,16.7,1,17,0.7c0.4-0.3,0.7-0.5,1.2-0.7c0.4-0.1,0.8,0,1.1,0.4l0.1,0.2c0.2,0,0.3,0,0.5,0L20,0.4C20.2,0,20.7-0.1,21.1,0c0.5,0.2,0.8,0.4,1.2,0.7c0.3,0.3,0.4,0.7,0.2,1.1l-0.1,0.1c0.1,0.1,0.2,0.3,0.2,0.4h0.2c0.4,0,0.8,0.3,0.9,0.7c0.1,0.5,0.1,0.9,0,1.4c-0.1,0.4-0.4,0.7-0.9,0.7h-0.2c-0.1,0.1-0.1,0.3-0.2,0.4l0.1,0.2c0.2,0.4,0.1,0.9-0.2,1.1c-0.4,0.3-0.7,0.5-1.3,0.7C20.6,7.7,20.2,7.5,20,7.2L20,7.2z M20.5,5.9l0.4,0.7c0.2-0.1,0.5-0.2,0.7-0.4l-0.4-0.7l0.2-0.3c0.2-0.2,0.3-0.4,0.4-0.7l0.1-0.3h0.8c0-0.3,0-0.5,0-0.8h-0.8l-0.1-0.3c-0.1-0.3-0.2-0.5-0.4-0.7l-0.2-0.3l0.4-0.7c-0.2-0.2-0.4-0.3-0.7-0.4l-0.4,0.7l-0.4-0.1c-0.3-0.1-0.5-0.1-0.8,0l-0.4,0.1L18.5,1c-0.2,0.1-0.5,0.2-0.7,0.4l0.4,0.7L18,2.4c-0.2,0.2-0.3,0.4-0.4,0.7l-0.1,0.3h-0.8c0,0.3,0,0.5,0,0.8h0.8l0.1,0.3C17.7,4.8,17.8,5,18,5.2l0.2,0.3l-0.4,0.7c0.2,0.2,0.4,0.3,0.7,0.4l0.4-0.7L19.3,6c0.3,0.1,0.5,0.1,0.8,0L20.5,5.9z M5.4,16.8v-1.2c-0.5-0.2-0.9-0.5-1.4-0.8l-1,0.6c-0.4,0.2-0.8,0.1-1.1-0.2c-0.9-1-1.4-1.8-1.9-3.3c-0.1-0.4,0-0.8,0.4-1l1-0.6c-0.1-0.5-0.1-1,0-1.6l-1-0.6C0,7.9-0.1,7.5,0,7.1c0.5-1.4,1-2.2,1.9-3.2C2.2,3.6,2.6,3.5,3,3.7l1,0.6C4.5,4,4.9,3.7,5.4,3.5V2.3c0-0.4,0.3-0.7,0.7-0.8c1.3-0.3,2.3-0.4,3.8,0c0.4,0.1,0.7,0.5,0.7,0.9v1.2c0.5,0.2,0.9,0.5,1.4,0.8l1-0.6c0.4-0.2,0.8-0.1,1.1,0.2c1,1.1,1.5,2.1,1.9,3.3c0.1,0.4,0,0.8-0.4,1l-0.9,0.6c0.1,0.5,0.1,1,0,1.6l1,0.6c0.3,0.2,0.5,0.6,0.4,0.9c-0.3,1.2-1.2,2.4-2.1,3.3c-0.3,0.3-0.7,0.4-1.1,0.2l-1-0.6c-0.4,0.3-0.9,0.6-1.4,0.8v1.2c0,0.4-0.3,0.8-0.7,0.9c-1.4,0.3-2.4,0.3-3.8,0C5.7,17.5,5.4,17.2,5.4,16.8L5.4,16.8z M6.6,16.5c0.9,0.2,1.9,0.2,2.8,0v-1.8l0.4-0.1c0.6-0.2,1.2-0.6,1.7-1l0.3-0.3l1.5,0.9c0.6-0.7,1.3-1.5,1.6-2.4l-1.5-0.9l0.1-0.4c0.1-0.7,0.1-1.3,0-2l-0.1-0.4l1.5-0.9c-0.3-0.9-0.9-1.7-1.6-2.4l-1.5,0.9l-0.3-0.3C11,5,10.4,4.6,9.8,4.4L9.4,4.3V2.6c-0.9-0.2-1.9-0.2-2.8,0v1.8L6.2,4.5C5.6,4.7,5,5.1,4.5,5.5L4.2,5.7L2.7,4.8C2.1,5.5,1.6,6.3,1.3,7.2l1.5,0.9L2.7,8.5c-0.1,0.7-0.1,1.3,0,2l0.1,0.4l-1.5,0.9c0.3,0.9,0.8,1.7,1.4,2.4l1.5-0.9l0.3,0.3c0.5,0.4,1.1,0.8,1.7,1l0.4,0.1C6.6,14.7,6.6,16.5,6.6,16.5z M8,12.6c-1.7,0-3.1-1.4-3.1-3.1S6.3,6.4,8,6.4s3.1,1.4,3.1,3.1S9.7,12.6,8,12.6z M8,7.7c-1,0-1.9,0.8-1.9,1.9s0.8,1.9,1.9,1.9c1,0,1.9-0.8,1.9-1.9S9.1,7.7,8,7.7L8,7.7z M20,18.5l-0.1-0.1c-0.2,0-0.3,0-0.5,0v0.1c-0.2,0.3-0.6,0.5-1,0.4c-0.5-0.2-0.9-0.3-1.3-0.7c-0.3-0.3-0.4-0.8-0.2-1.1l0.1-0.2c-0.1-0.1-0.2-0.3-0.2-0.4h-0.4c-0.4,0-0.8-0.3-0.9-0.7c-0.1-0.5-0.1-0.9,0-1.4c0.1-0.4,0.4-0.7,0.9-0.7h0.3c0.1-0.1,0.1-0.3,0.2-0.4l-0.1-0.2c-0.2-0.4-0.1-0.8,0.2-1.1c0.4-0.3,0.7-0.5,1.2-0.7c0.4-0.1,0.8,0,1.1,0.4l0.1,0.2c0.2,0,0.3,0,0.5,0l0.1-0.2c0.2-0.4,0.7-0.5,1.1-0.4c0.5,0.2,0.8,0.4,1.2,0.7c0.3,0.3,0.4,0.7,0.2,1.1l-0.1,0.1c0.1,0.1,0.2,0.3,0.2,0.4h0.2c0.4,0,0.8,0.3,0.9,0.7c0.1,0.5,0.1,0.9,0,1.4c-0.1,0.4-0.4,0.7-0.9,0.7h-0.2c-0.1,0.1-0.1,0.3-0.2,0.4l0.1,0.2c0.2,0.4,0.1,0.9-0.2,1.1c-0.4,0.3-0.7,0.5-1.3,0.7C20.6,19,20.2,18.8,20,18.5L20,18.5z M20.5,17.2l0.4,0.7c0.2-0.1,0.5-0.2,0.7-0.4l-0.4-0.7l0.2-0.3c0.2-0.2,0.3-0.4,0.4-0.7l0.1-0.3h0.8c0-0.3,0-0.5,0-0.8h-0.8l-0.1-0.3c-0.1-0.3-0.2-0.5-0.4-0.7l-0.2-0.3l0.4-0.7c-0.2-0.2-0.4-0.3-0.7-0.4l-0.4,0.6h-0.4c-0.3-0.1-0.5-0.1-0.8,0h-0.4l-0.4-0.7c-0.2,0.1-0.5,0.2-0.7,0.4l0.4,0.7L18,13.6c-0.2,0.2-0.3,0.4-0.4,0.7l-0.1,0.3h-0.8c0,0.3,0,0.5,0,0.8h0.8l0.1,0.3c0.1,0.3,0.2,0.5,0.4,0.7l0.2,0.3l-0.4,0.7c0.2,0.2,0.4,0.3,0.7,0.4l0.4-0.7l0.4,0.1c0.3,0.1,0.5,0.1,0.8,0L20.5,17.2z M20.8,15c0-0.7-0.5-1.2-1.2-1.2s-1.2,0.5-1.2,1.2s0.5,1.2,1.2,1.2C20.3,16.2,20.8,15.7,20.8,15z M20.8,3.8c0-0.7-0.5-1.2-1.2-1.2s-1.2,0.5-1.2,1.2s0.6,1.1,1.2,1.1C20.3,4.9,20.8,4.4,20.8,3.8z"/>
+                    </svg>
+                    <div id="ampSelectorTitle">Desenvolvimento</div>
+                  </div>
+                  </div>
+                <div role="tabpanel" class="tabContent TaskEditorMsgsOverflow">
+                    <div class="taskEditorTabMsgsContainer scrollbar2" id="style-3-scrollbar">
+                      <div class="force-overflow">
+                      <div class="myMsg">
+                        <div class="MyMsgsName">@User1 - 11/10/2018 - 16:29h</div>
+                        <div class="MyMsgsTxt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias a atque vitae error omnis ullam minus fugit.</div>
+                        <div class="MsgsBtns">
+                          <button class="MyMsgTimesheet">
+                            <svg id="MyMsgTimeSheetIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.9 17" xml:space="preserve">
+                              <path fill="#8E9AAF" d="M13.1,4.7l0.6-0.6c0.2-0.2,0.2-0.4,0-0.6l-0.2-0.2c-0.2-0.2-0.4-0.2-0.6,0l-0.6,0.6c-1.2-1-2.7-1.7-4.4-1.8V1.1h0.8c0.2,0,0.4-0.2,0.4-0.4V0.4C9.2,0.2,9,0,8.8,0H6.1C5.9,0,5.7,0.2,5.7,0.4v0.3c0,0.2,0.2,0.4,0.4,0.4h0.8v1.1C3,2.4,0,5.6,0,9.6C0,13.7,3.3,17,7.4,17s7.4-3.3,7.4-7.4C14.9,7.7,14.2,6,13.1,4.7z M7.4,15.9c-3.5,0-6.4-2.9-6.4-6.4s2.9-6.4,6.4-6.4s6.4,2.9,6.4,6.4S11,15.9,7.4,15.9z M7.6,11.7H7.3c-0.2,0-0.4-0.2-0.4-0.4V5.7c0-0.2,0.2-0.4,0.4-0.4h0.3C7.8,5.3,8,5.5,8,5.7v5.6C8,11.5,7.8,11.7,7.6,11.7z"/>
+                            </svg>
+                          </button>
+                          <button class="MyMsgCheck" onclick="myFunctionReadConfirm()">
+                            <svg id="msgCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                              <path fill="#a5a5a5" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="teamMsg">
+                        <div class="teamMsgsName">@User1 - 11/10/2018 - 16:29h</div>
+                        <div class="teamMsgsTxt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias a atque vitae error omnis ullam minus fugit.</div>
+                        <div class="MsgsBtns">
+                          <button class="TeamMsgReply">
+                            <svg id="IconMsgReply" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 82.2 73" xml:space="preserve">
+                              <path fill="#8E9AAF" d="M1.6,35.9l25.1,26.3c3.5,3.7,9.8,1.2,9.8-3.9V45.7c22,0.3,31.3,2.4,25.8,21.6c-1.2,4.2,3.6,7.5,7.1,4.9c4.7-3.5,12.7-11.4,12.7-24.9c0-24.4-22-28.7-45.7-29V5.7c0-5.2-6.3-7.6-9.8-3.9L1.6,28C-0.5,30.2-0.5,33.7,1.6,35.9L1.6,35.9zM4.9,31.2L30,4.9c0.7-0.7,2-0.2,2,0.8v17.1c22.4,0,45.7,1.6,45.7,24.4c0,10.6-5.7,17.4-10.8,21.2c7.3-26-10.4-27.3-34.8-27.3v17.1c0,1-1.3,1.5-2,0.8L4.9,32.7C4.5,32.3,4.5,31.6,4.9,31.2z"/>
+                            </svg>
+                          </button>
+                          <button class="TeamMsgCheck">
+                            <svg id="msgCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                              <path fill="#a5a5a5" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+<!-- equipe modal -->
+          <div id="equipeModal" style="display: none;" class="equipe-modal">
+            <div class="my-lightboxEquipe">
+              <div class="lightbox-equipe">
+              <button class="TeamReplyCloseBtn" onclick="myFunctionReadConfirmClose()">
+            <div class="close-svg-equipe">
+              <svg id="close-btn2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+              </svg>
+            </div>
+          </button>
+          <div id="lightbox-equipeTitle">Equipe</div>
+          <!-- confirm team list -->
+                <div class="TaskEditorTeamReplySelection scrollbar3" id="style-3-scrollbar3">
+                  <div class="force-overflow3">
+                    <ul class="ReplyTeamList">
+                      <li>
+                        <div>Al Pacino</div>
+                        <a href="">
+                          <svg id="TeamMsgReplyCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                            <path fill="#E6E6E6" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <div>Al Pacino</div>
+                        <a href="">
+                          <svg id="TeamMsgReplyCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                            <path fill="#E6E6E6" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <div>Al Pacino</div>
+                        <a href="">
+                          <svg id="TeamMsgReplyCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                            <path fill="#E6E6E6" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <div>Al Pacino</div>
+                        <a href="">
+                          <svg id="TeamMsgReplyCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                            <path fill="#E6E6E6" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <div>Al Pacino</div>
+                        <a href="">
+                          <svg id="TeamMsgReplyCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                            <path fill="#E6E6E6" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <div>Al Pacino</div>
+                        <a href="">
+                          <svg id="TeamMsgReplyCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                            <path fill="#E6E6E6" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <div>Al Pacino</div>
+                        <a href="">
+                          <svg id="TeamMsgReplyCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                            <path fill="#E6E6E6" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <div>Al Pacino</div>
+                        <a href="">
+                          <svg id="TeamMsgReplyCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+                            <path fill="#E6E6E6" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+          <!-- confirm team list -->
+<!--               <button class="TaskEditorReplyBtn">
+                  <svg id="IconMsgReply" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 82.2 73" xml:space="preserve">
+                    <path fill="#8E9AAF" d="M1.6,35.9l25.1,26.3c3.5,3.7,9.8,1.2,9.8-3.9V45.7c22,0.3,31.3,2.4,25.8,21.6c-1.2,4.2,3.6,7.5,7.1,4.9c4.7-3.5,12.7-11.4,12.7-24.9c0-24.4-22-28.7-45.7-29V5.7c0-5.2-6.3-7.6-9.8-3.9L1.6,28C-0.5,30.2-0.5,33.7,1.6,35.9L1.6,35.9zM4.9,31.2L30,4.9c0.7-0.7,2-0.2,2,0.8v17.1c22.4,0,45.7,1.6,45.7,24.4c0,10.6-5.7,17.4-10.8,21.2c7.3-26-10.4-27.3-34.8-27.3v17.1c0,1-1.3,1.5-2,0.8L4.9,32.7C4.5,32.3,4.5,31.6,4.9,31.2z"/>
+                  </svg>
+                <p>Encaminhar</p>
+              </button> -->
+            </div>
+            </div>
+        </div>
+<!-- fim modal equipe -->
+
+                    <!-- task editor digitar mnensagem  -->
+                    <div class="GridTaskEditorInputMsgs">
+                      <div class="TaskEditorInputMsgs">
+                        <input type="text" placeholder="escrever mensagem">
+                        <button class="TaskEditorEnviarMsg">Enviar</button>
+                      </div>
+                    </div>
+                    <!-- taks editor digitar mensagem -->
+                  </div>
+                <div role="tab" class="tabButton" option="b">
+                  <div class="innerTabBtn">
+                    <svg id="log-eventos-icon" class="iconsAbas" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.3 19" xml:space="preserve">
+                      <path fill="#8E9AAF" d="M12.5,0H1.8C0.8,0,0,0.8,0,1.8V19l7.1-4.2l7.1,4.2V1.8C14.3,0.8,13.5,0,12.5,0z M13.1,16.9l-5.9-3.5l-5.9,3.5V1.8c0-0.3,0.3-0.6,0.6-0.6h10.7c0.3,0,0.6,0.3,0.6,0.6V16.9z"/>
+                    </svg>
+                    <div id="ampSelectorTitle">Log/Eventos</div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tabContent">
+                    <div class="TaskEditorLogMsgsContainer">
+                      <div class="scrollbar4" id="style-3-scrollbar4">
+                        <div class="force-overflow4">
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                          <div class="TaskEditorLogMsgWrapper">
+                            <div><span>@User1 - 11/10/2018 - 16:29h - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div role="tab" class="tabButton" option="c">
+                  <div class="innerTabBtn">
+                    <svg id="files-icon" class="iconsAbas" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 138.9 158.8" xml:space="preserve">
+                      <path fill="#8E9AAF" d="M134.6,20.4L118.5,4.4C115.7,1.6,111.9,0,108,0H54.6c-8.2,0-14.9,6.7-14.9,14.9v14.9H14.9C6.7,29.8,0,36.4,0,44.7v99.2c0,8.2,6.7,14.9,14.9,14.9h69.5c8.2,0,14.9-6.7,14.9-14.9V129H124c8.2,0,14.9-6.7,14.9-14.9V31C138.9,27,137.4,23.2,134.6,20.4z M109.2,10.1c0.9,0.2,1.7,0.7,2.3,1.3l16.1,16.1c0.6,0.6,1.1,1.4,1.3,2.3h-19.7V10.1z M89.3,143.9c0,2.7-2.2,5-5,5H14.9c-2.7,0-5-2.2-5-5V44.7c0-2.7,2.2-5,5-5h24.8v74.4c0,8.2,6.7,14.9,14.9,14.9h34.7V143.9z M129,114.1c0,2.7-2.2,5-5,5H54.6c-2.7,0-5-2.2-5-5V14.9c0-2.7,2.2-5,5-5h44.7v22.3c0,4.1,3.3,7.4,7.4,7.4H129V114.1z"/>
+                    </svg>
+                    <div id="ampSelectorTitle">Arquivos</div>
+                  </div>
+                  </div>
+                <div role="tabpanel" class="tabContent">
+                  <div class="TaskEditorFilesManagerContainer">
+                    <div class="scrollbar5" id="style-3-scrollbar5">
+                      <div class="force-overflow5">
+                        <div class="VersionFile">
+                        <ul id="VersionFileList">
+                          <li id="VersionFileListAdd">
+                            <div id="filesVersionsNames">Arquivo1.pdf</div>
+                            <div id="filesVersionsDate">12/05/2019</div>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                        </ul>
+                        <ul id="VersionFileList">
+                          <li id="VersionFileListAdd">
+                            <div id="filesVersionsNames">Arquivo1.pdf</div>
+                            <div id="filesVersionsDate">12/05/2019</div>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                        </ul>
+                        <ul id="VersionFileList">
+                          <li id="VersionFileListAdd">
+                            <div id="filesVersionsNames">Arquivo1.pdf</div>
+                            <div id="filesVersionsDate">12/05/2019</div>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                        </ul>
+                        <ul id="VersionFileList">
+                          <li id="VersionFileListAdd">
+                            <div id="filesVersionsNames">Arquivo1.pdf</div>
+                            <div id="filesVersionsDate">12/05/2019</div>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                          <li id="VersionFileListAdd">
+                            <svg id="FilesVersionArrowIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 77.1 51.4" xml:space="preserve">
+                              <path fill="#EEE2DF" d="M51.4,12.8V0l25.7,25.7L51.4,51.4V38.5H22.7C-6.4,38.5-0.2,8,2.4,1.9c2.5,7.9,7.9,11,17.3,11H51.4z"/>
+                            </svg>
+                            <span id="filesVersionsNames">Arquivo1.pdf</span>
+                            <span id="filesVersionsDate">12/05/2019</span>
+                          </li>
+                        </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div role="tab" class="tabButton" option="d">
+                  <div class="innerTabBtn">
+                    <svg id="contacts-icon" class="iconsAbas" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100.4 114.8" xml:space="preserve">
+                      <path fill="#8E9AAF" d="M97.7,35.9c1.5,0,2.7-1.2,2.7-2.7v-9c0-1.5-1.2-2.7-2.7-2.7h-4.5v-7.2C93.3,6.4,86.8,0,78.9,0H14.3C6.4,0,0,6.4,0,14.3v86.1c0,7.9,6.4,14.3,14.3,14.3h64.6c7.9,0,14.3-6.4,14.3-14.3v-7.2h4.5c1.5,0,2.7-1.2,2.7-2.7v-9c0-1.5-1.2-2.7-2.7-2.7h-4.5V64.6h4.5c1.5,0,2.7-1.2,2.7-2.7v-9c0-1.5-1.2-2.7-2.7-2.7h-4.5V35.9H97.7z M86.1,100.4c0,3.9-3.2,7.2-7.2,7.2H14.3c-3.9,0-7.2-3.2-7.2-7.2V14.3c0-3.9,3.2-7.2,7.2-7.2h64.6c3.9,0,7.2,3.2,7.2,7.2V100.4z M46.6,61c9.9,0,17.9-8,17.9-17.9s-8-17.9-17.9-17.9s-17.9,8-17.9,17.9S36.7,61,46.6,61z M46.6,32.3c5.9,0,10.8,4.8,10.8,10.8s-4.8,10.8-10.8,10.8S35.9,49,35.9,43S40.7,32.3,46.6,32.3z M57.1,64.6c-4.4,0-5.5,1.6-10.5,1.6s-6.1-1.6-10.5-1.6c-4.8,0-9.4,2.1-12.1,6.1c-1.6,2.4-2.6,5.3-2.6,8.4v8.8c0,1,0.8,1.8,1.8,1.8h3.6c1,0,1.8-0.8,1.8-1.8v-8.8c0-1.6,0.5-3.1,1.3-4.4c1.3-1.9,3.5-3,6.1-3c2.8,0,4.7,1.6,10.5,1.6c5.8,0,7.7-1.6,10.5-1.6c2.6,0,4.9,1.1,6.1,3c0.9,1.3,1.3,2.8,1.3,4.4v8.8c0,1,0.8,1.8,1.8,1.8H70c1,0,1.8-0.8,1.8-1.8v-8.8c0-3.1-0.9-6-2.6-8.4C66.5,66.7,61.8,64.6,57.1,64.6L57.1,64.6z"/>
+                    </svg>
+                    <div id="ampSelectorTitle">Contatos</div>
+                  </div>
+                  </div>
+                <div role="tabpanel" class="tabContent ContactsTab">
+                      <button class="buttonCtn">
+                        <svg id="ContatosIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 222.2 155.6" xml:space="preserve">
+                          <path fill="#EEE2DF" d="M166.7,77.8c18.4,0,33.3-14.9,33.3-33.3s-14.9-33.3-33.3-33.3S133.3,26,133.3,44.4S148.3,77.8,166.7,77.8zM166.7,22.2c12.3,0,22.2,10,22.2,22.2s-10,22.2-22.2,22.2s-22.2-10-22.2-22.2S154.4,22.2,166.7,22.2z M66.7,77.8c21.5,0,38.9-17.4,38.9-38.9S88.2,0,66.7,0S27.8,17.4,27.8,38.9S45.2,77.8,66.7,77.8z M66.7,11.1c15.3,0,27.8,12.5,27.8,27.8S82,66.7,66.7,66.7S38.9,54.2,38.9,38.9S51.4,11.1,66.7,11.1z M94.5,84.7c-11.6,0-14.5,4.2-27.8,4.2c-13.3,0-16.2-4.2-27.8-4.2c-12.6,0-24.9,5.6-32,16.3C2.5,107.4,0,115.1,0,123.3v15.6c0,9.2,7.5,16.7,16.7,16.7h100c9.2,0,16.7-7.5,16.7-16.7v-15.6c0-8.3-2.5-15.9-6.8-22.3C119.3,90.3,107.1,84.7,94.5,84.7L94.5,84.7z M122.2,138.9c0,3.1-2.5,5.6-5.6,5.6h-100c-3.1,0-5.6-2.5-5.6-5.6v-15.6c0-5.8,1.7-11.4,4.9-16.1c4.8-7.1,13.3-11.4,22.8-11.4c9.5,0,12.9,4.2,27.8,4.2s18.3-4.2,27.8-4.2s18,4.3,22.8,11.4c3.2,4.8,4.9,10.3,4.9,16.1L122.2,138.9L122.2,138.9z M216.6,99c-6-8.9-16.2-13.6-26.7-13.6c-9.7,0-12.1,3.5-23.2,3.5s-13.5-3.5-23.2-3.5c-4.6,0-9.1,1-13.2,2.8c5.3,5.3,6.4,8.2,7,9.2c2-0.6,4-0.9,6.2-0.9c7.6,0,10.4,3.5,23.2,3.5s15.6-3.5,23.2-3.5c7.3,0,13.8,3.2,17.5,8.7c2.5,3.6,3.8,8,3.8,12.4v12.9c0,1.5-1.3,2.8-2.8,2.8h-63.9c0,6.1,0.1,7.8-0.6,11.1h64.4c7.7,0,13.9-6.2,13.9-13.9v-13C222.2,110.7,220.1,104.3,216.6,99z"/>
+                        </svg>
+                        <div id="buttonCtnTitle">BUSCAR CONTATO</div>
+                      </button>
+                    <div style="width: 100%" class="contactsTable">
+                      <div class="ContactsRows">
+                        <div class="TableHeader ContactsColumn ctName">Nome</div>
+                        <div class="TableHeader ContactsColumn ctVeiculo">Veículo</div>
+                        <div class="TableHeader ContactsColumn ctTel">Status</div>
+                        <div class="TableHeader ContactsColumn ctNota">Nota</div>
+                      </div>
+                    <div class="scrollbar6" id="style-3-scrollbar6">
+                      <div class="force-overflow6">
+                        <amp-accordion class="accordionTaskEditorContacts">
+<!-- contact line -->
+                          <section>
+                            <div id="accordionTaskEditorContactsTexts">
+                              <span  class="TaskEditorContactsLine">                                
+                              <div id="ContactLineName">Elvis</div>
+                              <div id="ContactLineVeiculo">Folha de São Paulo</div>
+                              <div id="ContactLineStatus">Status</div>
+                              <div id="ContactLineNota">Nota</div>
+                              <svg id="ContactLineDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+                                <path fill="#eee2df" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+                              </svg>
+                              </span>
+                            </div>
+                            <div class="ContactLineData">
+                              <button id="ContactLineEdit">
+                                <svg id="ContactLineEditIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.8 27" xml:space="preserve">
+                                  <path fill="#8E9AAF" d="M33.1,18.9l-0.9-0.5c0-0.4,0-0.9,0-1.4l0.9-0.5c0.5-0.3,0.7-0.9,0.6-1.4c-0.4-1.2-1-2.4-1.9-3.3c-0.4-0.4-1-0.5-1.5-0.2L29.4,12c-0.4-0.3-0.8-0.5-1.2-0.7v-1c0-0.6-0.4-1.1-1-1.2c-1.3-0.3-2.6-0.3-3.9,0c-0.6,0.1-1,0.6-1,1.2v1c-0.4,0.2-0.8,0.4-1.2,0.7l-0.9-0.5c-0.5-0.3-1.1-0.2-1.5,0.2c-0.9,1-1.6,2.1-1.9,3.3c-0.2,0.5,0.1,1.1,0.6,1.4l0.9,0.5c0,0.4,0,0.9,0,1.4l-0.9,0.5c-0.5,0.3-0.7,0.9-0.6,1.4c0.4,1.2,1,2.4,1.9,3.3c0.4,0.4,1,0.5,1.5,0.2l0.9-0.5c0.4,0.3,0.8,0.5,1.2,0.7v1c0,0.6,0.4,1.1,1,1.2c0.6,0.1,1.3,0.2,1.9,0.2c0.6,0,1.3-0.1,1.9-0.2c0.6-0.1,1-0.6,1-1.2v-1c0.4-0.2,0.8-0.4,1.2-0.7l0.9,0.5c0.5,0.3,1.1,0.2,1.5-0.2c0.9-1,1.6-2.1,1.9-3.3C33.9,19.8,33.6,19.2,33.1,18.9L33.1,18.9zM30.4,19.3l1.6,0.9c-0.3,0.8-0.7,1.5-1.2,2.1l-1.6-0.9c-1.1,1-1.3,1.1-2.7,1.6v1.8c-0.8,0.1-1.6,0.1-2.4,0v-1.8c-1.4-0.5-1.6-0.6-2.7-1.6l-1.6,0.9c-0.5-0.6-0.9-1.3-1.2-2.1l1.6-0.9c-0.3-1.4-0.3-1.6,0-3.1l-1.6-0.9c0.3-0.8,0.7-1.5,1.2-2.1l1.6,0.9c1.1-1,1.3-1.1,2.7-1.6v-1.8c0.8-0.1,1.6-0.1,2.4,0v1.8c1.4,0.5,1.6,0.6,2.7,1.6l1.6-0.9c0.5,0.6,0.9,1.3,1.2,2.1l-1.6,0.9C30.7,17.6,30.7,17.8,30.4,19.3z M25.3,14.3c-1.9,0-3.4,1.5-3.4,3.4s1.5,3.4,3.4,3.4c1.9,0,3.4-1.5,3.4-3.4S27.2,14.3,25.3,14.3zM25.3,19.4c-0.9,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7s1.7,0.8,1.7,1.7S26.3,19.4,25.3,19.4z M11.8,13.5c3.7,0,6.8-3,6.8-6.8S15.5,0,11.8,0S5.1,3,5.1,6.8S8.1,13.5,11.8,13.5z M11.8,1.7c2.8,0,5.1,2.3,5.1,5.1s-2.3,5.1-5.1,5.1S6.8,9.5,6.8,6.8S9,1.7,11.8,1.7z M2.5,25.3c-0.5,0-0.8-0.4-0.8-0.8v-2.2c0-3,2.4-5.4,5.4-5.4c1,0,2.1,0.8,4.7,0.8c1,0,2-0.2,3-0.5c0-0.6,0.1-1.2,0.2-1.8c-0.5,0.1-1.6,0.6-3.2,0.6c-2.5,0-3.2-0.8-4.7-0.8c-3.9,0-7.1,3.2-7.1,7.1v2.2C0,25.9,1.1,27,2.5,27h17.8c-0.8-0.5-1.6-1-2.3-1.7H2.5z"/>
+                                </svg>
+                                <div id="ContactLineEditTitle">Editar contato</div>
+                              </button>
+                              <div><span id="Bold1">Nome completo:</span>Ayrton Senna da Silva</div>
+                              <div><span id="Bold1">Telefone:</span>11 99999-0000</div>
+                              <div><span id="Bold1">e-mail:</span>ayrton@senna.com.br</div>
+                              <div><span id="Bold1">Nome completo:</span>Ayrton Senna da Silva</div>
+                              <div><span id="Bold1">Status:</span></div>
+                              <div><span id="Bold1">Nota:</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima odit est tempore voluptatem nisi architecto quis, asperiores, hic, iure sapiente quisquam repudiandae, quasi nesciunt maxime laborum saepe! Libero, repellat, eius?</div>
+                            </div>
+                          </section>
+<!-- fim contact line -->
+
+
+<!-- contact line -->
+                          <section>
+                            <div id="accordionTaskEditorContactsTexts">
+                              <span  class="TaskEditorContactsLine">                                
+                              <div id="ContactLineName">Elvis</div>
+                              <div id="ContactLineVeiculo">Folha de São Paulo</div>
+                              <div id="ContactLineStatus">Status</div>
+                              <div id="ContactLineNota">Nota</div>
+                              <svg id="ContactLineDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+                                <path fill="#eee2df" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+                              </svg>
+                              </span>
+                            </div>
+                            <div class="ContactLineData">
+                              <button id="ContactLineEdit">
+                                <svg id="ContactLineEditIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.8 27" xml:space="preserve">
+                                  <path fill="#8E9AAF" d="M33.1,18.9l-0.9-0.5c0-0.4,0-0.9,0-1.4l0.9-0.5c0.5-0.3,0.7-0.9,0.6-1.4c-0.4-1.2-1-2.4-1.9-3.3c-0.4-0.4-1-0.5-1.5-0.2L29.4,12c-0.4-0.3-0.8-0.5-1.2-0.7v-1c0-0.6-0.4-1.1-1-1.2c-1.3-0.3-2.6-0.3-3.9,0c-0.6,0.1-1,0.6-1,1.2v1c-0.4,0.2-0.8,0.4-1.2,0.7l-0.9-0.5c-0.5-0.3-1.1-0.2-1.5,0.2c-0.9,1-1.6,2.1-1.9,3.3c-0.2,0.5,0.1,1.1,0.6,1.4l0.9,0.5c0,0.4,0,0.9,0,1.4l-0.9,0.5c-0.5,0.3-0.7,0.9-0.6,1.4c0.4,1.2,1,2.4,1.9,3.3c0.4,0.4,1,0.5,1.5,0.2l0.9-0.5c0.4,0.3,0.8,0.5,1.2,0.7v1c0,0.6,0.4,1.1,1,1.2c0.6,0.1,1.3,0.2,1.9,0.2c0.6,0,1.3-0.1,1.9-0.2c0.6-0.1,1-0.6,1-1.2v-1c0.4-0.2,0.8-0.4,1.2-0.7l0.9,0.5c0.5,0.3,1.1,0.2,1.5-0.2c0.9-1,1.6-2.1,1.9-3.3C33.9,19.8,33.6,19.2,33.1,18.9L33.1,18.9zM30.4,19.3l1.6,0.9c-0.3,0.8-0.7,1.5-1.2,2.1l-1.6-0.9c-1.1,1-1.3,1.1-2.7,1.6v1.8c-0.8,0.1-1.6,0.1-2.4,0v-1.8c-1.4-0.5-1.6-0.6-2.7-1.6l-1.6,0.9c-0.5-0.6-0.9-1.3-1.2-2.1l1.6-0.9c-0.3-1.4-0.3-1.6,0-3.1l-1.6-0.9c0.3-0.8,0.7-1.5,1.2-2.1l1.6,0.9c1.1-1,1.3-1.1,2.7-1.6v-1.8c0.8-0.1,1.6-0.1,2.4,0v1.8c1.4,0.5,1.6,0.6,2.7,1.6l1.6-0.9c0.5,0.6,0.9,1.3,1.2,2.1l-1.6,0.9C30.7,17.6,30.7,17.8,30.4,19.3z M25.3,14.3c-1.9,0-3.4,1.5-3.4,3.4s1.5,3.4,3.4,3.4c1.9,0,3.4-1.5,3.4-3.4S27.2,14.3,25.3,14.3zM25.3,19.4c-0.9,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7s1.7,0.8,1.7,1.7S26.3,19.4,25.3,19.4z M11.8,13.5c3.7,0,6.8-3,6.8-6.8S15.5,0,11.8,0S5.1,3,5.1,6.8S8.1,13.5,11.8,13.5z M11.8,1.7c2.8,0,5.1,2.3,5.1,5.1s-2.3,5.1-5.1,5.1S6.8,9.5,6.8,6.8S9,1.7,11.8,1.7z M2.5,25.3c-0.5,0-0.8-0.4-0.8-0.8v-2.2c0-3,2.4-5.4,5.4-5.4c1,0,2.1,0.8,4.7,0.8c1,0,2-0.2,3-0.5c0-0.6,0.1-1.2,0.2-1.8c-0.5,0.1-1.6,0.6-3.2,0.6c-2.5,0-3.2-0.8-4.7-0.8c-3.9,0-7.1,3.2-7.1,7.1v2.2C0,25.9,1.1,27,2.5,27h17.8c-0.8-0.5-1.6-1-2.3-1.7H2.5z"/>
+                                </svg>
+                                <div id="ContactLineEditTitle">Editar contato</div>
+                              </button>
+                              <div><span id="Bold1">Nome completo:</span>Ayrton Senna da Silva</div>
+                              <div><span id="Bold1">Telefone:</span>11 99999-0000</div>
+                              <div><span id="Bold1">e-mail:</span>ayrton@senna.com.br</div>
+                              <div><span id="Bold1">Nome completo:</span>Ayrton Senna da Silva</div>
+                              <div><span id="Bold1">Status:</span></div>
+                              <div><span id="Bold1">Nota:</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima odit est tempore voluptatem nisi architecto quis, asperiores, hic, iure sapiente quisquam repudiandae, quasi nesciunt maxime laborum saepe! Libero, repellat, eius?</div>
+                            </div>
+                          </section>
+<!-- fim contact line -->
+
+
+<!-- contact line -->
+                          <section>
+                            <div id="accordionTaskEditorContactsTexts">
+                              <span  class="TaskEditorContactsLine">                                
+                              <div id="ContactLineName">Elvis</div>
+                              <div id="ContactLineVeiculo">Folha de São Paulo</div>
+                              <div id="ContactLineStatus">Status</div>
+                              <div id="ContactLineNota">Nota</div>
+                              <svg id="ContactLineDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+                                <path fill="#eee2df" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"/>
+                              </svg>
+                              </span>
+                            </div>
+                            <div class="ContactLineData">
+                              <button id="ContactLineEdit">
+                                <svg id="ContactLineEditIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.8 27" xml:space="preserve">
+                                  <path fill="#8E9AAF" d="M33.1,18.9l-0.9-0.5c0-0.4,0-0.9,0-1.4l0.9-0.5c0.5-0.3,0.7-0.9,0.6-1.4c-0.4-1.2-1-2.4-1.9-3.3c-0.4-0.4-1-0.5-1.5-0.2L29.4,12c-0.4-0.3-0.8-0.5-1.2-0.7v-1c0-0.6-0.4-1.1-1-1.2c-1.3-0.3-2.6-0.3-3.9,0c-0.6,0.1-1,0.6-1,1.2v1c-0.4,0.2-0.8,0.4-1.2,0.7l-0.9-0.5c-0.5-0.3-1.1-0.2-1.5,0.2c-0.9,1-1.6,2.1-1.9,3.3c-0.2,0.5,0.1,1.1,0.6,1.4l0.9,0.5c0,0.4,0,0.9,0,1.4l-0.9,0.5c-0.5,0.3-0.7,0.9-0.6,1.4c0.4,1.2,1,2.4,1.9,3.3c0.4,0.4,1,0.5,1.5,0.2l0.9-0.5c0.4,0.3,0.8,0.5,1.2,0.7v1c0,0.6,0.4,1.1,1,1.2c0.6,0.1,1.3,0.2,1.9,0.2c0.6,0,1.3-0.1,1.9-0.2c0.6-0.1,1-0.6,1-1.2v-1c0.4-0.2,0.8-0.4,1.2-0.7l0.9,0.5c0.5,0.3,1.1,0.2,1.5-0.2c0.9-1,1.6-2.1,1.9-3.3C33.9,19.8,33.6,19.2,33.1,18.9L33.1,18.9zM30.4,19.3l1.6,0.9c-0.3,0.8-0.7,1.5-1.2,2.1l-1.6-0.9c-1.1,1-1.3,1.1-2.7,1.6v1.8c-0.8,0.1-1.6,0.1-2.4,0v-1.8c-1.4-0.5-1.6-0.6-2.7-1.6l-1.6,0.9c-0.5-0.6-0.9-1.3-1.2-2.1l1.6-0.9c-0.3-1.4-0.3-1.6,0-3.1l-1.6-0.9c0.3-0.8,0.7-1.5,1.2-2.1l1.6,0.9c1.1-1,1.3-1.1,2.7-1.6v-1.8c0.8-0.1,1.6-0.1,2.4,0v1.8c1.4,0.5,1.6,0.6,2.7,1.6l1.6-0.9c0.5,0.6,0.9,1.3,1.2,2.1l-1.6,0.9C30.7,17.6,30.7,17.8,30.4,19.3z M25.3,14.3c-1.9,0-3.4,1.5-3.4,3.4s1.5,3.4,3.4,3.4c1.9,0,3.4-1.5,3.4-3.4S27.2,14.3,25.3,14.3zM25.3,19.4c-0.9,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7s1.7,0.8,1.7,1.7S26.3,19.4,25.3,19.4z M11.8,13.5c3.7,0,6.8-3,6.8-6.8S15.5,0,11.8,0S5.1,3,5.1,6.8S8.1,13.5,11.8,13.5z M11.8,1.7c2.8,0,5.1,2.3,5.1,5.1s-2.3,5.1-5.1,5.1S6.8,9.5,6.8,6.8S9,1.7,11.8,1.7z M2.5,25.3c-0.5,0-0.8-0.4-0.8-0.8v-2.2c0-3,2.4-5.4,5.4-5.4c1,0,2.1,0.8,4.7,0.8c1,0,2-0.2,3-0.5c0-0.6,0.1-1.2,0.2-1.8c-0.5,0.1-1.6,0.6-3.2,0.6c-2.5,0-3.2-0.8-4.7-0.8c-3.9,0-7.1,3.2-7.1,7.1v2.2C0,25.9,1.1,27,2.5,27h17.8c-0.8-0.5-1.6-1-2.3-1.7H2.5z"/>
+                                </svg>
+                                <div id="ContactLineEditTitle">Editar contato</div>
+                              </button>
+                              <div><span id="Bold1">Nome completo:</span>Ayrton Senna da Silva</div>
+                              <div><span id="Bold1">Telefone:</span>11 99999-0000</div>
+                              <div><span id="Bold1">e-mail:</span>ayrton@senna.com.br</div>
+                              <div><span id="Bold1">Nome completo:</span>Ayrton Senna da Silva</div>
+                              <div><span id="Bold1">Status:</span></div>
+                              <div><span id="Bold1">Nota:</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima odit est tempore voluptatem nisi architecto quis, asperiores, hic, iure sapiente quisquam repudiandae, quasi nesciunt maxime laborum saepe! Libero, repellat, eius?</div>
+                            </div>
+                          </section>
+<!-- fim contact line -->
+
+
+                        </amp-accordion>
+                      </div>
+                    </div>
+                  </div>
+              </amp-selector>
+        </div>
+      </div>
+    </section>
+<!-- fim-task-editor-field-grid -->
+
+
+    </div>
+  </div>
+</amp-lightbox>
+<!-- fim modal editor de tasks -->
+
+<!-- mural sidebar -->
+<amp-sidebar id="sidebar" layout="nodisplay" side="right">
+  <div class="taskEditorTabMsgsContainer">
+    <div class="force-overflow">
+      <div class="myMsg">
+        <div class="MyMsgsName">@User1 - 11/10/2018 - 16:29h</div>
+        <div class="MyMsgsTxt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias a atque vitae error omnis ullam minus fugit.</div>
+        <div class="MsgsBtns">
+          <button class="MyMsgTimesheet">
+            <svg id="MyMsgTimeSheetIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.9 17" xml:space="preserve">
+              <path fill="#8E9AAF" d="M13.1,4.7l0.6-0.6c0.2-0.2,0.2-0.4,0-0.6l-0.2-0.2c-0.2-0.2-0.4-0.2-0.6,0l-0.6,0.6c-1.2-1-2.7-1.7-4.4-1.8V1.1h0.8c0.2,0,0.4-0.2,0.4-0.4V0.4C9.2,0.2,9,0,8.8,0H6.1C5.9,0,5.7,0.2,5.7,0.4v0.3c0,0.2,0.2,0.4,0.4,0.4h0.8v1.1C3,2.4,0,5.6,0,9.6C0,13.7,3.3,17,7.4,17s7.4-3.3,7.4-7.4C14.9,7.7,14.2,6,13.1,4.7z M7.4,15.9c-3.5,0-6.4-2.9-6.4-6.4s2.9-6.4,6.4-6.4s6.4,2.9,6.4,6.4S11,15.9,7.4,15.9z M7.6,11.7H7.3c-0.2,0-0.4-0.2-0.4-0.4V5.7c0-0.2,0.2-0.4,0.4-0.4h0.3C7.8,5.3,8,5.5,8,5.7v5.6C8,11.5,7.8,11.7,7.6,11.7z"/>
+            </svg>
+          </button>
+          <button class="MyMsgCheck" onclick="myFunctionReadConfirm()">
+            <svg id="msgCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+              <path fill="#a5a5a5" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="teamMsg">
+        <div class="teamMsgsName">@User1 - 11/10/2018 - 16:29h</div>
+        <div class="teamMsgsTxt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias a atque vitae error omnis ullam minus fugit.</div>
+        <div class="MsgsBtns">
+          <button class="TeamMsgReply">
+            <svg id="IconMsgReply" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 82.2 73" xml:space="preserve">
+              <path fill="#8E9AAF" d="M1.6,35.9l25.1,26.3c3.5,3.7,9.8,1.2,9.8-3.9V45.7c22,0.3,31.3,2.4,25.8,21.6c-1.2,4.2,3.6,7.5,7.1,4.9c4.7-3.5,12.7-11.4,12.7-24.9c0-24.4-22-28.7-45.7-29V5.7c0-5.2-6.3-7.6-9.8-3.9L1.6,28C-0.5,30.2-0.5,33.7,1.6,35.9L1.6,35.9zM4.9,31.2L30,4.9c0.7-0.7,2-0.2,2,0.8v17.1c22.4,0,45.7,1.6,45.7,24.4c0,10.6-5.7,17.4-10.8,21.2c7.3-26-10.4-27.3-34.8-27.3v17.1c0,1-1.3,1.5-2,0.8L4.9,32.7C4.5,32.3,4.5,31.6,4.9,31.2z"/>
+            </svg>
+          </button>
+          <button class="TeamMsgCheck">
+            <svg id="msgCheckIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 106.4 80.5" xml:space="preserve">
+              <path fill="#a5a5a5" d="M98.7,0.8L31.4,68.1L7.6,44.3c-1.1-1.1-3-1.1-4.1,0l-2.7,2.7c-1.1,1.1-1.1,3,0,4.1l28.5,28.5c1.1,1.1,3,1.1,4.1,0l72-72c1.1-1.1,1.1-3,0-4.1l-2.7-2.7C101.7-0.3,99.8-0.3,98.7,0.8L98.7,0.8z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="GridTaskEditorInputMsgsMural">
+        <div class="TaskEditorInputMsgsMural">
+          <input type="text" placeholder="escrever mensagem">
+          <button class="TaskEditorEnviarMsgMural">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</amp-sidebar>
+<!-- fim mural sidebar -->
+
+<!-- footer snacktabs -->
+<div class="clientSnacktab">
+  <h1>Nome do Cliente</h1>
+</div>
+<div class="TaskShacktab" id="TaskShacktab" style="display: ;">
+  <div id="TaskShacktabNomeCliente">Nome do Cliente</div>
+  <div class="TaskSnacktabIcons">
+    <button>
+      <div id="TaskSnacktabIconsTitle">Copiar</div>
+      <svg id="copy-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 23.6 27" xml:space="preserve">
+        <path fill="#8E9AAF" d="M22.9,3.5l-2.7-2.7C19.7,0.3,19,0,18.4,0H9.3C7.9,0,6.8,1.1,6.8,2.5V5H2.5C1.1,5.1,0,6.2,0,7.6v16.9C0,25.9,1.1,27,2.5,27h11.8c1.4,0,2.5-1.1,2.5-2.5V22H21c1.4,0,2.5-1.1,2.5-2.5V5.3C23.6,4.6,23.4,4,22.9,3.5z M18.6,1.7c0.1,0,0.3,0.1,0.4,0.2l2.7,2.7c0.1,0.1,0.2,0.2,0.2,0.4h-3.3C18.6,5,18.6,1.7,18.6,1.7z M15.2,24.5c0,0.5-0.4,0.8-0.8,0.8H2.5c-0.5,0-0.8-0.4-0.8-0.8V7.6c0-0.5,0.4-0.8,0.8-0.8h4.2v12.7c0,1.4,1.1,2.5,2.5,2.5h5.9L15.2,24.5L15.2,24.5z M21.9,19.4c0,0.5-0.4,0.8-0.8,0.8H9.3c-0.5,0-0.8-0.4-0.8-0.8V2.5c0-0.5,0.4-0.8,0.8-0.8h7.6v3.8c0,0.7,0.6,1.3,1.3,1.3H22L21.9,19.4L21.9,19.4z"/>
+      </svg>
+    </button>
+    <button>
+      <div id="TaskSnacktabIconsTitle">Duplicar</div>
+      <svg id="duplicateIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 27 27" xml:space="preserve">
+        <path fill="#8E9AAF" d="M24.5,0H7.6C6.2,0,5.1,1.1,5.1,2.5v2.5H2.5C1.1,5.1,0,6.2,0,7.6v16.9C0,25.9,1.1,27,2.5,27h16.9c1.4,0,2.5-1.1,2.5-2.5v-2.5h2.5c1.4,0,2.5-1.1,2.5-2.5V2.5C27,1.1,25.9,0,24.5,0z M20.3,24.5c0,0.5-0.4,0.8-0.8,0.8H2.5c-0.5,0-0.8-0.4-0.8-0.8V7.6c0-0.5,0.4-0.8,0.8-0.8h2.5v12.7c0,1.4,1.1,2.5,2.5,2.5h12.7V24.5z M25.3,19.4c0,0.5-0.4,0.8-0.8,0.8H7.6c-0.5,0-0.8-0.4-0.8-0.8V2.5c0-0.5,0.4-0.8,0.8-0.8h16.9c0.5,0,0.8,0.4,0.8,0.8V19.4z"/>
+        <path fill="#8E9AAF" d="M21.4,10.2h-4.6V5.4c0-0.1-0.1-0.2-0.2-0.2h-0.9c-0.1,0-0.2,0.1-0.2,0.2v4.8h-4.6c-0.1,0-0.2,0.1-0.2,0.2v1c0,0.1,0.1,0.2,0.2,0.2h4.6v4.8c0,0.1,0.1,0.2,0.2,0.2h0.9c0.1,0,0.2-0.1,0.2-0.2v-4.8h4.6c0.1,0,0.2-0.1,0.2-0.2v-1C21.6,10.3,21.5,10.2,21.4,10.2z"/>
+      </svg>
+    </button>
+    <button>
+      <div id="TaskSnacktabIconsTitle">Exportar</div>
+      <svg id="export-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30.4 27" xml:space="preserve">
+        <path fill="#8E9AAF" d="M29.9,8.9l-8.4-8.4c-1.1-1.1-2.9-0.3-2.9,1.2v3.8C11.1,5.7,4.6,7.6,4.6,15.1c0,4.5,2.6,7.1,4.2,8.2c1.3,0.9,3.1-0.3,2.6-1.8c-1.5-5.4,0.4-6.5,7.1-6.7v3.8c0,1.5,1.8,2.2,2.9,1.2l8.4-8.4C30.5,10.7,30.5,9.6,29.9,8.9L29.9,8.9zM20.2,18.6v-5.5c-7.5,0-12.7,0.8-10.4,8.9c-1.7-1.2-3.5-3.4-3.5-6.8c0-7.1,6.9-7.9,13.9-7.9V1.7l8.4,8.4L20.2,18.6z M22.2,21.3c0.1-0.1,0.2-0.2,0.4-0.3c0.4-0.4,1.1-0.1,1.1,0.5v3c0,1.4-1.1,2.5-2.5,2.5H2.5C1.1,27,0,25.9,0,24.5V5.9c0-1.4,1.1-2.5,2.5-2.5h9.1c0.3,0,0.6,0.3,0.6,0.6c0,0.3-0.2,0.5-0.5,0.6c-0.5,0.1-1,0.3-1.4,0.4c-0.1,0-0.1,0-0.2,0H2.5c-0.5,0-0.8,0.4-0.8,0.8v18.6c0,0.5,0.4,0.8,0.8,0.8h18.6c0.5,0,0.8-0.4,0.8-0.8v-2.6C21.9,21.6,22,21.4,22.2,21.3L22.2,21.3z"/>
+      </svg>
+    </button>
+    <button>
+      <div id="TaskSnacktabIconsTitle">Arquivar</div>
+      <svg id="arquivar-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30.4 27" xml:space="preserve">
+        <path fill="#8E9AAF" d="M29.6,17.4l-5-4.7c-0.1-0.1-0.3-0.1-0.4,0l-0.7,0.8c-0.1,0.1-0.1,0.3,0,0.4l3.1,2.9h-6.1l-1.7,3.4h-7.2l-1.7-3.4H3.8l3.1-2.9c0.1-0.1,0.1-0.3,0-0.4l-0.7-0.8c-0.1-0.1-0.3-0.1-0.4,0l-5,4.7C0.3,17.9,0,18.5,0,19.2v5.2C0,25.9,1.1,27,2.5,27h25.3c1.4,0,2.5-1.1,2.5-2.5v-5.2C30.4,18.5,30.1,17.9,29.6,17.4z M28.7,24.5c0,0.5-0.4,0.8-0.8,0.8H2.5c-0.5,0-0.8-0.4-0.8-0.8v-5.1c0-0.5,0.4-0.8,0.8-0.8h6.3l1.7,3.4h9.3l1.7-3.4h6.3c0.5,0,0.8,0.4,0.8,0.8V24.5z M21.9,6.8h-3.4V1.3C18.6,0.6,18,0,17.3,0h-4.2c-0.7,0-1.3,0.6-1.3,1.3v5.5H8.4c-1.5,0-2.3,1.8-1.2,2.9l6.8,6.8c0.7,0.7,1.7,0.7,2.4,0l6.8-6.8C24.2,8.6,23.4,6.8,21.9,6.8L21.9,6.8z M15.2,15.2L8.4,8.4h5.1V1.7h3.4v6.8h5.1L15.2,15.2z"/>
+      </svg>
+    </button>
+    <button>
+      <div id="TaskSnacktabIconsTitle">Excluir</div>
+      <svg id="TrashIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 23.6 27" xml:space="preserve">
+        <path fill="#8E9AAF" d="M17.7,3.4L15.9,1c-0.5-0.6-1.2-1-2-1H9.7c-0.8,0-1.5,0.4-2,1L5.9,3.4H1.3C0.6,3.4,0,3.9,0,4.6v0.1c0,0.2,0.1,0.3,0.3,0.3h1.4v19.4c0,1.4,1.1,2.5,2.5,2.5h15.2c1.4,0,2.5-1.1,2.5-2.5V5.1h1.4c0.2,0,0.3-0.1,0.3-0.3V4.6c0-0.7-0.6-1.3-1.3-1.3H17.7z M9.7,1.7h4.2c0.3,0,0.5,0.1,0.7,0.3l1,1.3H8L9,2C9.2,1.8,9.4,1.7,9.7,1.7z M20.3,24.5c0,0.5-0.4,0.8-0.8,0.8H4.2c-0.5,0-0.8-0.4-0.8-0.8V5.1h16.9V24.5z M11,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6H12c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6h-0.4C11.3,22.8,11,22.5,11,22.1z M6.8,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6h0.4c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6H7.4C7,22.8,6.8,22.5,6.8,22.1z M15.2,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6h0.4c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6h-0.4C15.5,22.8,15.2,22.5,15.2,22.1z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+<!-- fim footer snacktabs -->
+<!-- tasks team dropdown -->
+<div class="TasksteamDropdown" id="ProjectTeamDropdown" style="display: none;">
+  <div class="TasksTeamGrid">
+<div class="lightbox-equipe1">
+              <button href="#" class="close-svg-equipe" onclick="myFunctionProjectTeamEditor()">
+              <svg id="close-btn2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+              </svg>
+          </button>
+          <div id="lightboxEquipe1Text">Equipe</div>
+              <ul class="team-list">
+                <li>
+                  <div class="lider-btn team-list-color1">
+                    <div class="svg-diamond-lider">
+                      <svg id="diamond-lider" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 110.9 98.6" xml:space="preserve">
+                        <path fill="#26547C" d="M89.3,0H21.6c-0.8,0-1.6,0.4-2,1.1L0.3,32.5c-0.5,0.8-0.4,1.9,0.2,2.7l53.1,62.6c0.9,1.1,2.6,1.1,3.5,0l53.1-62.6c0.7-0.8,0.7-1.8,0.2-2.7L91.3,1.1C90.9,0.4,90.1,0,89.3,0z M86.7,6.9L101,30.8H85L74.1,6.9H86.7z M66.4,6.9l10.9,23.9H33.5l11-23.9H66.4z M24.2,6.9h12.6L25.9,30.8h-16L24.2,6.9z M11.8,37h14.1l15.8,37L11.8,37z M33.4,37h44.2L55.5,87.8L33.4,37zM69.3,73.9l15.8-37h14.1L69.3,73.9z"/>
+                      </svg>
+                    </div>
+                  <a href="#">
+                      <div>AP</div>
+                  </a>
+                    </div>
+                  <div id="lightboxEquipe1Text">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                    <div class="lider-btn team-list-color1">
+                  <a href="#">
+                      <div id="lightboxEquipe1Text">AP</div>
+                  </a>
+                    </div>
+                  <div id="lightboxEquipe1Text">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                    <div class="lider-btn team-list-color1">
+                  <a href="#">
+                      <div id="lightboxEquipe1Text">AP</div>
+                  </a>
+                    </div>
+                  <div id="lightboxEquipe1Text">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                    <div class="lider-btn team-list-color1">
+                  <a href="#">
+                      <div id="lightboxEquipe1Text">AP</div>
+                  </a>
+                    </div>
+                  <div id="lightboxEquipe1Text">Al Pacino</div>
+                  <a href="#" class="exclude-team">
+                    <div class="exclude-svg-equipe">
+                      <svg id="close-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve">
+                        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"/>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+    </div>
+  </div>
+
+</div>
+<!-- fim tasks team dropdown -->
+
+
+
+</div>
+<!-- fim tasks manager -->
+
+
+<script>
+
+// dropdown windows funcitions
+  function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+  function myFunctionTotalTeam() {
+    var x = document.getElementById("myDIVTotalTeam");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+  function myFunctionTypeList() {
+    var x = document.getElementById("myDIVtypeList");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+  function myFunctionTaskStatusList() {
+    var x = document.getElementById("myDIVtaskStatusList");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+  function myFunctionTaskTeamNameStatusList() {
+    var x = document.getElementById("myDIVTaskTeamStatusSelector");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+  function myFunctionTaskTeamNameStatusList1() {
+    var x = document.getElementById("myDIVTaskTeamStatusSelector1");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+  function myFunctionTaskEditorTerm() {
+    var x = document.getElementById("TaskEditorTermMyDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+  function myFunctionTaskEditorType() {
+    var x = document.getElementById("myDIVtypeList1");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+  function myFunctionReadConfirm() {
+    var x = document.getElementById("equipeModal");
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+  function myFunctionReadConfirmClose() {
+    var x = document.getElementById("equipeModal");
+    if (x.style.display === "flex") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "flex";
+    }
+}
+
+  function myFunctionCheckBox() {
+    var x = document.getElementById("TaskShacktab");
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+  function myFunctionProjectTeamEditor() {
+    var x = document.getElementById("ProjectTeamDropdown");
+    if (x.style.display === "flex") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "flex";
+    }
+}
+
+  function myFunctionTaskEditorTeamEditor() {
+    var x = document.getElementById("TaskEditorTeamDropdown");
+    if (x.style.display === "flex") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "flex";
+    }
+}
+
+// dropdown windows funcitions
+
+setUpdateType();
+
+setUpdateStatus();
+
+</script>
+
+  </body>
+</html>
